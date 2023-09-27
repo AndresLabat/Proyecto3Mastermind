@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .fondo-pantalla {
@@ -24,36 +25,45 @@ body {
     object-fit: cover;
 }
 
-.sobre-fondo{
+.sobre-fondo {
     width: 100vw;
     height: 100vh;
     position: absolute;
 }
 
-.titulo-mastermind{
+.titulo-mastermind {
     width: 100vw;
     height: 20vh;
     /* border: 0.1em solid black; */
 }
 
-.titulo-superior{
+.titulo-superior {
     width: 100vw;
     height: 10vh;
     /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: end;
-    font-size:2.4em;
+    font-size: 2.8em;
     background: linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-weight: bold; 
+    font-weight: bold;
     text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
     margin-top: 0.4em;
+    cursor: pointer;
+    font-family: 'Fredericka the Great', cursive;
 }
 
-.titulo-inferior{
+.titulo-superior a {
+    text-decoration: none;
+    /* Quital el subrayado */
+    color: inherit;
+    /* Hereda el color del texto del padre (tu título) */
+}
+
+.titulo-inferior {
     width: 100vw;
     height: 10vh;
     /* border: 0.1em solid black; */
@@ -62,43 +72,47 @@ body {
     align-items: center;
 }
 
-.logo{
+.logo {
     width: 4em;
     /* border: 0.1em solid black; */
 }
 
-.logo img{
+.logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     animation: blink 2s infinite;
 }
 
-.texto-titulo{
-    font-size:x-large;
+.texto-titulo {
+    font-size: x-large;
     background: linear-gradient(45deg, violet, indigo, blue, green, orange, red);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-weight: bold; 
+    font-weight: bold;
     text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
     animation: blink 2s infinite;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Sedgwick Ave Display', cursive;
 }
 
 @keyframes blink {
     0% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.4;
     }
+
     100% {
         opacity: 1;
     }
 }
 
-.div-video{
+/* INDEX */
+
+.div-video {
     width: 100vw;
     height: 50vh;
     /* border: 0.1em solid black; */
@@ -107,21 +121,33 @@ body {
     align-items: center;
 }
 
-.contenedor-video-presentacion{
+.marco-video{
+    width: 36.4em;
+    height: 21em;
+    border: 0.1em solid black;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 100% 100%, #212325 0%, #46494f 50%, #46494f 50%, #212325 100%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.contenedor-video-presentacion {
     width: 35.4em;
     height: 20em;
     border: 0.1em solid black;
     border-radius: 1em;
 }
 
-.contenedor-video-presentacion video{
+.contenedor-video-presentacion video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 0.9em;
-}
+    }
 
-.div-botones{
+.div-botones {
     width: 100vw;
     height: 27.4vh;
     /* border: 0.1em solid black; */
@@ -130,7 +156,8 @@ body {
     align-items: center;
 }
 
-.div-boton-instrucciones, .div-boton-play{
+.div-boton-instrucciones,
+.div-boton-play {
     width: 17.7em;
     height: 27.4vh;
     /* border: 0.1em solid black; */
@@ -139,9 +166,9 @@ body {
     align-items: center;
 }
 
-.boton-instrucciones{
-    width: 8.5em;
-    height: 3.7em;
+.boton-instrucciones {
+    width: 12em;
+    height: 4em;
     background-color: #3498db;
     border: 0.1em solid black;
     border-radius: 1.2em;
@@ -152,15 +179,15 @@ body {
     text-align: center;
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    font-family: "Press Start 2P", monospace;
+    font-family: 'Monoton', cursive;
     margin-bottom: 3em;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: 0.5s;
 }
 
-.boton-play{
-    width: 8.5em;
-    height: 3.7em;
+.boton-play {
+    width: 12em;
+    height: 4em;
     background-color: #2ecc71;
     border: 0.1em solid black;
     border-radius: 1.2em;
@@ -171,14 +198,63 @@ body {
     text-align: center;
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    font-family: "Press Start 2P", monospace;
+    font-family: 'Monoton', cursive;
     margin-bottom: 3em;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: 0.5s;
 }
 
-.boton-play:hover, .boton-instrucciones:hover{
+.boton-play:hover,
+.boton-instrucciones:hover {
     margin-bottom: 3.5em;
     margin-right: 0.5em;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    cursor: pointer;
 }
+
+.div-boton-instrucciones a,
+.div-boton-play a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* INSTRUCTIONS */
+
+.div-explicacion {
+    width: 96vw;
+    height: 50vh;
+    /* border: 0.1em solid black; */
+    color: white;
+    padding-left: 2em;
+    padding-right: 2em;
+ 
+}
+
+.texto-explicacion{
+    margin: 0.5em;
+}
+
+.div-welcome{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.div-welcome img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.white{
+    text-shadow: none;
+}
+
+.grande{
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;  
+    margin-bottom: 1em;
+}
+
+

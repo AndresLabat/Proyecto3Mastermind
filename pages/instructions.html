@@ -1,30 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Mastermind</title>
 </head>
+
 <body>
-
-  El juego consiste en encontrar la combinación de fichas de colores escogida por el ordenador. Arrastra los colores a las casillas y haz clic en los puntos de la parte derecha para descubrir tus aciertos
-    
-  El juego consiste en encontrar la combinación de fichas de colores oculta. Comenzando por la parte superior, cada fila de huecos determina un turno de la partida. En cada turno debemos arrastrar fichas de colores en todos los huecos y tocar o hacer clic en los puntos de la parte derecha para descubrir los aciertos.
-
-Puedes arrastrar las fichas que aparecen en la parte izquierda o las de turnos anteriores. También puedes usar el teclado (cursores y ENTER) para jugar.
-
-Si hemos colocado una ficha del color correcto en la posición adecuada, nos aparecerá un punto negro. Si hemos acertado el color de la ficha pero la posición no es correcta, aparecerá un punto blanco. Y si por el contrario no existe ninguna ficha de ese color en el juego el punto no cambiará de color. Los colores de los puntos nos indican la cantidad de piezas bien o mal colocadas pero no nos indican a que ficha se refieren. Es simplemente un contador global de las fichas bien colocadas, las fichas mal situadas y las fichas que no aparecen en la combinación.
-
-Sigue las pistas de cada jugada para planear la combinación de colores del siguiente turno. Si acertamos la combinación, los cuatro puntos aparecerán de color negro y se mostrará la combinación oculta en la parte inferior.
-
-La barra de botones de la parte superior te permitirá realizar las siguientes acciones:
-
-  Comenzar una partida nueva: Inicia una nueva partida con las dimensiones indicadas.
-  Reiniciar la partida actual: Elimina el progreso de la partida actual y la comienza de nuevo. La combinación de colores será la misma.
-  Deshacer el último movimiento: Permite volver atrás en los movimientos realizados.
-  Rehacer el anterior movimiendo: Si deshiciste el último movimiento puedes rehacerlo pulsando este botón.
-  Mostrar la solución: La partida se solucionará automáticamente y te mostrará la combinación de colores en la parte inferior.
-  Instrucciones detalladas del juego: Acceso a las instrucciones del juego que estas leyendo.
-Seleccionar la dificultad del juego: Permite seleccionar las características de la partida y definir un tablero personalizado.
+    <div class="div-welcome">
+        <img src="../img/thumb-1920-805200.jpg" alt="welcome">
+    </div>
+    <div class="fondo-pantalla">
+        <img src="../img/fondo-tecnologico.jpg" alt="fondo">
+    </div>
+    <div class="sobre-fondo">
+        <div class="titulo-mastermind">
+            <div class="titulo-superior white">
+                <a href="../index.html">
+                    MASTERMIND
+                </a>
+            </div>
+            <div class="titulo-inferior">
+                <div class="logo">
+                    <img src="../img/cerebro.png" alt="logo">
+                </div>
+                <div class="texto-titulo white">
+                    ¡Crack the Code and Win!
+                </div>
+            </div>
+        </div>
+        <div class="div-explicacion">
+            <div class="texto-explicacion grande">
+                INTRUCCIONES DE USO:
+            </div>
+            <div class="texto-explicacion">
+                El juego consiste en encontrar la combinación de fichas de colores escogida por el ordenador.
+                Arrastra los colores a las casillas y haz clic en los puntos de la parte derecha para descubrir tus
+                aciertos.
+                La idea es encontrar la combinación de fichas de colores oculta. Comenzando por la parte superior, cada
+                fila de huecos
+                determina un turno de la partida. En cada turno debemos arrastrar fichas de colores en todos los huecos
+                y tocar o hacer
+                clic en los puntos de la parte derecha para descubrir los aciertos.Puedes seleccionar el color de las
+                fichas que
+                aparecen en la parte izquierda o las de turnos anteriores.
+            </div>
+            <div class="texto-explicacion">
+                - Si hemos colocado una ficha del color correcto en la posición adecuada, nos aparecerá un punto negro.
+            </div>
+            <div class="texto-explicacion">
+                - Si hemos acertado el color de la ficha pero la posición no es correcta, aparecerá un punto blanco.
+            </div>
+            <div class="texto-explicacion">
+                - Y si por el contrario no existe ninguna ficha de ese color en el juego el punto no cambiará de color.
+            </div>
+            <div class="texto-explicacion">
+                Los colores de los puntos nos indican la cantidad de piezas bien o mal colocadas pero no nos indican a
+                que ficha se refieren.
+                Es simplemente un contador global de las fichas bien colocadas, las fichas mal situadas y las fichas que
+                no aparecen en la combinación.
+            </div>
+            <div class="texto-explicacion">
+                Sigue las pistas de cada jugada para planear la combinación de colores del siguiente turno.
+                Si acertamos la combinación, los cuatro puntos aparecerán de color negro y se mostrará la combinación oculta
+                en la parte inferior.
+            </div>
+            <div class="texto-explicacion">
+                La barra de botones de la parte superior te permitirá realizar las siguientes acciones:
+            </div>
+            <div class="texto-explicacion">
+                - Comenzar una partida nueva: Inicia una nueva partida con las dimensiones indicadas.
+            </div>
+            <div class="texto-explicacion">
+                - Reiniciar la partida actual: Elimina el progreso de la partida actual y la comienza de nuevo. La
+                combinación de colores será la misma.
+            </div>
+            <div class="texto-explicacion">
+                - Deshacer el último movimiento: Permite volver atrás en los movimientos realizados.
+            </div>
+            <div class="texto-explicacion">
+                - Rehacer el anterior movimiendo: Si deshiciste el último movimiento puedes rehacerlo pulsando este botón.
+            </div>
+            <div class="texto-explicacion">
+                - Mostrar la solución: La partida se solucionará automáticamente y te mostrará la combinación de colores en
+                la parte inferior.
+            </div>
+            <div class="texto-explicacion">
+                - Instrucciones detalladas del juego: Acceso a las instrucciones del juego que estas leyendo.
+            </div>
+            <div class="texto-explicacion">
+                - Seleccionar la dificultad del juego: Permite seleccionar las características de la partida y definir un
+                tablero personalizado.
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
