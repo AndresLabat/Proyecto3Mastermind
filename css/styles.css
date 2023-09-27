@@ -50,7 +50,6 @@ body {
     background-clip: text;
     color: transparent;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
     margin-top: 0.4em;
     cursor: pointer;
     font-family: 'Fredericka the Great', cursive;
@@ -58,9 +57,7 @@ body {
 
 .titulo-superior a {
     text-decoration: none;
-    /* Quital el subrayado */
     color: inherit;
-    /* Hereda el color del texto del padre (tu título) */
 }
 
 .titulo-inferior {
@@ -167,7 +164,7 @@ body {
 }
 
 .boton-instrucciones {
-    width: 12em;
+    width: 10em;
     height: 4em;
     background-color: #3498db;
     border: 0.1em solid black;
@@ -186,7 +183,7 @@ body {
 }
 
 .boton-play {
-    width: 12em;
+    width: 10em;
     height: 4em;
     background-color: #2ecc71;
     border: 0.1em solid black;
@@ -205,7 +202,7 @@ body {
 }
 
 .boton-play:hover,
-.boton-instrucciones:hover {
+.boton-instrucciones:hover, .boton-volver:hover {
     margin-bottom: 3.5em;
     margin-right: 0.5em;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
@@ -222,7 +219,7 @@ body {
 
 .div-explicacion {
     width: 96vw;
-    height: 50vh;
+    height: 78vh;
     /* border: 0.1em solid black; */
     color: white;
     padding-left: 2em;
@@ -231,19 +228,7 @@ body {
 }
 
 .texto-explicacion{
-    margin: 0.5em;
-}
-
-.div-welcome{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-}
-
-.div-welcome img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    margin: 0.35em;
 }
 
 .white{
@@ -256,5 +241,81 @@ body {
     font-weight: bold;  
     margin-bottom: 1em;
 }
+
+.boton-volver{
+    width: 10em;
+    height: 4em;
+    background-color: #2ecc71;
+    border: 0.1em solid black;
+    border-radius: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    font-family: 'Monoton', cursive;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.div-boton-volver{
+    width: 96vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.8em;
+    /* border: 0.1em solid black; */
+}
+
+.div-boton-volver a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* WELCOME */
+
+.div-izquierdo, .div-derecho{
+    width: 50vw;
+    height: 100vh;
+    /* border: 0.1em solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.degradado{
+    color: white;
+    /* border: 0.1em solid black; */
+    width: 9.9em;
+}
+
+.sobre-fondo a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.div-background-white{
+    background-color: #ffffff71;
+    width: 28em;
+    height: 17em;
+    border: 0.1em solid black;
+    border-radius: 1.2em;
+    text-align: center;
+}
+
+.small{
+    width: 9.9em;
+    /* border: 0.1em solid black; */
+}
+
+.small-logo{
+    width: 28em;
+    /* border: 0.1em solid black; */
+}
+
+
 
 
