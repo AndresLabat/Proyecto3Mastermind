@@ -76,7 +76,12 @@ body {
 
 .texto-titulo{
     font-size:x-large;
-    color: #333;
+    background: linear-gradient(45deg, violet, indigo, blue, green, orange, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
     animation: blink 2s infinite;
     font-family: 'Press Start 2P', cursive;
 }
@@ -119,7 +124,7 @@ body {
 .div-botones{
     width: 100vw;
     height: 27.4vh;
-    border: 0.1em solid black;
+    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,8 +133,52 @@ body {
 .div-boton-instrucciones, .div-boton-play{
     width: 17.7em;
     height: 27.4vh;
-    border: 0.1em solid black;
+    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.boton-instrucciones{
+    width: 8.5em;
+    height: 3.7em;
+    background-color: #3498db;
+    border: 0.1em solid black;
+    border-radius: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    font-family: "Press Start 2P", monospace;
+    margin-bottom: 3em;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+.boton-play{
+    width: 8.5em;
+    height: 3.7em;
+    background-color: #2ecc71;
+    border: 0.1em solid black;
+    border-radius: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    font-family: "Press Start 2P", monospace;
+    margin-bottom: 3em;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+.boton-play:hover, .boton-instrucciones:hover{
+    margin-bottom: 3.5em;
+    margin-right: 0.5em;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
