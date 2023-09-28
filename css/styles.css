@@ -493,14 +493,14 @@ body {
 
 .div-interior-colores{
     width: 48em;
-    height: 22em;
+    height: 24.5em;
     border: 0.1em solid black;
     text-align: center;
     background: radial-gradient(circle at 100% 100%, #c0bebe 0%, #EBEBEB 50%, #EBEBEB 50%, #c0bebe 100%);
     border-radius: 2em;
     padding-top: 0.8em;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    margin-top: 2em;
+    margin-top: 2.5em;
 }
 
 .div-separacion-colores-exterior{
@@ -577,6 +577,16 @@ body {
     color: transparent;
     font-family: 'Sedgwick Ave Display', cursive;
     font-weight: bold;
+}
+
+.margin-bottom{
+    margin-bottom: 1em;
+}
+
+.margin-bottom input{
+    font-size: large;
+    font-family: 'Sedgwick Ave Display', cursive;
+    width: 8em;
 }
 
 

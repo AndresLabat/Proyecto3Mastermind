@@ -9,6 +9,8 @@ const muestraColor2 = document.getElementById("muestraColor2");
 const muestraColor3 = document.getElementById("muestraColor3");
 const muestraColor4 = document.getElementById("muestraColor4");
 
+const nombreJugador = document.getElementById("nombreJugador");
+
 color1.addEventListener("input", ()=>{
     muestraColor1.style.backgroundColor = color1.value;
     localStorage.setItem("color1", color1.value);
@@ -27,4 +29,8 @@ color3.addEventListener("input", ()=>{
 color4.addEventListener("input", ()=>{
     muestraColor4.style.backgroundColor = color4.value;
     localStorage.setItem("color4", color4.value);
+})
+
+nombreJugador.addEventListener("input", ()=>{
+    localStorage.setItem("nombreJugador", nombreJugador.value);
 })
