@@ -336,7 +336,6 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 1.7em;
-    /* border: 0.1em solid white; */
 }
 
 .div-boton-volver a{
@@ -344,33 +343,41 @@ body {
     color: inherit;
 }
 
+/* DIFFICULTY */
+
 .div-selector-dificultad{
     width: 100vw;
-    height: 32.7em;
-    border: 0.1em solid black;
+    height: 68em;
+    /* border: 0.1em solid black; */
     
 }
 
 .contenedor-div-dificultades{
-    width: 100vw;
-    height: 8em;
-    border: 0.1em solid black;
+    width: 50vw;
+    height: 18em;
+    border: 0.1em solid #004870;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 21vw;
+    margin-right: 21vw;
+    border-radius: 3em;
+    box-shadow: #004870 3px 3px 6px 0px inset, #004870 -3px -3px 6px 1px inset;
+    margin-bottom: 2em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
 }
 
 .div-dificultades{
     width: 25em;
-    height: 8em;
-    border: 0.1em solid black;
+    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .div-img-dificultades{
-    height: 8em;
+    height: 16em;
 }
 
 .div-img-dificultades img{
@@ -384,9 +391,9 @@ body {
     width: 20em;
     height: 5.5em;
     text-align: center;
-    padding-bottom: 1.7em;
-    /* background-color: #3498db; */
-    border-radius: 1em;
+    padding-bottom: 6.6em;
+    /* background-color: #3498db81;
+    border-radius: 1em; */
 }
 
 .margin-top{
@@ -405,6 +412,30 @@ body {
     margin-left: 1em;
 }
 
+.rosa label{
+    font-size: 1.3em;
+    background: linear-gradient(45deg,purple, pink);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Fredericka the Great', cursive;
+    margin-left: 1em;
+}
+
+.rojo label{
+    font-size: 1.3em;
+    background: linear-gradient(45deg,red, orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Fredericka the Great', cursive;
+    margin-left: 1em;
+}
+
 #facil{
     background-color: black;
     -webkit-background-clip: text;
@@ -412,6 +443,34 @@ body {
     color: transparent;
     font-weight: bold;
     font-family: 'Fredericka the Great', cursive;
+}
+
+.cursiva{
+    font-style: italic;
+    color: rgb(0, 0, 0);
+    font-weight:normal;
+}
+
+.botones-dificultad{
+    width: 30vw;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 31vw;
+    margin-right: 31vw;
+    margin-top: 4em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.fondo-pantalla-dificultad {
+    height: 100vh;
+    z-index: -1;
+}
+
+.fondo-pantalla-dificultad img {
+    width: 134%;
 }
 
 
