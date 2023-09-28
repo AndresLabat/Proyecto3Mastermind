@@ -587,6 +587,10 @@ body {
     font-size: large;
     font-family: 'Sedgwick Ave Display', cursive;
     width: 8em;
+    border: 0.1em solid black;
+    border-radius: 0.4em;
+    text-align: center;
+    margin-left: 0.5em;
 }
 
 
