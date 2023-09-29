@@ -670,7 +670,61 @@ body {
 
 /* WINNER */
 
+.div-felicitacion{
+    width: 100vw;
+    height: 50vh;
+    /* background-color: #c0bebe; */
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2.2em;
+    /* color: white; */
+}
 
+.texto-felicitacion-verde{
+    font-size: 1.8em;
+    background: linear-gradient(45deg, pink, green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-family: 'Fredericka the Great', cursive;
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
+}
+.texto-felicitacion-naranja{
+    font-size: 1.8em;
+    background: linear-gradient(45deg, red, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-family: 'Fredericka the Great', cursive;
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
+}
+
+#nickname{
+    font-size: 1.8em;
+    color: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* color: transparent; */
+    font-weight: bold;
+    font-family: 'Fredericka the Great', cursive;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cerebros{
+    font-size: 1.3em;
+}
+
+.margen{
+    margin-left: 4em;
+}
 
 
 /* LOSSER */
