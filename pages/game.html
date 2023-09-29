@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Mastermind</title>
+</head>
+
+<body class="hidden">
+    <div class="fondo-pantalla">
+        <img src="../img/fondo-tecnologico.jpg" alt="fondo">
+    </div>
+    <div class="sobre-fondo">
+        <div class="sobre-fondo-flex">
+            <div class="tablero-exterior">
+                <div class="zona-juego">
+                    <div class="div-huecos-principales">
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-principales">
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                            <div class="div-hueco-principal">
+                                <div class="hueco-principal"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-huecos-secundarios">
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila-huecos-secundarios">
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario">
+                                <div class="div-hueco-secundario-interno">
+                                    <div class="hueco-secundario"></div>
+                                </div>
+                            </div>
+                            <div class="div-hueco-secundario-check">
+                                <div class="div-hueco-secundario-interno-check">
+                                    <div class="check">Check</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <div class="acceso-botones-juego">
+
+                </div>
+                </div>
+            </div>
+</body>
+
+</html>

@@ -668,7 +668,7 @@ body {
     align-items: center;
 }
 
-/* WINNER */
+/* WINNER - LOSSER */
 
 .div-felicitacion{
     width: 100vw;
@@ -726,6 +726,143 @@ body {
     margin-left: 4em;
 }
 
+/* GAME */
 
-/* LOSSER */
+.sobre-fondo-flex{
+    width: 100vw;
+    height: 100vh;
+    border: 0.01em solid black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.tablero-exterior{
+    width: 36em;
+    height: 40em;
+    border: 0.01em solid black;
+    display: flex;
+    align-items:flex-start;
+}
+
+.zona-juego{
+    width: 28em;
+    height: 40em;
+    border: 0.01em solid black;
+    display: flex;
+    align-items: center;
+}
+
+.acceso-botones-juego{
+    width: 8em;
+    height: 40em;
+    border: 0.01em solid black;
+    display: flex;
+    align-items: center;
+    background-color:#2ecc71
+}
+
+.div-huecos-principales{
+    width: 16em;
+    height: 40em;
+    border: 0.01em solid black;
+    background-color: red;
+}
+
+.div-huecos-secundarios{
+    width: 12em;
+    height: 40em;
+    border: 0.01em solid black;
+    /* background-color: #3498db; */
+}
+
+.fila-huecos-principales{
+    width: 16em;
+    height: 4em;
+    /* border: 0.01em solid black; */
+    /* background-color: #46494f; */
+    display: flex;
+}
+
+.div-hueco-principal{
+    width: 4em;
+    height: 4em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hueco-principal{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 0.01em solid black;
+    background-color: white;
+}
+
+.fila-huecos-secundarios{
+    width: 12em;
+    height: 4em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    background-color: yellow;
+}
+
+.div-hueco-secundario{
+    width: 2em;
+    height: 4em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-hueco-secundario-check{
+    width: 4em;
+    height: 4em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-hueco-secundario-interno{
+    width: 2em;
+    height: 2em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #3498db; */
+}
+
+.div-hueco-secundario-interno-check{
+    width: 4em;
+    height: 2em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #3498db; */
+}
+
+.hueco-secundario{
+    width: 1.2em;
+    height: 1.2em;
+    border: 0.01em solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.check{
+    width: 3em;
+    height: 1.2em;
+    border: 0.01em solid black;
+    border-radius: 0.2em;
+    background-color: white;
+    text-align: center;
+}
+
+
 
