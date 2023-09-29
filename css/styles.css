@@ -497,7 +497,7 @@ body {
 }
 
 .fondo-pantalla-dificultad img {
-    width: 134%;
+    width: 136.4%;
 }
 
 .margin-right{
@@ -737,10 +737,57 @@ body {
     align-items: center;
 }
 
+.fondo-madera{
+    width: 48em;
+    height: 42em;
+    border: 0.01em solid black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #3498db;
+}
+
+.fondo-madera-interior{
+    width: 46em;
+    height: 40em;
+    border: 0.1em solid black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color:#46494f;
+}
+
+.div-colores-importados{
+    width: 10em;
+    height: 40em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.div-colores-importados-interior{
+    width: 10em;
+    height: 28em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.color-importado{
+    width: 4em;
+    height: 4em;
+    border-radius: 1em;
+    border: 0.01em solid black;
+    background-color: white;
+}
+
 .tablero-exterior{
     width: 36em;
     height: 40em;
-    border: 0.01em solid black;
+    /* border: 0.01em solid black; */
     display: flex;
     align-items:flex-start;
 }
@@ -748,7 +795,7 @@ body {
 .zona-juego{
     width: 28em;
     height: 40em;
-    border: 0.01em solid black;
+    /* border: 0.01em solid black; */
     display: flex;
     align-items: center;
 }
@@ -756,7 +803,7 @@ body {
 .acceso-botones-juego{
     width: 8em;
     height: 40em;
-    border: 0.01em solid black;
+    /* border: 0.01em solid black; */
     display: flex;
     align-items: center;
     background-color:#2ecc71
@@ -765,14 +812,14 @@ body {
 .div-huecos-principales{
     width: 16em;
     height: 40em;
-    border: 0.01em solid black;
+    /* border: 0.01em solid black; */
     background-color: red;
 }
 
 .div-huecos-secundarios{
     width: 12em;
     height: 40em;
-    border: 0.01em solid black;
+    /* border: 0.01em solid black; */
     /* background-color: #3498db; */
 }
 
