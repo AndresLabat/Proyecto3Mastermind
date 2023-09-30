@@ -14,3 +14,14 @@ color1Game.style.backgroundColor = color1Guardado
 color2Game.style.backgroundColor = color2Guardado
 color3Game.style.backgroundColor = color3Guardado
 color4Game.style.backgroundColor = color4Guardado
+
+const botonInstrucciones = document.querySelector("#botonInstrucciones");
+const imagenInstrucciones = document.querySelector("#imagenInstrucciones");
+
+botonInstrucciones.addEventListener("click", () => {
+    imagenInstrucciones.style.width = "96em";
+})
+
+imagenInstrucciones.addEventListener("click", () => {
+    imagenInstrucciones.style.width = "0em";
+})
