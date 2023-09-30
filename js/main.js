@@ -1,3 +1,4 @@
+
 const nombreJugador = document.getElementById("nombreJugador");
 
 const color1 = document.getElementById("color1");
