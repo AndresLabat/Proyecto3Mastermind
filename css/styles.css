@@ -426,7 +426,7 @@ body {
     width: 20em;
     height: 5.5em;
     text-align: center;
-    padding-bottom: 6.6em;
+    padding-bottom: 12em;
     /* background-color: #3498db81;
     border-radius: 1em; */
 }
@@ -917,13 +917,6 @@ body {
     /* background-color: red; */
 }
 
-.div-huecos-secundarios{
-    width: 12em;
-    height: 40em;
-    /* border: 0.01em solid black; */
-    /* background-color: #3498db; */
-}
-
 .fila-huecos-principales{
     width: 16em;
     height: 4em;
@@ -955,6 +948,13 @@ body {
     /* border: 0.01em solid black; */
     display: flex;
     /* background-color: yellow; */
+}
+
+.div-huecos-secundarios{
+    width: 12em;
+    height: 40em;
+    /* border: 0.01em solid black; */
+    /* background-color: #3498db; */
 }
 
 .div-hueco-secundario{
@@ -1000,7 +1000,7 @@ body {
     height: 1.2em;
     border: 0.01em solid black;
     border-radius: 50%;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .check{

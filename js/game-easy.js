@@ -31,7 +31,7 @@ imagenInstrucciones.addEventListener("click", () => {
     imagenInstrucciones.style.width = "0em";
 })
 
-// DECLARACION DE TODOS LOS HUECOS A PINTAR
+// DECLARACION DE TODOS LOS CIRCULOS A PINTAR
 const row1Circle1 = document.querySelector("#row1Circle1");
 const row1Circle2 = document.querySelector("#row1Circle2");
 const row1Circle3 = document.querySelector("#row1Circle3");
@@ -73,6 +73,48 @@ const row10Circle2 = document.querySelector("#row10Circle2");
 const row10Circle3 = document.querySelector("#row10Circle3");
 const row10Circle4 = document.querySelector("#row10Circle4");
 
+// DECLARACION DE TODOS LOS CIRCULOS QUE INDICAN POSICION Y COLOR CORRECTOS
+const row1CircleSecundary1 = document.querySelector("#row1CircleSecundary1");
+const row1CircleSecundary2 = document.querySelector("#row1CircleSecundary2");
+const row1CircleSecundary3 = document.querySelector("#row1CircleSecundary3");
+const row1CircleSecundary4 = document.querySelector("#row1CircleSecundary4");
+const row2CircleSecundary1 = document.querySelector("#row2CircleSecundary1");
+const row2CircleSecundary2 = document.querySelector("#row2CircleSecundary2");
+const row2CircleSecundary3 = document.querySelector("#row2CircleSecundary3");
+const row2CircleSecundary4 = document.querySelector("#row2CircleSecundary4");
+const row3CircleSecundary1 = document.querySelector("#row3CircleSecundary1");
+const row3CircleSecundary2 = document.querySelector("#row3CircleSecundary2");
+const row3CircleSecundary3 = document.querySelector("#row3CircleSecundary3");
+const row3CircleSecundary4 = document.querySelector("#row3CircleSecundary4");
+const row4CircleSecundary1 = document.querySelector("#row4CircleSecundary1");
+const row4CircleSecundary2 = document.querySelector("#row4CircleSecundary2");
+const row4CircleSecundary3 = document.querySelector("#row4CircleSecundary3");
+const row4CircleSecundary4 = document.querySelector("#row4CircleSecundary4");
+const row5CircleSecundary1 = document.querySelector("#row5CircleSecundary1");
+const row5CircleSecundary2 = document.querySelector("#row5CircleSecundary2");
+const row5CircleSecundary3 = document.querySelector("#row5CircleSecundary3");
+const row5CircleSecundary4 = document.querySelector("#row5CircleSecundary4");
+const row6CircleSecundary1 = document.querySelector("#row6CircleSecundary1");
+const row6CircleSecundary2 = document.querySelector("#row6CircleSecundary2");
+const row6CircleSecundary3 = document.querySelector("#row6CircleSecundary3");
+const row6CircleSecundary4 = document.querySelector("#row6CircleSecundary4");
+const row7CircleSecundary1 = document.querySelector("#row7CircleSecundary1");
+const row7CircleSecundary2 = document.querySelector("#row7CircleSecundary2");
+const row7CircleSecundary3 = document.querySelector("#row7CircleSecundary3");
+const row7CircleSecundary4 = document.querySelector("#row7CircleSecundary4");
+const row8CircleSecundary1 = document.querySelector("#row8CircleSecundary1");
+const row8CircleSecundary2 = document.querySelector("#row8CircleSecundary2");
+const row8CircleSecundary3 = document.querySelector("#row8CircleSecundary3");
+const row8CircleSecundary4 = document.querySelector("#row8CircleSecundary4");
+const row9CircleSecundary1 = document.querySelector("#row9CircleSecundary1");
+const row9CircleSecundary2 = document.querySelector("#row9CircleSecundary2");
+const row9CircleSecundary3 = document.querySelector("#row9CircleSecundary3");
+const row9CircleSecundary4 = document.querySelector("#row9CircleSecundary4");
+const row10CircleSecundary1 = document.querySelector("#row10CircleSecundary1");
+const row10CircleSecundary2 = document.querySelector("#row10CircleSecundary2");
+const row10CircleSecundary3 = document.querySelector("#row10CircleSecundary3");
+const row10CircleSecundary4 = document.querySelector("#row10CircleSecundary4");
+
 // DECLARACION DE TODOS LOS CHECKS
 const checkRow1 = document.querySelector("#checkRow1")
 const checkRow2 = document.querySelector("#checkRow2")
@@ -85,7 +127,7 @@ const checkRow8 = document.querySelector("#checkRow8")
 const checkRow9 = document.querySelector("#checkRow9")
 const checkRow10 = document.querySelector("#checkRow10")
 
-// FUNCION QUE CONTIENE LOS EVENTOS para pasar el background de los colores seleccionados antes de jugar a los huecos de las rows
+// FUNCION QUE CONTIENE LOS EVENTOS DE COGER EL BACKGROUND Y PASARSELO A UN CIRCULO
 function pasarColorDivs(colorElement, circleElement, key) {
     colorElement.addEventListener("click", () => {
         const color = window.getComputedStyle(colorElement).backgroundColor;
@@ -175,9 +217,36 @@ checkRow1.addEventListener("click", () => {
                 window.location.href = 'winner.html';
             }, 200);
         } else {
-            console.log("Sigue intentándolo");
+            for(let i = 0; i<arrayRow1.length; i++){
+
+            }
         }
 
+        // ------------------------------------------------------------------------
+
+        function checkUserCombination() {
+            const userTokens = firstShotTokens.querySelectorAll('.slot-player.selected');
+            const userColorsSelection = Array.from(userTokens).map(token => token.style.backgroundColor);
+        
+            for (let i = 0; i < arrayWinner.length; i++) {
+                const winnerColor = arrayWinner[i];
+                const userColor = userColorsSelection[i];
+                const tokenCheck = document.getElementById('firstCheck').querySelector('.slot-check.check:nth-child(' + (i + 1) + ')');
+        
+                if (userColor === winnerColor) {
+                    tokenCheck.style.backgroundColor = 'black';
+                } else if (userColorsSelection.includes(winnerColor)) {
+                    tokenCheck.style.backgroundColor = 'pink';
+                }
+            }
+        
+            if (userColorsSelection.join('') === arrayWinner.join('')) {
+                alert('¡Has ganado!');
+            }
+        }
+
+        // ------------------------------------------------------------------------
+        
         console.log(arrayRow1);
 
         pasarColorDivs(color1Game, row2Circle1, "background");
