@@ -131,6 +131,10 @@ for (let i = 1; i <= 4; i++) {
     }
 }
 
+arrayGanador.forEach((valor, index) => {
+    localStorage.setItem(`arrayGanador${index}`, valor);
+});
+
 console.log(arrayGanador);
 
 // ARRAYS ROWS
@@ -167,6 +171,9 @@ checkRow1.addEventListener("click", () => {
 
         if (arrayRow1.toString() === arrayGanador.toString()) {
             console.log("¡Has ganado!");
+            setTimeout(function() {
+                window.location.href = 'winner.html';
+            }, 200);
         } else {
             console.log("Sigue intentándolo");
         }
