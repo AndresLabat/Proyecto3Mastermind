@@ -212,41 +212,26 @@ checkRow1.addEventListener("click", () => {
         ]
 
         if (arrayRow1.toString() === arrayGanador.toString()) {
+            for (let i = 0; i < arrayRow1.length; i++) {
+                const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
+                if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
+                    circleSecundary.style.backgroundColor = 'purple';
+                }}
             console.log("¡Has ganado!");
             setTimeout(function() {
                 window.location.href = 'winner.html';
-            }, 200);
+            }, 1000);
         } else {
-            for(let i = 0; i<arrayRow1.length; i++){
-
-            }
-        }
-
-        // ------------------------------------------------------------------------
-
-        function checkUserCombination() {
-            const userTokens = firstShotTokens.querySelectorAll('.slot-player.selected');
-            const userColorsSelection = Array.from(userTokens).map(token => token.style.backgroundColor);
-        
-            for (let i = 0; i < arrayWinner.length; i++) {
-                const winnerColor = arrayWinner[i];
-                const userColor = userColorsSelection[i];
-                const tokenCheck = document.getElementById('firstCheck').querySelector('.slot-check.check:nth-child(' + (i + 1) + ')');
-        
-                if (userColor === winnerColor) {
-                    tokenCheck.style.backgroundColor = 'black';
-                } else if (userColorsSelection.includes(winnerColor)) {
-                    tokenCheck.style.backgroundColor = 'pink';
+            for (let i = 0; i < arrayRow1.length; i++) {
+                const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
+                if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
+                    circleSecundary.style.backgroundColor = 'purple';
+                } else if (arrayGanador.includes(arrayRow1[i])) {
+                    circleSecundary.style.backgroundColor = 'white';
                 }
             }
-        
-            if (userColorsSelection.join('') === arrayWinner.join('')) {
-                alert('¡Has ganado!');
-            }
         }
 
-        // ------------------------------------------------------------------------
-        
         console.log(arrayRow1);
 
         pasarColorDivs(color1Game, row2Circle1, "background");
@@ -279,9 +264,24 @@ checkRow2.addEventListener("click", () => {
         ]
 
         if (arrayRow2.toString() === arrayGanador.toString()) {
+            for (let i = 0; i < arrayRow2.length; i++) {
+                const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
+                if (arrayRow2[i].toString() === arrayGanador[i].toString()) {
+                    circleSecundary.style.backgroundColor = 'purple';
+                }}
             console.log("¡Has ganado!");
+            setTimeout(function() {
+                window.location.href = 'winner.html';
+            }, 1000);
         } else {
-            console.log("Sigue intentándolo");
+            for (let i = 0; i < arrayRow2.length; i++) {
+                const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
+                if (arrayRow2[i].toString() === arrayGanador[i].toString()) {
+                    circleSecundary.style.backgroundColor = 'purple';
+                } else if (arrayGanador.includes(arrayRow2[i])) {
+                    circleSecundary.style.backgroundColor = 'white';
+                }
+            }
         }
 
         console.log(arrayRow2);
