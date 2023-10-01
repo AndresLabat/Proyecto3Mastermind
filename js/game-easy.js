@@ -677,6 +677,9 @@ checkRow10.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'white';
                 }
             }
+            setTimeout(function () {
+                window.location.href = 'losser.html';
+            }, 1000);
         }
     }
 });

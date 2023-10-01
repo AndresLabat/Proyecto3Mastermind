@@ -497,6 +497,9 @@ checkRow6.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'white';
                 }
             }
+            setTimeout(function () {
+                window.location.href = 'losser.html';
+            }, 1000);
         }
 
         posicionCheck = 6;
