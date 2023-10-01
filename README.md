@@ -198,6 +198,26 @@ Para aprender a jugar a **Juego Mastermind** debes conocer su funcionamiento:
 
 El juego consiste en encontrar la combinación de fichas de colores escogida por el ordenador, haz click en los colores del lateral izquierdo para elegir que color quieres pintar y después click en las casillas grandes de la fila para pintarlo. 
 
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/colores-para-pintar.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Pincha en el color que quieras y después haz click en la casilla que te gustaría pintar</b></em>
+   </div>   
+</p>
+
+La idea es encontrar la combinación de fichas de colores oculta. Comenzando por la parte superior, cada fila de huecos determina un turno de la partida. En cada turno debemos pintar las casillas de colores en todos los huecos de su fila y hacer click en "check", esto nos permitirá descubrir los aciertos en los puntos de la parte derecha, o incluso, si hemos acertado todos, terminar el juego.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/boton-check.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Al pulsar al boton check, te dejará pintar en la siguiente línea y podras descubrir tus aciertos y fallos</b></em>
+   </div>   
+</p>
+
 En los puntos de la parte derecha podrás descubrir tus aciertos y fallos:
 - **Sin cambio**: Si no cambian de color, es que el color no existe en la combinación ganadora.
 - **Color blanco**: Si cambia a blanco, es que el color está, pero no en esa posición.
@@ -205,25 +225,32 @@ En los puntos de la parte derecha podrás descubrir tus aciertos y fallos:
 
 <p>
    <div align="center">
-      <img src="img/imagenes README/tocar dock.jpeg" style="max-width: 100%;" width="500">
+      <img src="img/imagenes-README/puntos-de-apoyo.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>Posición inicial, hacer click en el dock para desmontar</b></em>
+      <em><b>Son los encargados de darte las pistas para acertar la combinación ganadora</b></em>
    </div>   
 </p>
+     
+Sigue las pistas de cada jugada para planear la combinación de colores del siguiente turno, si acertamos la combinación, los cuatro puntos aparecerán de color morado y se mostrará la combinación oculta. 
 
-La idea es encontrar la combinación de fichas de colores oculta. Comenzando por la parte superior, cada fila de huecos determina un turno de la partida. En cada turno debemos pintar las casillas de colores en todos los huecos de su fila y hacer click en "check" para descubrir los aciertos en los puntos de la parte derecha.
+La barra de botones de la parte lateral derecha te permitirá realizar las siguientes acciones:
         
-Sigue las pistas de cada jugada para planear la combinación de colores del siguiente turno.
-Si acertamos la combinación, los cuatro puntos aparecerán de color morado y se mostrará la combinación oculta. La barra de botones de la parte lateral derecha te permitirá realizar las siguientes acciones:
-        
-- Reiniciar la partida: Elimina el progreso de la partida actual y la comienza de nuevo. La combinación de colores será la misma que habías seleccionado.
-- Seleccionar colores: Permite volver a seleccionar los colores de la partida pero la partida se reiniciará.
-- Seleccionar dificultad: Permite seleccionar las características de la partida y definir un tablero personalizado.
-- Volver al menú de inicio: Nos llevará al vídeo de presentación donde podremos volver a comenzar.
-- Instrucciones del juego: Acceso a las instrucciones del juego que estas leyendo.
-- Rendirse: La partida terminará automáticamente y te mostrará la combinación ganadora en la misma pantalla que si no aciertas antes de acabar los intentos.
+- **Reiniciar la partida**: Elimina el progreso de la partida actual y la comienza de nuevo. La combinación de colores será la misma que habías seleccionado.
+- **Seleccionar colores**: Permite volver a seleccionar los colores de la partida pero la partida se reiniciará.
+- **Seleccionar dificultad**: Permite seleccionar las características de la partida y definir un tablero personalizado.
+- **Volver al menú de inicio**: Nos llevará al vídeo de presentación donde podremos volver a comenzar.
+- **Instrucciones del juego**: Acceso a las instrucciones del juego que estas leyendo.
+- **Rendirse**: La partida terminará automáticamente y te mostrará la combinación ganadora en la misma pantalla que si no aciertas antes de acabar los intentos.
 
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/botones-laterales.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Este menú lateral te permitirá realizar acciones más allá del propio juego</b></em>
+   </div>   
+</p>
 
 ## 🎯Problemas y Soluciones
 
