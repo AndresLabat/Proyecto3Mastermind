@@ -254,75 +254,59 @@ La barra de botones de la parte lateral derecha te permitirá realizar las sigui
 
 ## 🎯Problemas y Soluciones
 
-### 1. El tamaño de la consola y el Dock son muy grandes
+### 1. Al darle al boton check, se habilita la siguiente fila de colores pero no se bloquea la anterior.
 
-- **🚧Problema**: Debido a que el diseño original se ha realizado en el monitor de 32 pulgadas de mi ordenador de sobremesa, al abrir el proyecto en el ordenador portatil, que tiene una resolución distinta, quedaban enormes todos los elementos de la consola.
+- **🚧Problema**: he intentando que la fila comprobada se bloquee de forma que ya no se puedan cambiar sus colores al dar click al botón check sin éxito.
 
-   - **💡Solución**: Escalar todos los elementos del Css menos el del vídeo que hay de fondo al 70% de su tamaño y redistribuirlos en altura y anchura por la pantalla.
+   - **💡Solución**: Eliminar los eventos de los círculos de la fila a bloquear, aún no lo he conseguido, seguramente por algún error de sintaxis.
 
 <p>
    <div align="center">
-      <img src="img/imagenes README/resolucion del monitor del pc, tamaño correcto.jpeg" style="max-width: 100%;" width="500">
+      <img src="img/imagenes-README/bloquear-fila.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>Este es el aspecto de los elementos después del escalado, visto en el monitor de 32 pulgadas</b></em>
+      <em><b>La fila envuelta en color rojo es la fila a bloquear al darle al botón "check"</b></em>
+   </div>   
+</p>
+
+### 2. Evitar que el botón "check" funcione a menos que hayas asignado colores a los 4 circulos diferentes del color blanco inicial.
+
+- **🚧Problema**: quiero conseguir que el botón check no tenga ninguna funcionalidad a menos que todos los circulos de su fila esten pintados de color, o lo que es lo mismo, no tenga el color inicial blanco, a menos que uno de los colores elegidos en el lateral izquierdo sea el blanco.
+
+   - **💡Solución**: añadir un "if, else" al evento de check en el que se ejecute todo solo cuando todos los colores sean distintos del inicial, pero tiene el problema de que si el color inicial coincide con el color de uno de los colores elegidos, el juego no funcionaría.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/circulo-blanco.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>El check actúa pese a no haber pintado todos los círculos de colores</b></em>
+   </div>   
+</p>
+
+### 3. Si accedes a las instrucciones desde la partida, la partida se reinicia.
+
+- **🚧Problema**: Debido al cambio de html producido al acceder a la pantalla de las instrucciones, la partida se reiniciaba, la única forma de evitarlo era guardar absolutamente todos los valores de todas las posiciones para que los volviera a poner al volver, y tenia el consecuente problema de que si reiniciabas la partida tenia que asignarle a cada valor guardado un nuevo valor, debiendo ser este el inicial, era muchísima faena y dudo que pudiera ejecutarla con eficiencia.
+
+   - **💡Solución**: en lugar de que el botón "instrucciones del juego" accediera a otro html, lo que he hecho es aprovechar  que solo es un texto y hacer una captura de pantalla del html de las instrucciones, la he editado de forma que solo se vea la información relevante, y la he puesto en este mismo html pero con tamaño 0em, y cuando pulsas el botón, con una transición de un segundo se hace grande hasta ocupar toda la pantalla, y con otro click vuelve a su estado inicial.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/boton-instrucciones.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Al hacer click en este botón se amplia la imagen de las instrucciones de tamaño 0 a toda la pantalla con una transición de 1 segundo</b></em>
    </div>   
 </p>
 
 <p>
    <div align="center">
-      <img src="img/imagenes README/posicion todo desmontado, consola encendida.jpeg" style="max-width: 100%;" width="500">
+      <img src="img/imagenes-README/imagen-instrucciones.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>Este es el aspecto de los elementos en el ordenador portatil</b></em>
+      <em><b>Esta es la imagen que se consigue al pulsar el botón instrucciones de uso, si haces click en cualquier parte, vuelve a su estado inicial, tamaño 0</b></em>
    </div>   
 </p>
-
-### 2. Doble click en algunas posiciones para que los eventos ocurran
-
-- **🚧Problema**: El mayor problema que he tenido a la hora de realizar los carruseles es hacer la parte de Css de forma que quede bien definido lo que quiero que ocurra en cada posición, ya que a veces necesitaba 2 clicks en un mismo botón para que ocurriera el cambio de imagen.
-
-   - **💡Solución**: El uso de una variable definida anteriormente fuera del evento para poder usarla como condición en los "if" e "if else".
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/variable posicion.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>La variable "posición" es la encargada del correcto funcionamiento de los carrusel</b></em>
-   </div>   
-</p>
-
-### 3. Evitar que el evento del Joy-con ocurriera al hacer click en un botón contenido dentro del mismo
-
-- **🚧Problema**: En un principio diseñe que cuando se hiciera click en un mando, en cualquiera de sus puntos, este se desplazara hasta la parte superior de la consola y, en caso de estar ya en la posición superior, volviera al lateral de la consola, pero esto hacía que al hacer click en alguno de sus botones, en lugar de suceder el evento del botón en concreto, sucediera el evento del mando .
-
-   - **💡Solución**: Agregarle a los botones en el código de javascript un event.stopPropagation(); de esta forma, solo su evento particular sucedía al hacerle click en dicho botón.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/error evento Joycon.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Hacer click en cualquier punto del mando provocaba su desplazamiento y anulaba el resto de eventos de sus botones</b></em>
-   </div>   
-</p>
-
-### 4. Evitar que un evento ocurriera al hacer click por accidente en el Joy-con
-
-- **🚧Problema**: El hecho de haber diseñado que cuando se hiciera click en un mando, en cualquiera de sus puntos esto provocara su desplazamiento hacía que al hacer click en alguno de sus botones, si por accidente pinchabas fuera, ocurriera el evento del mando, siendo incómodo ya que implicaba un desplazamiento del mismo.
-
-   - **💡Solución 1**: Eliminar el evento de desplazamiento del mando en cualquier punto del mismo, y asignarselo a su propio jostick, quedando mucho mas controlado y elegante en la ejecución, ya que además le he añadido movimiento al jostick al clickar sobre él.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/click en el jostick desmontado.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Ahora para provocar el desplazamiento del mando, hay que hacer click en el jostick</b></em>
-   </div>   
-</p>
-
 
 ## 🤝 Cómo Contribuir
 
