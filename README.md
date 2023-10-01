@@ -1,55 +1,177 @@
-<h1 align="center"># README - 🕹️Nintendo Switch Interactive Console🕹️</h1>
+<h1 align="center"># README - 🕹️MasterMind🕹️</h1>
 
-__<p align="center">Proyecto 2 - Videoconsola Interactiva - Semana 2</p>__
+__<p align="center">Proyecto 3 - Juego MasterMind - Semanas 3 y 4</p>__
 
-<p align="center">Nintendo Switch Interactive Console, por Andrés Labat.
+__<p align="center">Github pages: https://andreslabat.github.io/Proyecto3Mastermind/</p>__
+
+
+<p align="center">Juego MasterMind, por Andrés Labat.
 <br>
-Desarrollada como parte del Bootcamp de Full Stack Developer de Geekshubs Academy.</p>
+Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academy.</p>
 
 <p align="center">_______________________________________________</p>
 
 
-**Nintendo Switch Interactive Console** es un proyecto que recrea una experiencia interactiva de una videoconsola Nintendo Switch utilizando HTML, CSS, JavaScript, GIT y GitHub. Este proyecto incluye una serie de elementos interactivos que simulan la consola y sus mandos, así como algunas funciones divertidas y creativas.
+**Juego MasterMind** es un proyecto que recrea una experiencia interactiva del juego de mesa MasterMind utilizando HTML, CSS, JavaScript, GIT y GitHub. Este proyecto incluye una serie de elementos interactivos que simulan el juego de mesa, así como algunas funciones útiles que te permiten acceder a las instrucciones o volver a elegir colores y dificultad con tan solo un click.
 
 ## 📋 Contenido del Proyecto
 
-El proyecto **Nintendo Switch Interactive Console** consta de los siguientes archivos:
+El proyecto **Juego MasterMind** consta de los siguientes archivos:
 
-1. **🔌index.html🔌**: Página principal que muestra una pequeña ambientación y que tiene un acceso en forma de botón a console.html.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/pantalla de inicio.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Acceso a la consola</b></em>
-   </div>   
-</p>
-
-2. **🎮console.html🎮**: Esta es la página realmente importante, muestra la videoconsola Nintendo Switch y permite interactuar con ella.
+1. **🔌index.html🔌**: Página principal de bienvenida, sirve como acceso al menú del juego.
 
 <p>
    <div align="center">
-      <img src="img/imagenes README/posicion todo desmontado, consola encendida.jpeg" style="max-width: 100%;" width="500">
+      <img src="img/imagenes-README/index.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>Consola desmontada y encendida</b></em>
+      <em><b>Bienvenida a MasterMind</b></em>
    </div>   
 </p>
 
-3. **🎨styles.css🎨**: Archivo CSS que proporciona estilos y diseño a la página.
+2. **🎮menu.html🎮**: Esta página tiene un vídeo de presentación divertido ambientado en cerebros, desde ella podrás acceder a las instrucciones de uso y al juego en sí.
 
-4. **👾main.js👾**: Archivo JavaScript que controla las interacciones y funciones de la videoconsola.
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/menu.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Vídeo divertido y accesos a instrucciones y juego</b></em>
+   </div>   
+</p>
+
+3. **📓instructions.html📓**: su contenido se centra en explicar las reglas y la finalidad del juego.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/instructions.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Instrucciones necesarias para jugar</b></em>
+   </div>   
+</p>
+
+4. **🚪difficulty.html🚪**: en este menú podrás seleccionar la dificultad a la que quieras jugar basandote en tu experiencia previa.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/difficulty-1.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Desde dificultad para jugadores nuevos</b></em>
+   </div>   
+</p>
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/difficulty-2.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Hasta expertos en juegos de lógica</b></em>
+   </div>   
+</p>
+
+5. **🟪colors-easy.html, colors-medium.html, colors-hard.html🟪**: aquí seleccionaremos los colores con los que queremos jugar, la cantidad de colores a elegir dependerá de la dificultad seleccionada.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/colors-easy.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>En principiante son 4 colores</b></em>
+   </div>   
+</p>
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/colors-medium.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>En experimentado son 5 colores</b></em>
+   </div>   
+</p>
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/colors-hard.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>En experto son 6 colores</b></em>
+   </div>   
+</p>
+
+6. **🎲game-easy.html, game-medium.html, game-hard.html🎲**: la vista total de la página estará centrada en el tablero en el que se desarrolla la partida, teniendo funcionalidades extra en la parte derecha para poder navegar por los menús, consultar las instrucciones o rendirse.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/game-easy.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>En principiante tienes 10 oportunidades y 4 colores</b></em>
+   </div>   
+</p>
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/game-medium.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>En experimentado tienes 8 oportunidades y 5 colores</b></em>
+   </div>   
+</p>
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/game-hard.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>En experto tienes 6 oportunidades y 6 colores</b></em>
+   </div>   
+</p>
+
+7. **🤑winner.html🤑**: esta pantalla solo la verás en el caso de que en cualquiera de las dificultades soluciones con éxito el tablero.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/winner.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Se muestra la combinación ganadora, el nombre del jugador y una felicitación</b></em>
+   </div>   
+</p>
+
+8. **😓losser.html😓**: a esta pantalla se puede acceder en cualquiera de las dificultades si te rindes o si se terminan los intentos y no has llegado a resolver el tablero.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/losser.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Se muestra la combinación ganadora, el nombre del jugador y la posibilidad de jugar otra partida</b></em>
+   </div>   
+</p>
+
+9. **🎨styles.css🎨**: Archivo CSS que proporciona estilos y diseño a todas las páginas.
+
+10. **👀main.js👀**: es el archivo de JavaScript que recoge los valores del nombre del jugador y los colores seleccionados y los introduce en el local storage.
+
+11. **💸winner-losser.js💸**: recoge los valores del nombre del jugador y de la combinación ganadora y los muestra por pantalla en winner.html y en losser.html.
+
+12. **👾game-easy.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad principiante y guarda el resultado de la combinación ganadora en el local storage.
+
+13. **👾game-medium.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad experimentadoy guarda el resultado de la combinación ganadora en el local storage.
+
+14. **👾game-hard.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad expertoy guarda el resultado de la combinación ganadora en el local storage.
 
 ## 🔧 Tecnologías Utilizadas
 
 - **HTML**: Utilizado para estructurar la página web y crear elementos interactivos.
 <img src="img/logos README/logo html.png" style="max-width: 100%;" width="30">
 
-- **CSS**: Aplicado para dar estilo y diseño a la videoconsola y sus elementos.
+- **CSS**: Aplicado para dar estilo y diseño a todos los htmls.
 <img src="img/logos README/logo css.png" style="max-width: 100%;" width="40">
 
-- **JavaScript**: Utilizado para controlar las interacciones y las funciones de la videoconsola.
+- **JavaScript**: Utilizado para controlar las interacciones y las funciones de cada elemento que lo requiera.
 <img src="img/logos README/logo Javascript.png" style="max-width: 100%;" width="40">
 
 - **Git**: Sistema de control de versiones para el seguimiento de cambios en el proyecto.
@@ -60,22 +182,26 @@ El proyecto **Nintendo Switch Interactive Console** consta de los siguientes arc
 
 ## 🍃Ramas del Repositorio
 
-Este proyecto se desarrolló en una rama separada llamada "dev" que se creó desde la rama principal ("master"). Todos los commits se realizaron en la rama "dev" durante el desarrollo del proyecto, una vez finalizado, se ha realizado un merge a la rama master, y un último commit.
+Este proyecto se ha desarrollado en tres ramas. En la rama "dev" se han realizado las partes de maquetación y estilos en html y css, por otro lado en la rama "feature" se le han añadido las funcionalidades a los botones y se ha creado la lógica que permite jugar al MasterMind desde Javascript y, por último, todo este desarrollo en ambas ramas se ha unido a la rama principal "master", donde se ha creado este README.
 
 ## ⚙️Instrucciones de Uso
 
 1. Clona este repositorio en tu máquina local usando el siguiente comando: `git clone [URL del repositorio]`.
 
-2. Abre el archivo `index.html` en tu navegador web para comenzar a interactuar con la videoconsola.
+2. Abre el archivo `index.html` en tu navegador web para comenzar a interactuar con el juego.
 
-3. Explora todas las funcionalidades y diviértete interactuando con la videoconsola virtual.
+3. Explora todas las dificultades y diviértete jugando al clásico MasterMind.
 
-## 🎮 Funcionalidades Destacadas
+## 🎮Explicación del Modo de Juego
 
-El proyecto **Nintendo Switch Interactive Console** incluye las siguientes funcionalidades destacadas:
+Para aprender a jugar a **Juego Mastermind** debes conocer su funcionamiento:
 
+El juego consiste en encontrar la combinación de fichas de colores escogida por el ordenador, haz click en los colores del lateral izquierdo para elegir que color quieres pintar y después click en las casillas grandes de la fila para pintarlo. 
 
-- **Dock (Base de carga)**: Se puede quitar y poner la consola dentro del Dock. Si pulsamos sobre este, la consola se desplaza hacia el lateral, imitando cuando la quitamos del dock en la vida real, y los joycons se desplazan tambien imitando cuando los sacamos de la consola, quedando uno al lado del otro y ambos en la parte superior de la pantalla, de forma que se ve la consola a la izquierda, los mandos encima de esta, y el doc a la derecha de la consola, si volvemos a hacer click en el dock, todo vuelve a su estado original, mandos y consola a su posicion inicial dentro del dock.
+En los puntos de la parte derecha podrás descubrir tus aciertos y fallos:
+- **Sin cambio**: Si no cambian de color, es que el color no existe en la combinación ganadora.
+- **Color blanco**: Si cambia a blanco, es que el color está, pero no en esa posición.
+- **Color morado**: Si cambia a morado, es que la posición y el color son correctos.
 
 <p>
    <div align="center">
@@ -86,193 +212,17 @@ El proyecto **Nintendo Switch Interactive Console** incluye las siguientes funci
    </div>   
 </p>
 
-<p>
-   <div align="center">
-      <img src="img/imagenes README/posicion dos del dock.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Una vez desmontada, hacer click en el dock para volver a su posición original</b></em>
-   </div>   
-</p>
-
-- **Joy-Cons y josticks**: los Joy-Cons se pueden quitar y volver a colocar en la videoconsola. la funcionalidad se encuentra al hacer click en cualquiera de los dos josticks, en cada caso el mando se desplaza fuera de la consola simulando la posibilidad de quitar los joycons en la consola original para mayor comodidad del usuario, si vuelves a hacer click sobre cualquiera de ellos, ese Joy-con en concreto vuelve a su posición inicial en el lateral de la consola.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/click en el jostick.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al hacer click en un jostick, el joy-con asciende, separandose del cuerpo de la consola</b></em>
-   </div>   
-</p>
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/click en el jostick desmontado.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al volver a hacer click, el joy-condesciende, volviendo a montarse en la consola</b></em>
-   </div>   
-</p>
-
-- **Botón On**: Puedes encender y apagar la videoconsola con el botón de encendido, esto afectará al sonido, a la pantalla y también a la luz lateral del Dock.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/boton On.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>El botón ON controla el encendido y apagado de la consola</b></em>
-   </div>   
-</p>
-
-- **Botón +Vol**: El botón +Vol es el encargado de subir el volumen del audio, siempre que la consola esta encendida, aunque este audio comienza con 0 de volumen para evitar sobresaltos.
-
-- **Botón -Vol**: El botón -Vol es el encargado de bajar el volumen en el caso de que lo hayamos subido previamente.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/volumen.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al hacer click en el botón +Vol se sube el volumen un 40% cada vez y en el botón -Vol se baja la misma cantidad hasta que no se oye nada</b></em>
-   </div>   
-</p>
-
-- **Botones A y B**: Los botones A y B permiten avanzar y retroceder entre los carruseles de imágenes y videos. 
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/click en botones A y B posicion 1.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al hacer click en el boton A, avanzamos en el carrusel de imagenes y videos</b></em>
-   </div>   
-</p>
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/click en botones A y B posicion 2.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al hacer click en el boton B, retrocedemos en el carrusel de imagenes y videos</b></em>
-   </div>   
-</p>
-
-- **Botón Y (eShop)**: El botón Y simula una visita a la eShop de Nintendo con un carousel de imágenes, si se vuelve a pulsar el boton Y, se vuelve al carrusel original.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/acceso a nintendo eshop.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al hacer click en el boton Y, accedemos a la Nintendo eshop</b></em>
-   </div>   
-</p>
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/navegando por la eshop.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Ahora podemos usar los botones A y B para navegar por la eshop</b></em>
-   </div>   
-</p>
-
-- **Botón X (Brillo de Pantalla)**: El botón X accede al menu de cambio de usuario compuesto por una sola imagen, si vuelves a hacer click en el mismo, muestra la pantalla inicial de la consola.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/cambio de usuario.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al pulsar el botón X, nos muestra una imagen de cambio de usuario</b></em>
-   </div>   
-</p>
-
-- **Botón Home**: El botón Home te lleva de vuelta al menú principal en cualquier momento.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/boton home.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al pulsar el botón Home, estemos en el carrusel o video que estemos, se mostrará la imagen del menú de la consola</b></em>
-   </div>   
-</p>
-
-- **Botón Captura de pantalla**: Este botón muestra una imagen cómica de una captura de pantalla, si vuelves a hacer click en el mismo, muestra la pantalla inicial de la consola.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/captura de pantalla.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al pulsar el botón Captura de pantalla, estemos en el carrusel o video que estemos, se mostrara la imagen cómica de la captura</b></em>
-   </div>   
-</p>
-
-- **Botón +**: El botón + tiene como única función poner en marcha de nuevo el video del carrusel principal en caso de haberlo parado previamente con el botón menos.
-
-- **Botón -**: El botón - se encarga de pausar el video del carrusel principal.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/video.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al pulsar el botón Captura de pantalla, estemos en el carrusel o video que estemos, se mostrara la imagen cómica de la captura</b></em>
-   </div>   
-</p>
-
-- **Botón cruceta superior**: Sirve para controlar el brillo de la pantalla en caso de haberlo bajado previamente con el botón cruceta inferior, asciende un 20% con cada click.
-
-- **Botón cruceta inferior**: desciende el brillo de la consola un 20% cada vez que se pulsa hasta un máximo del 40% total.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/brillo al maximo.jpg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Podemos controlar el brillo de la pantalla con las crucetas superior e inferior</b></em>
-   </div>   
-</p>
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/brillo minimo.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al descenderlo con la cruceta inferior, podemos llegar a dejarlo a un 40% de su brillo total</b></em>
-   </div>   
-</p>
-
-- **Botón cruceta izquierda**: Sirve para descender la saturación de la pantalla, concretamente un 25% con cada click.
-
-- **Botón cruceta derecha**: con este botón podemos recuperar esa saturación cambiada con anterioridad, de nuevo con un 25% cada vez.
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/saturacion al maximo.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Podemos controlar la saturación de la pantalla con las crucetas izquierda y derecha</b></em>
-   </div>   
-</p>
-
-<p>
-   <div align="center">
-      <img src="img/imagenes README/saturacion al minimo.jpeg" style="max-width: 100%;" width="500">
-   </div>    
-   <div align="center">
-      <em><b>Al bajarla con la cruceta izquierda, podemos llegar a una saturación máxima del 0%</b></em>
-   </div>   
-</p>
-
-
- Todo esto está sobre un vídeo de fondo de imita un salón con una chimenea encendida y lluvia cayendo en el exterior, mojando la ventana, queriendo simular el calor del hogar y un momento de confort en el que disfrutas de tu tiempo de ocio y relax jugando a la videoconsola.
-
- Este proyecto es una dedicatoria a mi mujer y a su gran afición por la Nintendo Switch, intentando simular lo que ella describe como "la definición de un buen día", lluvia exterior, el hogar, calor, y su gran afición, la Nintendo Switch.
+La idea es encontrar la combinación de fichas de colores oculta. Comenzando por la parte superior, cada fila de huecos determina un turno de la partida. En cada turno debemos pintar las casillas de colores en todos los huecos de su fila y hacer click en "check" para descubrir los aciertos en los puntos de la parte derecha.
+        
+Sigue las pistas de cada jugada para planear la combinación de colores del siguiente turno.
+Si acertamos la combinación, los cuatro puntos aparecerán de color morado y se mostrará la combinación oculta. La barra de botones de la parte lateral derecha te permitirá realizar las siguientes acciones:
+        
+- Reiniciar la partida: Elimina el progreso de la partida actual y la comienza de nuevo. La combinación de colores será la misma que habías seleccionado.
+- Seleccionar colores: Permite volver a seleccionar los colores de la partida pero la partida se reiniciará.
+- Seleccionar dificultad: Permite seleccionar las características de la partida y definir un tablero personalizado.
+- Volver al menú de inicio: Nos llevará al vídeo de presentación donde podremos volver a comenzar.
+- Instrucciones del juego: Acceso a las instrucciones del juego que estas leyendo.
+- Rendirse: La partida terminará automáticamente y te mostrará la combinación ganadora en la misma pantalla que si no aciertas antes de acabar los intentos.
 
 
 ## 🎯Problemas y Soluciones
@@ -361,12 +311,12 @@ Si deseas contribuir a este proyecto, puedes realizar un fork del repositorio en
 
 5. Crea una solicitud de extracción en GitHub.
 
-Espero que disfrutes explorando y utilizando la Nintendo Switch Interactive Console. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto conmigo a través de la información de contacto proporcionada.
+Espero que disfrutes explorando y utilizando el juego MasterMind. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto conmigo a través de la información de contacto proporcionada.
 
 ## 📝Autor
 
 - **Nombre**: Andrés Labat Beltrán
-- **Fecha de Comienzo del Proyecto**: 20/09/2023
+- **Fecha de Comienzo del Proyecto**: 28/09/2023
 - **Email**: andreslabat89@gmail.com.
 - **Linkedin**: www.linkedin.com/in/andres-labat-beltran-99a082292.
 
@@ -376,9 +326,9 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para obt
 
 ## 👏Agradecimientos
 
-Agradecimentos a GeeksHubs Academy por los conocimientos que he podido adquirir estas dos semanas y que han hecho posible este proyecto, y a nuestro querido profesor David Ochando y su gran paciencia con nosotros.
+Agradecimentos a GeeksHubs Academy por los conocimientos que he podido adquirir estas tres semanas y que han hecho posible este proyecto, y a nuestros queridos profesores David Ochando y Dani Tarazona y su gran paciencia con nosotros.
 
 Quiero hacer una mención especial a mi mujer, Alba, ya que sin su apoyo e inspiracion ni este ni ningún otro proyecto llegarían a ser una realidad.
 
-¡Gracias por visitar **Nintendo Switch Interactive Console** y explorar mi proyecto!
+¡Gracias por visitar **Juego MasterMind** y explorar mi proyecto!
 
