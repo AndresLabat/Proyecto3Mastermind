@@ -810,12 +810,13 @@ body {
 }
 
 .div-colores-importados{
-    width: 10em;
+    width: 4em;
     height: 40em;
     /* border: 0.01em solid black; */
     display: flex;
     justify-content:center;
     align-items: center;
+    margin-right: 1.5em;
 }
 
 .div-colores-importados-interior{
@@ -877,7 +878,94 @@ body {
     flex-direction: column;
     justify-content:space-around;
     align-items: center;
-    /* background-color:#2ecc71 */
+}
+
+.interior-acceso-botones-juego-easy{
+    width: 8em;
+    height: 36em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    margin-left: 1em;
+}
+
+.aclaracion{
+    width: 8em;
+    height: 11.5em;
+    border: 0.01em solid black;
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0.599);
+}
+
+.titulo-aclaracion{
+    width: 8em;
+    height: 1.5em;
+    /* border: 0.01em solid black; */
+    background: linear-gradient(45deg, violet, indigo, blue, green, orange, red);
+    -webkit-background-clip: text;
+    text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
+    background-clip: text;
+    color: transparent;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-weight: bold;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+
+.div-aclaracion-colores{
+    width: 9em;
+    height: 9em;
+    /* border: 0.01em solid black; */
+    display: flex;
+}
+
+.aclaracion-colores{
+    width: 2em;
+    height: 9em;
+    /* border: 0.01em solid black; */
+}
+
+.div-blanco, .div-morado{
+    width: 2em;
+    height: 4.5em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blanco{
+    background-color: white;
+}
+
+.morado{
+    background-color: purple;
+}
+
+.div-texto-colores{
+    width: 6em;
+    height: 9em;
+    /* border: 0.01em solid black; */
+    background: linear-gradient(45deg, grey, black, grey);
+   -webkit-background-clip: text;
+    text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
+    background-clip: text;
+    color: transparent;
+    font-family: 'Sedgwick Ave Display', cursive;
+    /* font-weight: bold; */
+}
+
+.texto-blanco, .texto-morado{
+    width: 6em;
+    height: 4.5em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .boton-juego-externo{
@@ -1039,7 +1127,7 @@ body {
 /* GAME MEDIUM */
 
 .fondo-madera-medium{
-    width: 47.5em;
+    width: 45.5em;
     height: 33.5em;
     border: 0.05em solid black;
     display: flex;
@@ -1052,7 +1140,7 @@ body {
 }
 
 .fondo-madera-interior-medium{
-    width: 46em;
+    width: 44em;
     height: 32em;
     border: 0.05em solid black;
     display: flex;
@@ -1089,10 +1177,32 @@ body {
     /* background-color: #3498db; */
 }
 
+.div-colores-importados-interior-medium{
+    width: 10em;
+    height: 30em;
+    /* border: 0.01em solid black; */
+    margin-left: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.interior-acceso-botones-juego-medium{
+    width: 8em;
+    height: 28em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    margin-left: 1em;
+}
+
 /* GAME HARD */
 
 .fondo-madera-hard{
-    width: 47.5em;
+    width: 45.5em;
     height: 33.5em;
     border: 0.05em solid black;
     display: flex;
@@ -1105,7 +1215,7 @@ body {
 }
 
 .fondo-madera-interior-hard{
-    width: 46em;
+    width: 44em;
     height: 32em;
     border: 0.05em solid black;
     display: flex;
@@ -1140,4 +1250,26 @@ body {
     height: 24em;
     /* border: 0.01em solid black; */
     /* background-color: #3498db; */
+}
+
+.div-colores-importados-interior-hard{
+    width: 10em;
+    height: 30em;
+    /* border: 0.01em solid black; */
+    margin-left: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.interior-acceso-botones-juego-hard{
+    width: 8em;
+    height: 28em;
+    /* border: 0.01em solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    margin-left: 1em;
 }
