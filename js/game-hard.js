@@ -114,7 +114,6 @@ let arrayGanador = []
 
 for (let i = 1; i <= 4; i++) {
     const random = Math.floor(Math.random() * 6) + 1;
-    console.log(random);
     if (random == 1) {
         arrayGanador.push(localStorage.getItem("color1"));
     } else if (random == 2) {
@@ -133,8 +132,6 @@ for (let i = 1; i <= 4; i++) {
 arrayGanador.forEach((valor, index) => {
     localStorage.setItem(`arrayGanador${index}`, valor);
 });
-
-console.log(arrayGanador);
 
 // ARRAYS ROWS
 let arrayRow1 = []
