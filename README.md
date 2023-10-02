@@ -153,7 +153,7 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
 
 9. **🎨styles.css🎨**: Archivo CSS que proporciona estilos y diseño a todas las páginas.
 
-10. **👀main.js👀**: es el archivo de JavaScript que recoge los valores del nombre del jugador y los colores seleccionados y los introduce en el local storage.
+10. **👀main.js, color-medium, color-hard👀**: son los archivos de JavaScript encargados de recoger los valores del nombre del jugador y los colores seleccionados e introducirlos en el local storage y, por otro lado, impiden el acceso a la partida si no se ha escrito dicho nombre y seleccionado todos los colores de forma que sean distintos entre ellos.
 
 11. **💸winner-losser.js💸**: recoge los valores del nombre del jugador y de la combinación ganadora y los muestra por pantalla en winner.html y en losser.html.
 
@@ -269,11 +269,11 @@ La barra de botones de la parte lateral derecha te permitirá realizar las sigui
    </div>   
 </p>
 
-### 2. Evitar que el botón "check" funcione a menos que hayas asignado colores a los 4 circulos diferentes del color blanco inicial.
+### 2. Evitar que el botón "check" funcione a menos que hayas asignado colores a los 4 círculos.
 
-- **🚧Problema**: quiero conseguir que el botón check no tenga ninguna funcionalidad a menos que todos los circulos de su fila esten pintados de color, o lo que es lo mismo, no tenga el color inicial blanco, a menos que uno de los colores elegidos en el lateral izquierdo sea el blanco.
+- **🚧Problema**: quiero conseguir que el botón check no tenga ninguna funcionalidad a menos que todos los círculos de su fila esten pintados de color.
 
-   - **💡Solución**: añadir un "if, else" al evento de check en el que se ejecute todo solo cuando todos los colores sean distintos del inicial, pero tiene el problema de que si el color inicial coincide con el color de uno de los colores elegidos, el juego no funcionaría.
+   - **💡Solución**: añadir un "if, else" al evento de check en el que se ejecute todo solo cuando todos los colores sean distintos del inicial.
 
 <p>
    <div align="center">

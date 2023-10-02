@@ -37,5 +37,7 @@ botonEasy.addEventListener("click", () => {
             color2.value !== color4.value &&
             color3.value !== color4.value)) {
         window.location.href = 'game-easy.html';
+    } else {
+        alert("Debes escribir tu nombre y seleccionar colores distintos entre ellos para poder comenzar la partida.");
     }
 });

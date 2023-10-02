@@ -58,5 +58,7 @@ botonHard.addEventListener("click", () => {
             color4.value !== color6.value &&
             color5.value !== color6.value)) {
         window.location.href = 'game-hard.html';
+    }else {
+        alert("Debes escribir tu nombre y seleccionar colores distintos entre ellos para poder comenzar la partida.");
     }
 });

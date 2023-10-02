@@ -47,5 +47,7 @@ botonMedium.addEventListener("click", () => {
             color3.value !== color5.value &&
             color4.value !== color5.value)) {
         window.location.href = 'game-medium.html';
+    }else {
+        alert("Debes escribir tu nombre y seleccionar colores distintos entre ellos para poder comenzar la partida.");
     }
 });
