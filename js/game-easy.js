@@ -1,4 +1,3 @@
-
 // DECLARACION DE LOS ELEMENTOS DE CONTENDRAN LOS COLORES PREVIAMENTE SELECCIONADOS
 const color1Game = document.querySelector("#color1Game");
 const color2Game = document.querySelector("#color2Game");
@@ -30,6 +29,17 @@ botonInstrucciones.addEventListener("click", () => {
 imagenInstrucciones.addEventListener("click", () => {
     imagenInstrucciones.style.width = "0em";
 })
+
+// DECLARACION DEL BOTON PARA RENDIRSE
+const rendirseEasy = document.querySelector("#rendirseEasy");
+
+// EVENTO QUE CONTROLA EL BOTON RENDIRSE
+rendirseEasy.addEventListener("click", () => {
+    arrayGanador.forEach((valor, index) => {
+        localStorage.setItem(`arrayGanador${index}`, valor);
+    });
+    window.location.href = 'losser.html';
+});
 
 // DECLARACION DE TODOS LOS CIRCULOS A PINTAR
 const row1Circle1 = document.querySelector("#row1Circle1");
@@ -154,10 +164,6 @@ for (let i = 1; i <= 4; i++) {
     }
 }
 
-arrayGanador.forEach((valor, index) => {
-    localStorage.setItem(`arrayGanador${index}`, valor);
-});
-
 // ARRAYS ROWS
 let arrayRow1 = []
 let arrayRow2 = []
@@ -215,6 +221,9 @@ checkRow1.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -265,6 +274,9 @@ checkRow2.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -315,6 +327,9 @@ checkRow3.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -365,6 +380,9 @@ checkRow4.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -415,6 +433,9 @@ checkRow5.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -465,6 +486,9 @@ checkRow6.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -515,6 +539,9 @@ checkRow7.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -565,6 +592,9 @@ checkRow8.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -615,6 +645,9 @@ checkRow9.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -665,6 +698,9 @@ checkRow10.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'purple';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'winner.html';
             }, 1000);
@@ -677,9 +713,13 @@ checkRow10.addEventListener("click", () => {
                     circleSecundary.style.backgroundColor = 'white';
                 }
             }
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
             setTimeout(function () {
                 window.location.href = 'losser.html';
             }, 1000);
         }
     }
 });
+

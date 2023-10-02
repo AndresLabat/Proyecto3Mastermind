@@ -41,7 +41,7 @@ color6.addEventListener("input", ()=>{
     localStorage.setItem("color6", color6.value);
 })
 botonHard.addEventListener("click", () => {
-    if (nombreJugador !== "" &&
+    if (nombreJugador.value !== "" &&
         (color1.value !== color2.value &&
             color1.value !== color3.value &&
             color1.value !== color4.value &&
