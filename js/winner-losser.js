@@ -14,3 +14,5 @@ muestraColorGanador3.style.backgroundColor = colorGanador3;
 const muestraColorGanador4 = document.getElementById('color4Resuelto')
 const colorGanador4 = localStorage.getItem('arrayGanador3');
 muestraColorGanador4.style.backgroundColor = colorGanador4;
+
+localStorage.clear();
