@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Mastermind</title>
+</head>
+
+<body class="hidden">
+    <div class="fondo-pantalla">
+        <img src="../img/fondo-tecnologico.jpg" alt="fondo">
+    </div>
+    <div class="sobre-fondo">
+        <div class="titulo-mastermind">
+            <div class="div-background-white-explicacion" id="no-border">
+                <div class="titulo-superior">
+                    <a href="../index.html">
+                        MASTERMIND
+                    </a>
+                </div>
+                <div class="titulo-inferior">
+                    <div class="logo">
+                        <img src="../img/cerebro.png" alt="logo">
+                    </div>
+                    <div class="texto-titulo">
+                        ¡Crack the Code and Win!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-general-colores">
+            <div class="div-interior-colores-hard">
+                <div class="div-seleccion-custom">
+                    <div class="margin-top margin-bottom redux">
+                        <label>Cantidad Intentos:</label>
+                        <input type="number" name="cantidadIntentos" id="cantidadIntentos" min="2" max="10"
+                            oninput="limitarRangoIntentos(event)">
+                    </div>
+                    <div class="margin-top margin-bottom center">
+                        <label>Nombre del jugador:</label>
+                        <input type="text" name="nombreJugador" id="nombreJugador" maxlength="20">
+                    </div>
+                </div>
+                <div class="margin-top rojo">
+                    <label>COLORES CON LOS QUE QUIERES JUGAR</label>
+                </div>
+                <div class="div-separacion-colores-exterior-hard">
+                    <div class="div-separacion-colores-interior">
+                        <div class="div-color-seleccionado">
+                            <div class="color-seleccionado" id="muestraColor1"></div>
+                        </div>
+                        <div class="div-input-color">
+                            <input type="color" name="color1" id="color1">
+                        </div>
+                        <div class="input-color-text">
+                            <div class="color-text-black">
+                                Selecciona el
+                            </div>
+                            <div class="color-text">
+                                COLOR 1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-separacion-colores-interior">
+                        <div class="div-color-seleccionado">
+                            <div class="color-seleccionado" id="muestraColor2"></div>
+                        </div>
+                        <div class="div-input-color">
+                            <input type="color" name="color2" id="color2">
+                        </div>
+                        <div class="input-color-text">
+                            <div class="color-text-black">
+                                Selecciona el
+                            </div>
+                            <div class="color-text">
+                                COLOR 2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-separacion-colores-interior">
+                        <div class="div-color-seleccionado">
+                            <div class="color-seleccionado" id="muestraColor3"></div>
+                        </div>
+                        <div class="div-input-color">
+                            <input type="color" name="color3" id="color3">
+                        </div>
+                        <div class="input-color-text">
+                            <div class="color-text-black">
+                                Selecciona el
+                            </div>
+                            <div class="color-text">
+                                COLOR 3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-separacion-colores-interior">
+                        <div class="div-color-seleccionado">
+                            <div class="color-seleccionado" id="muestraColor4"></div>
+                        </div>
+                        <div class="div-input-color">
+                            <input type="color" name="color4" id="color4">
+                        </div>
+                        <div class="input-color-text">
+                            <div class="color-text-black">
+                                Selecciona el
+                            </div>
+                            <div class="color-text">
+                                COLOR 4
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-separacion-colores-interior">
+                        <div class="div-color-seleccionado">
+                            <div class="color-seleccionado" id="muestraColor5"></div>
+                        </div>
+                        <div class="div-input-color">
+                            <input type="color" name="color5" id="color5">
+                        </div>
+                        <div class="input-color-text">
+                            <div class="color-text-black">
+                                Selecciona el
+                            </div>
+                            <div class="color-text">
+                                COLOR 5
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-separacion-colores-interior">
+                        <div class="div-color-seleccionado">
+                            <div class="color-seleccionado" id="muestraColor6"></div>
+                        </div>
+                        <div class="div-input-color">
+                            <input type="color" name="color6" id="color6">
+                        </div>
+                        <div class="input-color-text">
+                            <div class="color-text-black">
+                                Selecciona el
+                            </div>
+                            <div class="color-text">
+                                COLOR 6
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="botones-dificultad">
+            <div class="div-dificultades margin-top-grande">
+                <div class="div-boton-instrucciones">
+                    <a href="difficulty.html">
+                        <div class="boton-instrucciones">
+                            Elegir dificultad
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="div-dificultades margin-top-grande">
+                <div class="div-boton-play">
+                    <div class="boton-play" id="boton-custom">
+                        Jugar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/color-custom.js"></script>
+</body>
+
+</html>

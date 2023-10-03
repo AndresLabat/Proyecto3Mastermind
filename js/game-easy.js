@@ -16,7 +16,7 @@ color2Game.style.backgroundColor = color2Guardado
 color3Game.style.backgroundColor = color3Guardado
 color4Game.style.backgroundColor = color4Guardado
 
-// DECLARACION DEL BOTON PARA ACCEDER A LAS INTRUCCIONES Y LAS PROPIAS INSTRUCCIONES
+// DECLARACION DEL BOTON PARA ACCEDER A LAS INTRUCCIONES Y LA IMAGEN DE LAS INSTRUCCIONES
 const botonInstrucciones = document.querySelector("#botonInstrucciones");
 const imagenInstrucciones = document.querySelector("#imagenInstrucciones");
 
@@ -206,56 +206,54 @@ let posicionCheck = 0;
 
 // EVENTOS CHECK para que compare resultados y habilite una nueva row
 checkRow1.addEventListener("click", () => {
-    if (posicionCheck === 0) {
-        arrayRow1 = [
-            rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row1Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row1Circle4).backgroundColor)
-        ]
-
-        if (arrayRow1.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow1.length; i++) {
-                const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
-                if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
+        if (posicionCheck === 0) {
+            arrayRow1 = [
+                rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row1Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row1Circle4).backgroundColor)
+            ]
+            if (arrayRow1.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow1.length; i++) {
+                    const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
+                    if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow1.length; i++) {
+                    const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
+                    if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow1[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
-        } else {
-            for (let i = 0; i < arrayRow1.length; i++) {
-                const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
-                if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow1[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
-                }
-            }
+            pasarColorDivs(color1Game, row2Circle1, "background");
+            pasarColorDivs(color1Game, row2Circle2, "background");
+            pasarColorDivs(color1Game, row2Circle3, "background");
+            pasarColorDivs(color1Game, row2Circle4, "background");
+            pasarColorDivs(color2Game, row2Circle1, "background");
+            pasarColorDivs(color2Game, row2Circle2, "background");
+            pasarColorDivs(color2Game, row2Circle3, "background");
+            pasarColorDivs(color2Game, row2Circle4, "background");
+            pasarColorDivs(color3Game, row2Circle1, "background");
+            pasarColorDivs(color3Game, row2Circle2, "background");
+            pasarColorDivs(color3Game, row2Circle3, "background");
+            pasarColorDivs(color3Game, row2Circle4, "background");
+            pasarColorDivs(color4Game, row2Circle1, "background");
+            pasarColorDivs(color4Game, row2Circle2, "background");
+            pasarColorDivs(color4Game, row2Circle3, "background");
+            pasarColorDivs(color4Game, row2Circle4, "background");
+            posicionCheck = 1;
         }
-
-        pasarColorDivs(color1Game, row2Circle1, "background");
-        pasarColorDivs(color1Game, row2Circle2, "background");
-        pasarColorDivs(color1Game, row2Circle3, "background");
-        pasarColorDivs(color1Game, row2Circle4, "background");
-        pasarColorDivs(color2Game, row2Circle1, "background");
-        pasarColorDivs(color2Game, row2Circle2, "background");
-        pasarColorDivs(color2Game, row2Circle3, "background");
-        pasarColorDivs(color2Game, row2Circle4, "background");
-        pasarColorDivs(color3Game, row2Circle1, "background");
-        pasarColorDivs(color3Game, row2Circle2, "background");
-        pasarColorDivs(color3Game, row2Circle3, "background");
-        pasarColorDivs(color3Game, row2Circle4, "background");
-        pasarColorDivs(color4Game, row2Circle1, "background");
-        pasarColorDivs(color4Game, row2Circle2, "background");
-        pasarColorDivs(color4Game, row2Circle3, "background");
-        pasarColorDivs(color4Game, row2Circle4, "background");
-        posicionCheck = 1;
-    }
 });
 
 checkRow2.addEventListener("click", () => {
@@ -266,7 +264,6 @@ checkRow2.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row2Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row2Circle4).backgroundColor)
         ]
-
         if (arrayRow2.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow2.length; i++) {
                 const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
@@ -290,7 +287,6 @@ checkRow2.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row3Circle1, "background");
         pasarColorDivs(color1Game, row3Circle2, "background");
         pasarColorDivs(color1Game, row3Circle3, "background");
@@ -319,7 +315,6 @@ checkRow3.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row3Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row3Circle4).backgroundColor)
         ]
-
         if (arrayRow3.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow3.length; i++) {
                 const circleSecundary = document.getElementById(`row3CircleSecundary${i + 1}`);
@@ -343,7 +338,6 @@ checkRow3.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row4Circle1, "background");
         pasarColorDivs(color1Game, row4Circle2, "background");
         pasarColorDivs(color1Game, row4Circle3, "background");
@@ -372,7 +366,6 @@ checkRow4.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row4Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row4Circle4).backgroundColor)
         ]
-
         if (arrayRow4.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow4.length; i++) {
                 const circleSecundary = document.getElementById(`row4CircleSecundary${i + 1}`);
@@ -396,7 +389,6 @@ checkRow4.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row5Circle1, "background");
         pasarColorDivs(color1Game, row5Circle2, "background");
         pasarColorDivs(color1Game, row5Circle3, "background");
@@ -425,7 +417,6 @@ checkRow5.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row5Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row5Circle4).backgroundColor)
         ]
-
         if (arrayRow5.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow5.length; i++) {
                 const circleSecundary = document.getElementById(`row5CircleSecundary${i + 1}`);
@@ -449,7 +440,6 @@ checkRow5.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row6Circle1, "background");
         pasarColorDivs(color1Game, row6Circle2, "background");
         pasarColorDivs(color1Game, row6Circle3, "background");
@@ -478,7 +468,6 @@ checkRow6.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row6Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row6Circle4).backgroundColor)
         ]
-
         if (arrayRow6.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow6.length; i++) {
                 const circleSecundary = document.getElementById(`row6CircleSecundary${i + 1}`);
@@ -502,7 +491,6 @@ checkRow6.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row7Circle1, "background");
         pasarColorDivs(color1Game, row7Circle2, "background");
         pasarColorDivs(color1Game, row7Circle3, "background");
@@ -531,7 +519,6 @@ checkRow7.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row7Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row7Circle4).backgroundColor)
         ]
-
         if (arrayRow7.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow7.length; i++) {
                 const circleSecundary = document.getElementById(`row7CircleSecundary${i + 1}`);
@@ -555,7 +542,6 @@ checkRow7.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row8Circle1, "background");
         pasarColorDivs(color1Game, row8Circle2, "background");
         pasarColorDivs(color1Game, row8Circle3, "background");
@@ -584,7 +570,6 @@ checkRow8.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row8Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row8Circle4).backgroundColor)
         ]
-
         if (arrayRow8.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow8.length; i++) {
                 const circleSecundary = document.getElementById(`row8CircleSecundary${i + 1}`);
@@ -608,7 +593,6 @@ checkRow8.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row9Circle1, "background");
         pasarColorDivs(color1Game, row9Circle2, "background");
         pasarColorDivs(color1Game, row9Circle3, "background");
@@ -637,7 +621,6 @@ checkRow9.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row9Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row9Circle4).backgroundColor)
         ]
-
         if (arrayRow9.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow9.length; i++) {
                 const circleSecundary = document.getElementById(`row9CircleSecundary${i + 1}`);
@@ -661,7 +644,6 @@ checkRow9.addEventListener("click", () => {
                 }
             }
         }
-
         pasarColorDivs(color1Game, row10Circle1, "background");
         pasarColorDivs(color1Game, row10Circle2, "background");
         pasarColorDivs(color1Game, row10Circle3, "background");
@@ -690,7 +672,6 @@ checkRow10.addEventListener("click", () => {
             rgbHexadecimal(window.getComputedStyle(row10Circle3).backgroundColor),
             rgbHexadecimal(window.getComputedStyle(row10Circle4).backgroundColor)
         ]
-
         if (arrayRow10.toString() === arrayGanador.toString()) {
             for (let i = 0; i < arrayRow10.length; i++) {
                 const circleSecundary = document.getElementById(`row10CircleSecundary${i + 1}`);

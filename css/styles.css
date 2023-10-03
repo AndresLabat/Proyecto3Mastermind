@@ -1,8 +1,25 @@
-
 * {
     margin: 0;
     padding: 0;
 }
+
+@media only screen and (max-width: 990px) {
+    html {
+      font-size: 0.7em;
+    }
+  }
+  
+  @media only screen and (max-width: 750px) {
+    html {
+      font-size: 0.5em;
+    }
+  }
+  
+  @media only screen and (max-width: 680px) {
+    html {
+      font-size: 0.33em;
+    }
+  }
 
 #no-border{
     border: none;
@@ -427,8 +444,8 @@ body {
     height: 5.5em;
     text-align: center;
     padding-bottom: 12em;
-    /* background-color: #3498db81;
-    border-radius: 1em; */
+    /* background-color: #3498db81; */
+
 }
 
 .margin-top{
@@ -446,7 +463,6 @@ body {
     background-clip: text;
     color: transparent;
     font-weight: bold;
-    cursor: pointer;
     font-family: 'Fredericka the Great', cursive;
     margin-left: 1em;
 }
@@ -458,9 +474,8 @@ body {
     background-clip: text;
     color: transparent;
     font-weight: bold;
-    cursor: pointer;
     font-family: 'Fredericka the Great', cursive;
-    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .rojo label{
@@ -470,9 +485,8 @@ body {
     background-clip: text;
     color: transparent;
     font-weight: bold;
-    cursor: pointer;
     font-family: 'Fredericka the Great', cursive;
-    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .azul label{
@@ -482,9 +496,19 @@ body {
     background-clip: text;
     color: transparent;
     font-weight: bold;
-    cursor: pointer;
     font-family: 'Fredericka the Great', cursive;
-    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.marron label{
+    font-size: 1.6em;
+    background: linear-gradient(45deg,rgb(215, 215, 4), brown);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-family: 'Fredericka the Great', cursive;
+    margin-right: 1em;
 }
 
 #facil{
@@ -521,7 +545,7 @@ body {
 }
 
 .fondo-pantalla-dificultad img {
-    width: 136.4%;
+    width: 169.6%;
 }
 
 .margin-right{
@@ -714,8 +738,8 @@ body {
     font-family: 'Fredericka the Great', cursive;
     padding-top: 0.2em;
     padding-bottom: 0.4em;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
 }
+
 .texto-felicitacion-naranja{
     font-size: 1.8em;
     background: linear-gradient(45deg, red, yellow);
@@ -726,7 +750,6 @@ body {
     font-family: 'Fredericka the Great', cursive;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
 }
 
 #nickname{
@@ -734,7 +757,6 @@ body {
     color: white;
     -webkit-background-clip: text;
     background-clip: text;
-    /* color: transparent; */
     font-weight: bold;
     font-family: 'Fredericka the Great', cursive;
     padding-top: 0.3em;
@@ -1002,6 +1024,9 @@ body {
     width: 16em;
     height: 40em;
     /* border: 0.01em solid black; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     /* background-color: red; */
 }
 
@@ -1027,20 +1052,22 @@ body {
     height: 3em;
     border-radius: 50%;
     border: 0.01em solid black;
-    /* background-color: white; */
 }
 
 .fila-huecos-secundarios{
     width: 12em;
     height: 4em;
-    /* border: 0.01em solid black; */
     display: flex;
+    /* border: 0.01em solid black; */
     /* background-color: yellow; */
 }
 
 .div-huecos-secundarios{
     width: 12em;
     height: 40em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     /* border: 0.01em solid black; */
     /* background-color: #3498db; */
 }
@@ -1273,3 +1300,40 @@ body {
     align-items: center;
     margin-left: 1em;
 }
+
+/* COLORS-CUSTOM */
+
+.div-seleccion-custom{
+    display: flex;
+}
+
+.redux input{
+    width: 3em;
+    height: 1.5em;
+}
+
+.redux label{
+    margin-left: 8em;
+}
+
+.center input{
+    width: 11em;
+    height: 1.5em;
+}
+
+.check-custom{
+    margin-top: 0.9em;
+    margin-left: 0.8em;
+    width: 3.6em;
+    height: 1.8em;
+    box-shadow: #004870 3px 3px 6px 0px inset, #004870 -3px -3px 6px 1px inset;
+    cursor: pointer;
+}
+
+.check-custom:hover{
+    width: 4em;
+    height: 2.2em;
+    box-shadow: #004870 3px 3px 6px 0px inset, #004870 -3px -3px 6px 1px inset;
+    cursor: pointer;
+}
+

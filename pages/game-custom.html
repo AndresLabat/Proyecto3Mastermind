@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Mastermind</title>
+</head>
+
+<body class="hidden">
+    <div class="fondo-pantalla">
+        <img src="../img/fondo-tecnologico.jpg" alt="fondo">
+    </div>
+    <div class="contenedor-div-img-instrucciones">
+        <div class="div-img-instrucciones" id="imagenInstrucciones">
+            <img src="../img/imagen-instrucciones.jpeg" alt="fondo">
+        </div>
+    </div>
+    <div class="sobre-fondo">
+        <div class="sobre-fondo-flex">
+            <div class="fondo-madera">
+                <div class="fondo-madera-interior">
+                    <div class="div-colores-importados">
+                        <div class="div-colores-importados-interior">
+                            <div class="color-importado" id="color1Game"></div>
+                            <div class="color-importado" id="color2Game"></div>
+                            <div class="color-importado" id="color3Game"></div>
+                            <div class="color-importado" id="color4Game"></div>
+                            <div class="color-importado" id="color5Game"></div>
+                            <div class="color-importado" id="color6Game"></div>
+                        </div>
+                    </div>
+                    <div class="tablero-exterior">
+                        <div class="zona-juego">
+                            <div class="div-huecos-principales">
+                                
+                            </div>
+                            <div class="div-huecos-secundarios">
+                                
+                            </div>
+                        </div>
+                        <div class="acceso-botones-juego">
+                            <div class="interior-acceso-botones-juego-easy">
+                                <div class="aclaracion">
+                                    <div class="titulo-aclaracion">RECUERDA</div>
+                                    <div class="div-aclaracion-colores">
+                                        <div class="aclaracion-colores">
+                                            <div class="div-blanco">
+                                                <div class="hueco-secundario blanco"></div>
+                                            </div>
+                                            <div class="div-morado">
+                                                <div class="hueco-secundario morado"></div>
+                                            </div>
+                                        </div>
+                                        <div class="div-texto-colores">
+                                            <div class="texto-blanco">has acertado el color pero no la posición</div>
+                                            <div class="texto-morado">has acertado el color y la posición</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="game-custom.html">
+                                    <div class="boton-juego-externo">
+                                        <div>
+                                            Reiniciar la partida
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="colors-custom.html">
+                                    <div class="boton-juego-externo">
+                                        <div>
+                                            Seleccionar colores
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="difficulty.html">
+                                    <div class="boton-juego-externo">
+                                        <div>
+                                            Seleccionar dificultad
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="menu.html">
+                                    <div class="boton-juego-externo">
+                                        <div>
+                                            Volver al menú de inicio
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="boton-juego-externo" id="botonInstrucciones">
+                                    <div>
+                                        Instrucciones del juego
+                                    </div>
+                                </div>
+                                <div class="boton-juego-externo" id="rendirseEasy">
+                                    <div>
+                                        Rendirse
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/game-custom.js"></script>
+</body>
+
+</html>
