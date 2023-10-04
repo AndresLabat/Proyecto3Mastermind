@@ -28,6 +28,7 @@ color4.addEventListener("input", () => {
     muestraColor4.style.backgroundColor = color4.value;
     localStorage.setItem("color4", color4.value);
 })
+
 botonEasy.addEventListener("click", () => {
     if (nombreJugador.value !== "" &&
         (color1.value !== color2.value &&

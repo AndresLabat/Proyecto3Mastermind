@@ -67,7 +67,7 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
       <img src="img/imagenes-README/difficulty-2.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>Hasta expertos en juegos de lógica</b></em>
+      <em><b>Hasta expertos en juegos de lógica y juego personalizado</b></em>
    </div>   
 </p>
 
@@ -100,14 +100,25 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
    </div>   
 </p>
 
-6. **🎲game-easy.html, game-medium.html, game-hard.html🎲**: la vista total de la página estará centrada en el tablero en el que se desarrolla la partida, teniendo funcionalidades extra en la parte derecha para poder navegar por los menús, consultar las instrucciones o rendirse.
+6. **🟪colors-custom.html🟪**: tendremos un total de 6 colores a elegir pero la cantidad de intentos dependerá de la elección del jugador, es un tablero dinámico.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/colors-custom.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>En principiante son 4 colores</b></em>
+   </div>   
+</p>
+
+7. **🎲game-easy.html, game-medium.html, game-hard.html🎲**: la vista total de la página estará centrada en el tablero en el que se desarrolla la partida, teniendo funcionalidades extra en la parte derecha para poder navegar por los menús, consultar las instrucciones o rendirse.
 
 <p>
    <div align="center">
       <img src="img/imagenes-README/game-easy.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>En principiante tienes 10 oportunidades y 4 colores</b></em>
+      <em><b>En principiante el jugador tiene 10 oportunidades y 4 colores</b></em>
    </div>   
 </p>
 
@@ -116,7 +127,7 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
       <img src="img/imagenes-README/game-medium.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>En experimentado tienes 8 oportunidades y 5 colores</b></em>
+      <em><b>En experimentado el jugador tiene 8 oportunidades y 5 colores</b></em>
    </div>   
 </p>
 
@@ -125,11 +136,22 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
       <img src="img/imagenes-README/game-hard.jpeg" style="max-width: 100%;" width="500">
    </div>    
    <div align="center">
-      <em><b>En experto tienes 6 oportunidades y 6 colores</b></em>
+      <em><b>En experto el jugador tiene 6 oportunidades y 6 colores</b></em>
    </div>   
 </p>
 
-7. **🤑winner.html🤑**: esta pantalla solo la verás en el caso de que en cualquiera de las dificultades soluciones con éxito el tablero.
+8. **🎲game-custom.html🎲**: en este modo de juego, dependiendo de la elección realizada en cantidad de intentos, se generará dinamicamente un tablero con ese número de filas.
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/game-custom.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Siempre tendrá 6 colores, pero el número de intentos lo determinará el jugador</b></em>
+   </div>   
+</p>
+
+9. **🤑winner.html🤑**: esta pantalla solo la verás en el caso de que en cualquiera de las dificultades soluciones con éxito el tablero.
 
 <p>
    <div align="center">
@@ -140,7 +162,7 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
    </div>   
 </p>
 
-8. **😓losser.html😓**: a esta pantalla se puede acceder en cualquiera de las dificultades si te rindes o si se terminan los intentos y no has llegado a resolver el tablero.
+10. **😓losser.html😓**: a esta pantalla se puede acceder en cualquiera de las dificultades si te rindes o si se terminan los intentos y no has llegado a resolver el tablero.
 
 <p>
    <div align="center">
@@ -151,17 +173,19 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
    </div>   
 </p>
 
-9. **🎨styles.css🎨**: Archivo CSS que proporciona estilos y diseño a todas las páginas.
+11. **🎨styles.css🎨**: Archivo CSS que proporciona estilos y diseño a todas las páginas.
 
-10. **👀main.js, color-medium, color-hard👀**: son los archivos de JavaScript encargados de recoger los valores del nombre del jugador y los colores seleccionados e introducirlos en el local storage y, por otro lado, impiden el acceso a la partida si no se ha escrito dicho nombre y seleccionado todos los colores de forma que sean distintos entre ellos.
+12. **👀main.js, color-medium, color-hard👀**: son los archivos de JavaScript encargados de recoger los valores del nombre del jugador y los colores seleccionados e introducirlos en el local storage y, por otro lado, impiden el acceso a la partida si no se ha escrito dicho nombre y seleccionado todos los colores de forma que sean distintos entre ellos.
 
-11. **💸winner-losser.js💸**: recoge los valores del nombre del jugador y de la combinación ganadora y los muestra por pantalla en winner.html y en losser.html.
+13. **💸winner-losser.js💸**: recoge los valores del nombre del jugador y de la combinación ganadora y los muestra por pantalla en winner.html y en losser.html.
 
-12. **👾game-easy.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad principiante y guarda el resultado de la combinación ganadora en el local storage.
+14. **👾game-easy.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad principiante y guarda el resultado de la combinación ganadora en el local storage.
 
-13. **👾game-medium.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad experimentadoy guarda el resultado de la combinación ganadora en el local storage.
+15. **👾game-medium.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad experimentado y guarda el resultado de la combinación ganadora en el local storage.
 
-14. **👾game-hard.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad expertoy guarda el resultado de la combinación ganadora en el local storage.
+16. **👾game-hard.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad experto y guarda el resultado de la combinación ganadora en el local storage.
+
+17. **👾game-hard.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad personalizado y genera el tablero dinámicamente en base a la elección de intentos que haya realizado el jugador, por último guarda el resultado de la combinación ganadora en el local storage.
 
 ## 🔧 Tecnologías Utilizadas
 
