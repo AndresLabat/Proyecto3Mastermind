@@ -282,7 +282,7 @@ La barra de botones de la parte lateral derecha te permitirá realizar las sigui
 
 - **🚧Problema**: he intentando que la fila comprobada se bloquee de forma que ya no se puedan cambiar sus colores al dar click al botón check sin éxito.
 
-   - **💡Solución**: Eliminar los eventos de los círculos de la fila a bloquear, aún no lo he conseguido, seguramente por algún error de sintaxis.
+   - **💡Solución**: Eliminar los eventos de los círculos de la fila a bloquear, finalmente ha sido resuelto con éxito.
 
 <p>
    <div align="center">
@@ -297,7 +297,7 @@ La barra de botones de la parte lateral derecha te permitirá realizar las sigui
 
 - **🚧Problema**: quiero conseguir que el botón check no tenga ninguna funcionalidad a menos que todos los círculos de su fila esten pintados de color.
 
-   - **💡Solución**: añadir un "if, else" al evento de check en el que se ejecute todo solo cuando todos los colores sean distintos del inicial.
+   - **💡Solución**: añadir un "if" al evento de check en el que se ejecute todo solo cuando todos los colores sean distintos del inicial, finalmente también ha sido resuelto con éxito.
 
 <p>
    <div align="center">
