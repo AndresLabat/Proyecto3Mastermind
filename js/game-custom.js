@@ -237,18 +237,6 @@ for (let i = 1; i <= 4; i++) {
     }
 }
 
-// ARRAYS ROWS
-let arrayRow1 = []
-let arrayRow2 = []
-let arrayRow3 = []
-let arrayRow4 = []
-let arrayRow5 = []
-let arrayRow6 = []
-let arrayRow7 = []
-let arrayRow8 = []
-let arrayRow9 = []
-let arrayRow10 = []
-
 // Convertir rgb a hexadecimal
 function rgbHexadecimal(rgb) {
     const [r, g, b] = rgb.match(/\d+/g);
@@ -287,7 +275,13 @@ let posicionCheck = 0;
 
 // EVENTOS CHECK para que compare resultados y habilite una nueva row
 checkRow1.addEventListener("click", () => {
-        if (posicionCheck === 0) {
+    if (posicionCheck === 0) {
+        if (rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row1Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row1Circle4).backgroundColor) == "#000000") {
+
+        } else {
             arrayRow1 = [
                 rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor),
                 rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor),
@@ -318,7 +312,7 @@ checkRow1.addEventListener("click", () => {
                 }
             }
             posicionCheck++;
-            if(posicionCheck >= cantidadIntentosNumero){
+            if (posicionCheck >= cantidadIntentosNumero) {
                 arrayGanador.forEach((valor, index) => {
                     localStorage.setItem(`arrayGanador${index}`, valor);
                 });
@@ -355,183 +349,204 @@ checkRow1.addEventListener("click", () => {
             pasarColorDivs(color6Game, row2Circle3, "background");
             pasarColorDivs(color6Game, row2Circle4, "background");
         }
+    }
 });
 
 checkRow2.addEventListener("click", () => {
     if (posicionCheck === 1) {
-        arrayRow2 = [
-            rgbHexadecimal(window.getComputedStyle(row2Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row2Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row2Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row2Circle4).backgroundColor)
-        ]
-        if (arrayRow2.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow2.length; i++) {
-                const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
-                if (arrayRow2[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row2Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row2Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row2Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row2Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow2.length; i++) {
-                const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
-                if (arrayRow2[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow2[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow2 = [
+                rgbHexadecimal(window.getComputedStyle(row2Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row2Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row2Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row2Circle4).backgroundColor)
+            ]
+            if (arrayRow2.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow2.length; i++) {
+                    const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
+                    if (arrayRow2[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow2.length; i++) {
+                    const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
+                    if (arrayRow2[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow2[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
+            }
+            row2Circle1.style.pointerEvents = "none";
+            row2Circle2.style.pointerEvents = "none";
+            row2Circle3.style.pointerEvents = "none";
+            row2Circle4.style.pointerEvents = "none";
+            pasarColorDivs(color1Game, row3Circle1, "background");
+            pasarColorDivs(color1Game, row3Circle2, "background");
+            pasarColorDivs(color1Game, row3Circle3, "background");
+            pasarColorDivs(color1Game, row3Circle4, "background");
+            pasarColorDivs(color2Game, row3Circle1, "background");
+            pasarColorDivs(color2Game, row3Circle2, "background");
+            pasarColorDivs(color2Game, row3Circle3, "background");
+            pasarColorDivs(color2Game, row3Circle4, "background");
+            pasarColorDivs(color3Game, row3Circle1, "background");
+            pasarColorDivs(color3Game, row3Circle2, "background");
+            pasarColorDivs(color3Game, row3Circle3, "background");
+            pasarColorDivs(color3Game, row3Circle4, "background");
+            pasarColorDivs(color4Game, row3Circle1, "background");
+            pasarColorDivs(color4Game, row3Circle2, "background");
+            pasarColorDivs(color4Game, row3Circle3, "background");
+            pasarColorDivs(color4Game, row3Circle4, "background");
+            pasarColorDivs(color5Game, row3Circle1, "background");
+            pasarColorDivs(color5Game, row3Circle2, "background");
+            pasarColorDivs(color5Game, row3Circle3, "background");
+            pasarColorDivs(color5Game, row3Circle4, "background");
+            pasarColorDivs(color6Game, row3Circle1, "background");
+            pasarColorDivs(color6Game, row3Circle2, "background");
+            pasarColorDivs(color6Game, row3Circle3, "background");
+            pasarColorDivs(color6Game, row3Circle4, "background");
         }
-        posicionCheck++;
-        if(posicionCheck >= cantidadIntentosNumero){
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
-        }
-        row2Circle1.style.pointerEvents = "none";
-        row2Circle2.style.pointerEvents = "none";
-        row2Circle3.style.pointerEvents = "none";
-        row2Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row3Circle1, "background");
-        pasarColorDivs(color1Game, row3Circle2, "background");
-        pasarColorDivs(color1Game, row3Circle3, "background");
-        pasarColorDivs(color1Game, row3Circle4, "background");
-        pasarColorDivs(color2Game, row3Circle1, "background");
-        pasarColorDivs(color2Game, row3Circle2, "background");
-        pasarColorDivs(color2Game, row3Circle3, "background");
-        pasarColorDivs(color2Game, row3Circle4, "background");
-        pasarColorDivs(color3Game, row3Circle1, "background");
-        pasarColorDivs(color3Game, row3Circle2, "background");
-        pasarColorDivs(color3Game, row3Circle3, "background");
-        pasarColorDivs(color3Game, row3Circle4, "background");
-        pasarColorDivs(color4Game, row3Circle1, "background");
-        pasarColorDivs(color4Game, row3Circle2, "background");
-        pasarColorDivs(color4Game, row3Circle3, "background");
-        pasarColorDivs(color4Game, row3Circle4, "background");
-        pasarColorDivs(color5Game, row3Circle1, "background");
-        pasarColorDivs(color5Game, row3Circle2, "background");
-        pasarColorDivs(color5Game, row3Circle3, "background");
-        pasarColorDivs(color5Game, row3Circle4, "background");
-        pasarColorDivs(color6Game, row3Circle1, "background");
-        pasarColorDivs(color6Game, row3Circle2, "background");
-        pasarColorDivs(color6Game, row3Circle3, "background");
-        pasarColorDivs(color6Game, row3Circle4, "background");
     }
 });
 
 checkRow3.addEventListener("click", () => {
     if (posicionCheck === 2) {
-        arrayRow3 = [
-            rgbHexadecimal(window.getComputedStyle(row3Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row3Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row3Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row3Circle4).backgroundColor)
-        ]
-        if (arrayRow3.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow3.length; i++) {
-                const circleSecundary = document.getElementById(`row3CircleSecundary${i + 1}`);
-                if (arrayRow3[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row3Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row3Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row3Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row3Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow3.length; i++) {
-                const circleSecundary = document.getElementById(`row3CircleSecundary${i + 1}`);
-                if (arrayRow3[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow3[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow3 = [
+                rgbHexadecimal(window.getComputedStyle(row3Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row3Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row3Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row3Circle4).backgroundColor)
+            ]
+            if (arrayRow3.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow3.length; i++) {
+                    const circleSecundary = document.getElementById(`row3CircleSecundary${i + 1}`);
+                    if (arrayRow3[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow3.length; i++) {
+                    const circleSecundary = document.getElementById(`row3CircleSecundary${i + 1}`);
+                    if (arrayRow3[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow3[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
+            }
+            row3Circle1.style.pointerEvents = "none";
+            row3Circle2.style.pointerEvents = "none";
+            row3Circle3.style.pointerEvents = "none";
+            row3Circle4.style.pointerEvents = "none";
+            pasarColorDivs(color1Game, row4Circle1, "background");
+            pasarColorDivs(color1Game, row4Circle2, "background");
+            pasarColorDivs(color1Game, row4Circle3, "background");
+            pasarColorDivs(color1Game, row4Circle4, "background");
+            pasarColorDivs(color2Game, row4Circle1, "background");
+            pasarColorDivs(color2Game, row4Circle2, "background");
+            pasarColorDivs(color2Game, row4Circle3, "background");
+            pasarColorDivs(color2Game, row4Circle4, "background");
+            pasarColorDivs(color3Game, row4Circle1, "background");
+            pasarColorDivs(color3Game, row4Circle2, "background");
+            pasarColorDivs(color3Game, row4Circle3, "background");
+            pasarColorDivs(color3Game, row4Circle4, "background");
+            pasarColorDivs(color4Game, row4Circle1, "background");
+            pasarColorDivs(color4Game, row4Circle2, "background");
+            pasarColorDivs(color4Game, row4Circle3, "background");
+            pasarColorDivs(color4Game, row4Circle4, "background");
+            pasarColorDivs(color5Game, row4Circle1, "background");
+            pasarColorDivs(color5Game, row4Circle2, "background");
+            pasarColorDivs(color5Game, row4Circle3, "background");
+            pasarColorDivs(color5Game, row4Circle4, "background");
+            pasarColorDivs(color6Game, row4Circle1, "background");
+            pasarColorDivs(color6Game, row4Circle2, "background");
+            pasarColorDivs(color6Game, row4Circle3, "background");
+            pasarColorDivs(color6Game, row4Circle4, "background");
         }
-        posicionCheck++;
-        if(posicionCheck >= cantidadIntentosNumero){
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
-        }
-        row3Circle1.style.pointerEvents = "none";
-        row3Circle2.style.pointerEvents = "none";
-        row3Circle3.style.pointerEvents = "none";
-        row3Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row4Circle1, "background");
-        pasarColorDivs(color1Game, row4Circle2, "background");
-        pasarColorDivs(color1Game, row4Circle3, "background");
-        pasarColorDivs(color1Game, row4Circle4, "background");
-        pasarColorDivs(color2Game, row4Circle1, "background");
-        pasarColorDivs(color2Game, row4Circle2, "background");
-        pasarColorDivs(color2Game, row4Circle3, "background");
-        pasarColorDivs(color2Game, row4Circle4, "background");
-        pasarColorDivs(color3Game, row4Circle1, "background");
-        pasarColorDivs(color3Game, row4Circle2, "background");
-        pasarColorDivs(color3Game, row4Circle3, "background");
-        pasarColorDivs(color3Game, row4Circle4, "background");
-        pasarColorDivs(color4Game, row4Circle1, "background");
-        pasarColorDivs(color4Game, row4Circle2, "background");
-        pasarColorDivs(color4Game, row4Circle3, "background");
-        pasarColorDivs(color4Game, row4Circle4, "background");
-        pasarColorDivs(color5Game, row4Circle1, "background");
-        pasarColorDivs(color5Game, row4Circle2, "background");
-        pasarColorDivs(color5Game, row4Circle3, "background");
-        pasarColorDivs(color5Game, row4Circle4, "background");
-        pasarColorDivs(color6Game, row4Circle1, "background");
-        pasarColorDivs(color6Game, row4Circle2, "background");
-        pasarColorDivs(color6Game, row4Circle3, "background");
-        pasarColorDivs(color6Game, row4Circle4, "background");
     }
 });
 
 checkRow4.addEventListener("click", () => {
     if (posicionCheck === 3) {
-        arrayRow4 = [
-            rgbHexadecimal(window.getComputedStyle(row4Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row4Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row4Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row4Circle4).backgroundColor)
-        ]
-        if (arrayRow4.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow4.length; i++) {
-                const circleSecundary = document.getElementById(`row4CircleSecundary${i + 1}`);
-                if (arrayRow4[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row4Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row4Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row4Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row4Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow4.length; i++) {
-                const circleSecundary = document.getElementById(`row4CircleSecundary${i + 1}`);
-                if (arrayRow4[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow4[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow4 = [
+                rgbHexadecimal(window.getComputedStyle(row4Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row4Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row4Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row4Circle4).backgroundColor)
+            ]
+            if (arrayRow4.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow4.length; i++) {
+                    const circleSecundary = document.getElementById(`row4CircleSecundary${i + 1}`);
+                    if (arrayRow4[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow4.length; i++) {
+                    const circleSecundary = document.getElementById(`row4CircleSecundary${i + 1}`);
+                    if (arrayRow4[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow4[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
-        }
-        posicionCheck++;
-            if(posicionCheck >= cantidadIntentosNumero){
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
                 arrayGanador.forEach((valor, index) => {
                     localStorage.setItem(`arrayGanador${index}`, valor);
                 });
@@ -543,424 +558,467 @@ checkRow4.addEventListener("click", () => {
             row4Circle2.style.pointerEvents = "none";
             row4Circle3.style.pointerEvents = "none";
             row4Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row5Circle1, "background");
-        pasarColorDivs(color1Game, row5Circle2, "background");
-        pasarColorDivs(color1Game, row5Circle3, "background");
-        pasarColorDivs(color1Game, row5Circle4, "background");
-        pasarColorDivs(color2Game, row5Circle1, "background");
-        pasarColorDivs(color2Game, row5Circle2, "background");
-        pasarColorDivs(color2Game, row5Circle3, "background");
-        pasarColorDivs(color2Game, row5Circle4, "background");
-        pasarColorDivs(color3Game, row5Circle1, "background");
-        pasarColorDivs(color3Game, row5Circle2, "background");
-        pasarColorDivs(color3Game, row5Circle3, "background");
-        pasarColorDivs(color3Game, row5Circle4, "background");
-        pasarColorDivs(color4Game, row5Circle1, "background");
-        pasarColorDivs(color4Game, row5Circle2, "background");
-        pasarColorDivs(color4Game, row5Circle3, "background");
-        pasarColorDivs(color4Game, row5Circle4, "background");
-        pasarColorDivs(color5Game, row5Circle1, "background");
-        pasarColorDivs(color5Game, row5Circle2, "background");
-        pasarColorDivs(color5Game, row5Circle3, "background");
-        pasarColorDivs(color5Game, row5Circle4, "background");
-        pasarColorDivs(color6Game, row5Circle1, "background");
-        pasarColorDivs(color6Game, row5Circle2, "background");
-        pasarColorDivs(color6Game, row5Circle3, "background");
-        pasarColorDivs(color6Game, row5Circle4, "background");
+            pasarColorDivs(color1Game, row5Circle1, "background");
+            pasarColorDivs(color1Game, row5Circle2, "background");
+            pasarColorDivs(color1Game, row5Circle3, "background");
+            pasarColorDivs(color1Game, row5Circle4, "background");
+            pasarColorDivs(color2Game, row5Circle1, "background");
+            pasarColorDivs(color2Game, row5Circle2, "background");
+            pasarColorDivs(color2Game, row5Circle3, "background");
+            pasarColorDivs(color2Game, row5Circle4, "background");
+            pasarColorDivs(color3Game, row5Circle1, "background");
+            pasarColorDivs(color3Game, row5Circle2, "background");
+            pasarColorDivs(color3Game, row5Circle3, "background");
+            pasarColorDivs(color3Game, row5Circle4, "background");
+            pasarColorDivs(color4Game, row5Circle1, "background");
+            pasarColorDivs(color4Game, row5Circle2, "background");
+            pasarColorDivs(color4Game, row5Circle3, "background");
+            pasarColorDivs(color4Game, row5Circle4, "background");
+            pasarColorDivs(color5Game, row5Circle1, "background");
+            pasarColorDivs(color5Game, row5Circle2, "background");
+            pasarColorDivs(color5Game, row5Circle3, "background");
+            pasarColorDivs(color5Game, row5Circle4, "background");
+            pasarColorDivs(color6Game, row5Circle1, "background");
+            pasarColorDivs(color6Game, row5Circle2, "background");
+            pasarColorDivs(color6Game, row5Circle3, "background");
+            pasarColorDivs(color6Game, row5Circle4, "background");
+        }
     }
 });
 
 checkRow5.addEventListener("click", () => {
     if (posicionCheck === 4) {
-        arrayRow5 = [
-            rgbHexadecimal(window.getComputedStyle(row5Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row5Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row5Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row5Circle4).backgroundColor)
-        ]
-        if (arrayRow5.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow5.length; i++) {
-                const circleSecundary = document.getElementById(`row5CircleSecundary${i + 1}`);
-                if (arrayRow5[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row5Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row5Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row5Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row5Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow5.length; i++) {
-                const circleSecundary = document.getElementById(`row5CircleSecundary${i + 1}`);
-                if (arrayRow5[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow5[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow5 = [
+                rgbHexadecimal(window.getComputedStyle(row5Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row5Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row5Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row5Circle4).backgroundColor)
+            ]
+            if (arrayRow5.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow5.length; i++) {
+                    const circleSecundary = document.getElementById(`row5CircleSecundary${i + 1}`);
+                    if (arrayRow5[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow5.length; i++) {
+                    const circleSecundary = document.getElementById(`row5CircleSecundary${i + 1}`);
+                    if (arrayRow5[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow5[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
+            }
+            row5Circle1.style.pointerEvents = "none";
+            row5Circle2.style.pointerEvents = "none";
+            row5Circle3.style.pointerEvents = "none";
+            row5Circle4.style.pointerEvents = "none";
+            pasarColorDivs(color1Game, row6Circle1, "background");
+            pasarColorDivs(color1Game, row6Circle2, "background");
+            pasarColorDivs(color1Game, row6Circle3, "background");
+            pasarColorDivs(color1Game, row6Circle4, "background");
+            pasarColorDivs(color2Game, row6Circle1, "background");
+            pasarColorDivs(color2Game, row6Circle2, "background");
+            pasarColorDivs(color2Game, row6Circle3, "background");
+            pasarColorDivs(color2Game, row6Circle4, "background");
+            pasarColorDivs(color3Game, row6Circle1, "background");
+            pasarColorDivs(color3Game, row6Circle2, "background");
+            pasarColorDivs(color3Game, row6Circle3, "background");
+            pasarColorDivs(color3Game, row6Circle4, "background");
+            pasarColorDivs(color4Game, row6Circle1, "background");
+            pasarColorDivs(color4Game, row6Circle2, "background");
+            pasarColorDivs(color4Game, row6Circle3, "background");
+            pasarColorDivs(color4Game, row6Circle4, "background");
+            pasarColorDivs(color5Game, row6Circle1, "background");
+            pasarColorDivs(color5Game, row6Circle2, "background");
+            pasarColorDivs(color5Game, row6Circle3, "background");
+            pasarColorDivs(color5Game, row6Circle4, "background");
+            pasarColorDivs(color6Game, row6Circle1, "background");
+            pasarColorDivs(color6Game, row6Circle2, "background");
+            pasarColorDivs(color6Game, row6Circle3, "background");
+            pasarColorDivs(color6Game, row6Circle4, "background");
         }
-        posicionCheck++;
-        if(posicionCheck >= cantidadIntentosNumero){
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
-        }
-        row5Circle1.style.pointerEvents = "none";
-        row5Circle2.style.pointerEvents = "none";
-        row5Circle3.style.pointerEvents = "none";
-        row5Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row6Circle1, "background");
-        pasarColorDivs(color1Game, row6Circle2, "background");
-        pasarColorDivs(color1Game, row6Circle3, "background");
-        pasarColorDivs(color1Game, row6Circle4, "background");
-        pasarColorDivs(color2Game, row6Circle1, "background");
-        pasarColorDivs(color2Game, row6Circle2, "background");
-        pasarColorDivs(color2Game, row6Circle3, "background");
-        pasarColorDivs(color2Game, row6Circle4, "background");
-        pasarColorDivs(color3Game, row6Circle1, "background");
-        pasarColorDivs(color3Game, row6Circle2, "background");
-        pasarColorDivs(color3Game, row6Circle3, "background");
-        pasarColorDivs(color3Game, row6Circle4, "background");
-        pasarColorDivs(color4Game, row6Circle1, "background");
-        pasarColorDivs(color4Game, row6Circle2, "background");
-        pasarColorDivs(color4Game, row6Circle3, "background");
-        pasarColorDivs(color4Game, row6Circle4, "background");
-        pasarColorDivs(color5Game, row6Circle1, "background");
-        pasarColorDivs(color5Game, row6Circle2, "background");
-        pasarColorDivs(color5Game, row6Circle3, "background");
-        pasarColorDivs(color5Game, row6Circle4, "background");
-        pasarColorDivs(color6Game, row6Circle1, "background");
-        pasarColorDivs(color6Game, row6Circle2, "background");
-        pasarColorDivs(color6Game, row6Circle3, "background");
-        pasarColorDivs(color6Game, row6Circle4, "background");
     }
 });
 
 checkRow6.addEventListener("click", () => {
     if (posicionCheck === 5) {
-        arrayRow6 = [
-            rgbHexadecimal(window.getComputedStyle(row6Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row6Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row6Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row6Circle4).backgroundColor)
-        ]
-        if (arrayRow6.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow6.length; i++) {
-                const circleSecundary = document.getElementById(`row6CircleSecundary${i + 1}`);
-                if (arrayRow6[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row6Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row6Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row6Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row6Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow6.length; i++) {
-                const circleSecundary = document.getElementById(`row6CircleSecundary${i + 1}`);
-                if (arrayRow6[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow6[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow6 = [
+                rgbHexadecimal(window.getComputedStyle(row6Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row6Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row6Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row6Circle4).backgroundColor)
+            ]
+            if (arrayRow6.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow6.length; i++) {
+                    const circleSecundary = document.getElementById(`row6CircleSecundary${i + 1}`);
+                    if (arrayRow6[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow6.length; i++) {
+                    const circleSecundary = document.getElementById(`row6CircleSecundary${i + 1}`);
+                    if (arrayRow6[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow6[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
+            }
+            row6Circle1.style.pointerEvents = "none";
+            row6Circle2.style.pointerEvents = "none";
+            row6Circle3.style.pointerEvents = "none";
+            row6Circle4.style.pointerEvents = "none";
+            pasarColorDivs(color1Game, row7Circle1, "background");
+            pasarColorDivs(color1Game, row7Circle2, "background");
+            pasarColorDivs(color1Game, row7Circle3, "background");
+            pasarColorDivs(color1Game, row7Circle4, "background");
+            pasarColorDivs(color2Game, row7Circle1, "background");
+            pasarColorDivs(color2Game, row7Circle2, "background");
+            pasarColorDivs(color2Game, row7Circle3, "background");
+            pasarColorDivs(color2Game, row7Circle4, "background");
+            pasarColorDivs(color3Game, row7Circle1, "background");
+            pasarColorDivs(color3Game, row7Circle2, "background");
+            pasarColorDivs(color3Game, row7Circle3, "background");
+            pasarColorDivs(color3Game, row7Circle4, "background");
+            pasarColorDivs(color4Game, row7Circle1, "background");
+            pasarColorDivs(color4Game, row7Circle2, "background");
+            pasarColorDivs(color4Game, row7Circle3, "background");
+            pasarColorDivs(color4Game, row7Circle4, "background");
+            pasarColorDivs(color5Game, row7Circle1, "background");
+            pasarColorDivs(color5Game, row7Circle2, "background");
+            pasarColorDivs(color5Game, row7Circle3, "background");
+            pasarColorDivs(color5Game, row7Circle4, "background");
+            pasarColorDivs(color6Game, row7Circle1, "background");
+            pasarColorDivs(color6Game, row7Circle2, "background");
+            pasarColorDivs(color6Game, row7Circle3, "background");
+            pasarColorDivs(color6Game, row7Circle4, "background");
         }
-        posicionCheck++;
-        if(posicionCheck >= cantidadIntentosNumero){
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
-        }
-        row6Circle1.style.pointerEvents = "none";
-        row6Circle2.style.pointerEvents = "none";
-        row6Circle3.style.pointerEvents = "none";
-        row6Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row7Circle1, "background");
-        pasarColorDivs(color1Game, row7Circle2, "background");
-        pasarColorDivs(color1Game, row7Circle3, "background");
-        pasarColorDivs(color1Game, row7Circle4, "background");
-        pasarColorDivs(color2Game, row7Circle1, "background");
-        pasarColorDivs(color2Game, row7Circle2, "background");
-        pasarColorDivs(color2Game, row7Circle3, "background");
-        pasarColorDivs(color2Game, row7Circle4, "background");
-        pasarColorDivs(color3Game, row7Circle1, "background");
-        pasarColorDivs(color3Game, row7Circle2, "background");
-        pasarColorDivs(color3Game, row7Circle3, "background");
-        pasarColorDivs(color3Game, row7Circle4, "background");
-        pasarColorDivs(color4Game, row7Circle1, "background");
-        pasarColorDivs(color4Game, row7Circle2, "background");
-        pasarColorDivs(color4Game, row7Circle3, "background");
-        pasarColorDivs(color4Game, row7Circle4, "background");
-        pasarColorDivs(color5Game, row7Circle1, "background");
-        pasarColorDivs(color5Game, row7Circle2, "background");
-        pasarColorDivs(color5Game, row7Circle3, "background");
-        pasarColorDivs(color5Game, row7Circle4, "background");
-        pasarColorDivs(color6Game, row7Circle1, "background");
-        pasarColorDivs(color6Game, row7Circle2, "background");
-        pasarColorDivs(color6Game, row7Circle3, "background");
-        pasarColorDivs(color6Game, row7Circle4, "background");
     }
 });
 
 checkRow7.addEventListener("click", () => {
     if (posicionCheck === 6) {
-        arrayRow7 = [
-            rgbHexadecimal(window.getComputedStyle(row7Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row7Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row7Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row7Circle4).backgroundColor)
-        ]
-        if (arrayRow7.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow7.length; i++) {
-                const circleSecundary = document.getElementById(`row7CircleSecundary${i + 1}`);
-                if (arrayRow7[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row7Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row7Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row7Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row7Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow7.length; i++) {
-                const circleSecundary = document.getElementById(`row7CircleSecundary${i + 1}`);
-                if (arrayRow7[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow7[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow7 = [
+                rgbHexadecimal(window.getComputedStyle(row7Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row7Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row7Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row7Circle4).backgroundColor)
+            ]
+            if (arrayRow7.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow7.length; i++) {
+                    const circleSecundary = document.getElementById(`row7CircleSecundary${i + 1}`);
+                    if (arrayRow7[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow7.length; i++) {
+                    const circleSecundary = document.getElementById(`row7CircleSecundary${i + 1}`);
+                    if (arrayRow7[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow7[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
+            }
+            row7Circle1.style.pointerEvents = "none";
+            row7Circle2.style.pointerEvents = "none";
+            row7Circle3.style.pointerEvents = "none";
+            row7Circle4.style.pointerEvents = "none";
+            pasarColorDivs(color1Game, row8Circle1, "background");
+            pasarColorDivs(color1Game, row8Circle2, "background");
+            pasarColorDivs(color1Game, row8Circle3, "background");
+            pasarColorDivs(color1Game, row8Circle4, "background");
+            pasarColorDivs(color2Game, row8Circle1, "background");
+            pasarColorDivs(color2Game, row8Circle2, "background");
+            pasarColorDivs(color2Game, row8Circle3, "background");
+            pasarColorDivs(color2Game, row8Circle4, "background");
+            pasarColorDivs(color3Game, row8Circle1, "background");
+            pasarColorDivs(color3Game, row8Circle2, "background");
+            pasarColorDivs(color3Game, row8Circle3, "background");
+            pasarColorDivs(color3Game, row8Circle4, "background");
+            pasarColorDivs(color4Game, row8Circle1, "background");
+            pasarColorDivs(color4Game, row8Circle2, "background");
+            pasarColorDivs(color4Game, row8Circle3, "background");
+            pasarColorDivs(color4Game, row8Circle4, "background");
+            pasarColorDivs(color5Game, row8Circle1, "background");
+            pasarColorDivs(color5Game, row8Circle2, "background");
+            pasarColorDivs(color5Game, row8Circle3, "background");
+            pasarColorDivs(color5Game, row8Circle4, "background");
+            pasarColorDivs(color6Game, row8Circle1, "background");
+            pasarColorDivs(color6Game, row8Circle2, "background");
+            pasarColorDivs(color6Game, row8Circle3, "background");
+            pasarColorDivs(color6Game, row8Circle4, "background");
         }
-        posicionCheck++;
-        if(posicionCheck >= cantidadIntentosNumero){
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
-        }
-        row7Circle1.style.pointerEvents = "none";
-        row7Circle2.style.pointerEvents = "none";
-        row7Circle3.style.pointerEvents = "none";
-        row7Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row8Circle1, "background");
-        pasarColorDivs(color1Game, row8Circle2, "background");
-        pasarColorDivs(color1Game, row8Circle3, "background");
-        pasarColorDivs(color1Game, row8Circle4, "background");
-        pasarColorDivs(color2Game, row8Circle1, "background");
-        pasarColorDivs(color2Game, row8Circle2, "background");
-        pasarColorDivs(color2Game, row8Circle3, "background");
-        pasarColorDivs(color2Game, row8Circle4, "background");
-        pasarColorDivs(color3Game, row8Circle1, "background");
-        pasarColorDivs(color3Game, row8Circle2, "background");
-        pasarColorDivs(color3Game, row8Circle3, "background");
-        pasarColorDivs(color3Game, row8Circle4, "background");
-        pasarColorDivs(color4Game, row8Circle1, "background");
-        pasarColorDivs(color4Game, row8Circle2, "background");
-        pasarColorDivs(color4Game, row8Circle3, "background");
-        pasarColorDivs(color4Game, row8Circle4, "background");
-        pasarColorDivs(color5Game, row8Circle1, "background");
-        pasarColorDivs(color5Game, row8Circle2, "background");
-        pasarColorDivs(color5Game, row8Circle3, "background");
-        pasarColorDivs(color5Game, row8Circle4, "background");
-        pasarColorDivs(color6Game, row8Circle1, "background");
-        pasarColorDivs(color6Game, row8Circle2, "background");
-        pasarColorDivs(color6Game, row8Circle3, "background");
-        pasarColorDivs(color6Game, row8Circle4, "background");
     }
 });
 
 checkRow8.addEventListener("click", () => {
     if (posicionCheck === 7) {
-        arrayRow8 = [
-            rgbHexadecimal(window.getComputedStyle(row8Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row8Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row8Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row8Circle4).backgroundColor)
-        ]
-        if (arrayRow8.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow8.length; i++) {
-                const circleSecundary = document.getElementById(`row8CircleSecundary${i + 1}`);
-                if (arrayRow8[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row8Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row8Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row8Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row8Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow8.length; i++) {
-                const circleSecundary = document.getElementById(`row8CircleSecundary${i + 1}`);
-                if (arrayRow8[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow8[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow8 = [
+                rgbHexadecimal(window.getComputedStyle(row8Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row8Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row8Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row8Circle4).backgroundColor)
+            ]
+            if (arrayRow8.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow8.length; i++) {
+                    const circleSecundary = document.getElementById(`row8CircleSecundary${i + 1}`);
+                    if (arrayRow8[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow8.length; i++) {
+                    const circleSecundary = document.getElementById(`row8CircleSecundary${i + 1}`);
+                    if (arrayRow8[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow8[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
+            }
+            row8Circle1.style.pointerEvents = "none";
+            row8Circle2.style.pointerEvents = "none";
+            row8Circle3.style.pointerEvents = "none";
+            row8Circle4.style.pointerEvents = "none";
+            pasarColorDivs(color1Game, row9Circle1, "background");
+            pasarColorDivs(color1Game, row9Circle2, "background");
+            pasarColorDivs(color1Game, row9Circle3, "background");
+            pasarColorDivs(color1Game, row9Circle4, "background");
+            pasarColorDivs(color2Game, row9Circle1, "background");
+            pasarColorDivs(color2Game, row9Circle2, "background");
+            pasarColorDivs(color2Game, row9Circle3, "background");
+            pasarColorDivs(color2Game, row9Circle4, "background");
+            pasarColorDivs(color3Game, row9Circle1, "background");
+            pasarColorDivs(color3Game, row9Circle2, "background");
+            pasarColorDivs(color3Game, row9Circle3, "background");
+            pasarColorDivs(color3Game, row9Circle4, "background");
+            pasarColorDivs(color4Game, row9Circle1, "background");
+            pasarColorDivs(color4Game, row9Circle2, "background");
+            pasarColorDivs(color4Game, row9Circle3, "background");
+            pasarColorDivs(color4Game, row9Circle4, "background");
+            pasarColorDivs(color5Game, row9Circle1, "background");
+            pasarColorDivs(color5Game, row9Circle2, "background");
+            pasarColorDivs(color5Game, row9Circle3, "background");
+            pasarColorDivs(color5Game, row9Circle4, "background");
+            pasarColorDivs(color6Game, row9Circle1, "background");
+            pasarColorDivs(color6Game, row9Circle2, "background");
+            pasarColorDivs(color6Game, row9Circle3, "background");
+            pasarColorDivs(color6Game, row9Circle4, "background");
         }
-        posicionCheck++;
-        if(posicionCheck >= cantidadIntentosNumero){
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
-        }
-        row8Circle1.style.pointerEvents = "none";
-        row8Circle2.style.pointerEvents = "none";
-        row8Circle3.style.pointerEvents = "none";
-        row8Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row9Circle1, "background");
-        pasarColorDivs(color1Game, row9Circle2, "background");
-        pasarColorDivs(color1Game, row9Circle3, "background");
-        pasarColorDivs(color1Game, row9Circle4, "background");
-        pasarColorDivs(color2Game, row9Circle1, "background");
-        pasarColorDivs(color2Game, row9Circle2, "background");
-        pasarColorDivs(color2Game, row9Circle3, "background");
-        pasarColorDivs(color2Game, row9Circle4, "background");
-        pasarColorDivs(color3Game, row9Circle1, "background");
-        pasarColorDivs(color3Game, row9Circle2, "background");
-        pasarColorDivs(color3Game, row9Circle3, "background");
-        pasarColorDivs(color3Game, row9Circle4, "background");
-        pasarColorDivs(color4Game, row9Circle1, "background");
-        pasarColorDivs(color4Game, row9Circle2, "background");
-        pasarColorDivs(color4Game, row9Circle3, "background");
-        pasarColorDivs(color4Game, row9Circle4, "background");
-        pasarColorDivs(color5Game, row9Circle1, "background");
-        pasarColorDivs(color5Game, row9Circle2, "background");
-        pasarColorDivs(color5Game, row9Circle3, "background");
-        pasarColorDivs(color5Game, row9Circle4, "background");
-        pasarColorDivs(color6Game, row9Circle1, "background");
-        pasarColorDivs(color6Game, row9Circle2, "background");
-        pasarColorDivs(color6Game, row9Circle3, "background");
-        pasarColorDivs(color6Game, row9Circle4, "background");
     }
 });
 
 checkRow9.addEventListener("click", () => {
     if (posicionCheck === 8) {
-        arrayRow9 = [
-            rgbHexadecimal(window.getComputedStyle(row9Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row9Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row9Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row9Circle4).backgroundColor)
-        ]
-        if (arrayRow9.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow9.length; i++) {
-                const circleSecundary = document.getElementById(`row9CircleSecundary${i + 1}`);
-                if (arrayRow9[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row9Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row9Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row9Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row9Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow9.length; i++) {
-                const circleSecundary = document.getElementById(`row9CircleSecundary${i + 1}`);
-                if (arrayRow9[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow9[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow9 = [
+                rgbHexadecimal(window.getComputedStyle(row9Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row9Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row9Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row9Circle4).backgroundColor)
+            ]
+            if (arrayRow9.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow9.length; i++) {
+                    const circleSecundary = document.getElementById(`row9CircleSecundary${i + 1}`);
+                    if (arrayRow9[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow9.length; i++) {
+                    const circleSecundary = document.getElementById(`row9CircleSecundary${i + 1}`);
+                    if (arrayRow9[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow9[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
                 }
             }
+            posicionCheck++;
+            if (posicionCheck >= cantidadIntentosNumero) {
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
+            }
+            row9Circle1.style.pointerEvents = "none";
+            row9Circle2.style.pointerEvents = "none";
+            row9Circle3.style.pointerEvents = "none";
+            row9Circle4.style.pointerEvents = "none";
+            pasarColorDivs(color1Game, row10Circle1, "background");
+            pasarColorDivs(color1Game, row10Circle2, "background");
+            pasarColorDivs(color1Game, row10Circle3, "background");
+            pasarColorDivs(color1Game, row10Circle4, "background");
+            pasarColorDivs(color2Game, row10Circle1, "background");
+            pasarColorDivs(color2Game, row10Circle2, "background");
+            pasarColorDivs(color2Game, row10Circle3, "background");
+            pasarColorDivs(color2Game, row10Circle4, "background");
+            pasarColorDivs(color3Game, row10Circle1, "background");
+            pasarColorDivs(color3Game, row10Circle2, "background");
+            pasarColorDivs(color3Game, row10Circle3, "background");
+            pasarColorDivs(color3Game, row10Circle4, "background");
+            pasarColorDivs(color4Game, row10Circle1, "background");
+            pasarColorDivs(color4Game, row10Circle2, "background");
+            pasarColorDivs(color4Game, row10Circle3, "background");
+            pasarColorDivs(color4Game, row10Circle4, "background");
+            pasarColorDivs(color5Game, row10Circle1, "background");
+            pasarColorDivs(color5Game, row10Circle2, "background");
+            pasarColorDivs(color5Game, row10Circle3, "background");
+            pasarColorDivs(color5Game, row10Circle4, "background");
+            pasarColorDivs(color6Game, row10Circle1, "background");
+            pasarColorDivs(color6Game, row10Circle2, "background");
+            pasarColorDivs(color6Game, row10Circle3, "background");
+            pasarColorDivs(color6Game, row10Circle4, "background");
         }
-        posicionCheck++;
-        if(posicionCheck >= cantidadIntentosNumero){
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
-        }
-        row9Circle1.style.pointerEvents = "none";
-        row9Circle2.style.pointerEvents = "none";
-        row9Circle3.style.pointerEvents = "none";
-        row9Circle4.style.pointerEvents = "none";
-        pasarColorDivs(color1Game, row10Circle1, "background");
-        pasarColorDivs(color1Game, row10Circle2, "background");
-        pasarColorDivs(color1Game, row10Circle3, "background");
-        pasarColorDivs(color1Game, row10Circle4, "background");
-        pasarColorDivs(color2Game, row10Circle1, "background");
-        pasarColorDivs(color2Game, row10Circle2, "background");
-        pasarColorDivs(color2Game, row10Circle3, "background");
-        pasarColorDivs(color2Game, row10Circle4, "background");
-        pasarColorDivs(color3Game, row10Circle1, "background");
-        pasarColorDivs(color3Game, row10Circle2, "background");
-        pasarColorDivs(color3Game, row10Circle3, "background");
-        pasarColorDivs(color3Game, row10Circle4, "background");
-        pasarColorDivs(color4Game, row10Circle1, "background");
-        pasarColorDivs(color4Game, row10Circle2, "background");
-        pasarColorDivs(color4Game, row10Circle3, "background");
-        pasarColorDivs(color4Game, row10Circle4, "background");
-        pasarColorDivs(color5Game, row10Circle1, "background");
-        pasarColorDivs(color5Game, row10Circle2, "background");
-        pasarColorDivs(color5Game, row10Circle3, "background");
-        pasarColorDivs(color5Game, row10Circle4, "background");
-        pasarColorDivs(color6Game, row10Circle1, "background");
-        pasarColorDivs(color6Game, row10Circle2, "background");
-        pasarColorDivs(color6Game, row10Circle3, "background");
-        pasarColorDivs(color6Game, row10Circle4, "background");
     }
 });
 
 checkRow10.addEventListener("click", () => {
     if (posicionCheck === 9) {
-        arrayRow10 = [
-            rgbHexadecimal(window.getComputedStyle(row10Circle1).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row10Circle2).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row10Circle3).backgroundColor),
-            rgbHexadecimal(window.getComputedStyle(row10Circle4).backgroundColor)
-        ]
-        if (arrayRow10.toString() === arrayGanador.toString()) {
-            for (let i = 0; i < arrayRow10.length; i++) {
-                const circleSecundary = document.getElementById(`row10CircleSecundary${i + 1}`);
-                if (arrayRow10[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                }
-            }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'winner.html';
-            }, 1000);
+        if (rgbHexadecimal(window.getComputedStyle(row10Circle1).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row10Circle2).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row10Circle3).backgroundColor) == "#000000"
+            || rgbHexadecimal(window.getComputedStyle(row10Circle4).backgroundColor) == "#000000") {
+
         } else {
-            for (let i = 0; i < arrayRow10.length; i++) {
-                const circleSecundary = document.getElementById(`row10CircleSecundary${i + 1}`);
-                if (arrayRow10[i].toString() === arrayGanador[i].toString()) {
-                    circleSecundary.style.backgroundColor = 'purple';
-                } else if (arrayGanador.includes(arrayRow10[i])) {
-                    circleSecundary.style.backgroundColor = 'white';
+            arrayRow10 = [
+                rgbHexadecimal(window.getComputedStyle(row10Circle1).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row10Circle2).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row10Circle3).backgroundColor),
+                rgbHexadecimal(window.getComputedStyle(row10Circle4).backgroundColor)
+            ]
+            if (arrayRow10.toString() === arrayGanador.toString()) {
+                for (let i = 0; i < arrayRow10.length; i++) {
+                    const circleSecundary = document.getElementById(`row10CircleSecundary${i + 1}`);
+                    if (arrayRow10[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    }
                 }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'winner.html';
+                }, 1000);
+            } else {
+                for (let i = 0; i < arrayRow10.length; i++) {
+                    const circleSecundary = document.getElementById(`row10CircleSecundary${i + 1}`);
+                    if (arrayRow10[i].toString() === arrayGanador[i].toString()) {
+                        circleSecundary.style.backgroundColor = 'purple';
+                    } else if (arrayGanador.includes(arrayRow10[i])) {
+                        circleSecundary.style.backgroundColor = 'white';
+                    }
+                }
+                arrayGanador.forEach((valor, index) => {
+                    localStorage.setItem(`arrayGanador${index}`, valor);
+                });
+                setTimeout(function () {
+                    window.location.href = 'losser.html';
+                }, 1000);
             }
-            arrayGanador.forEach((valor, index) => {
-                localStorage.setItem(`arrayGanador${index}`, valor);
-            });
-            setTimeout(function () {
-                window.location.href = 'losser.html';
-            }, 1000);
         }
     }
 });
