@@ -218,6 +218,10 @@ checkRow1.addEventListener("click", () => {
                 }
             }
         }
+        row1Circle1.style.pointerEvents = "none";
+        row1Circle2.style.pointerEvents = "none";
+        row1Circle3.style.pointerEvents = "none";
+        row1Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row2Circle1, "background");
         pasarColorDivs(color1Game, row2Circle2, "background");
         pasarColorDivs(color1Game, row2Circle3, "background");
@@ -242,7 +246,7 @@ checkRow1.addEventListener("click", () => {
         pasarColorDivs(color6Game, row2Circle2, "background");
         pasarColorDivs(color6Game, row2Circle3, "background");
         pasarColorDivs(color6Game, row2Circle4, "background");
-        posicionCheck = 1;
+        posicionCheck++;
     }
 });
 
@@ -277,6 +281,10 @@ checkRow2.addEventListener("click", () => {
                 }
             }
         }
+        row2Circle1.style.pointerEvents = "none";
+        row2Circle2.style.pointerEvents = "none";
+        row2Circle3.style.pointerEvents = "none";
+        row2Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row3Circle1, "background");
         pasarColorDivs(color1Game, row3Circle2, "background");
         pasarColorDivs(color1Game, row3Circle3, "background");
@@ -301,7 +309,7 @@ checkRow2.addEventListener("click", () => {
         pasarColorDivs(color6Game, row3Circle2, "background");
         pasarColorDivs(color6Game, row3Circle3, "background");
         pasarColorDivs(color6Game, row3Circle4, "background");
-        posicionCheck = 2;
+        posicionCheck++;
     }
 });
 
@@ -336,6 +344,10 @@ checkRow3.addEventListener("click", () => {
                 }
             }
         }
+        row3Circle1.style.pointerEvents = "none";
+        row3Circle2.style.pointerEvents = "none";
+        row3Circle3.style.pointerEvents = "none";
+        row3Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row4Circle1, "background");
         pasarColorDivs(color1Game, row4Circle2, "background");
         pasarColorDivs(color1Game, row4Circle3, "background");
@@ -360,7 +372,7 @@ checkRow3.addEventListener("click", () => {
         pasarColorDivs(color6Game, row4Circle2, "background");
         pasarColorDivs(color6Game, row4Circle3, "background");
         pasarColorDivs(color6Game, row4Circle4, "background");
-        posicionCheck = 3;
+        posicionCheck++;
     }
 });
 
@@ -395,6 +407,10 @@ checkRow4.addEventListener("click", () => {
                 }
             }
         }
+        row4Circle1.style.pointerEvents = "none";
+        row4Circle2.style.pointerEvents = "none";
+        row4Circle3.style.pointerEvents = "none";
+        row4Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row5Circle1, "background");
         pasarColorDivs(color1Game, row5Circle2, "background");
         pasarColorDivs(color1Game, row5Circle3, "background");
@@ -419,7 +435,7 @@ checkRow4.addEventListener("click", () => {
         pasarColorDivs(color6Game, row5Circle2, "background");
         pasarColorDivs(color6Game, row5Circle3, "background");
         pasarColorDivs(color6Game, row5Circle4, "background");
-        posicionCheck = 4;
+        posicionCheck++;
     }
 });
 
@@ -454,6 +470,10 @@ checkRow5.addEventListener("click", () => {
                 }
             }
         }
+        row5Circle1.style.pointerEvents = "none";
+        row5Circle2.style.pointerEvents = "none";
+        row5Circle3.style.pointerEvents = "none";
+        row5Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row6Circle1, "background");
         pasarColorDivs(color1Game, row6Circle2, "background");
         pasarColorDivs(color1Game, row6Circle3, "background");
@@ -478,7 +498,7 @@ checkRow5.addEventListener("click", () => {
         pasarColorDivs(color6Game, row6Circle2, "background");
         pasarColorDivs(color6Game, row6Circle3, "background");
         pasarColorDivs(color6Game, row6Circle4, "background");
-        posicionCheck = 5;
+        posicionCheck++;
     }
 });
 

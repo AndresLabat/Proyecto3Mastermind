@@ -326,6 +326,10 @@ checkRow1.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
+            row1Circle1.style.pointerEvents = "none";
+            row1Circle2.style.pointerEvents = "none";
+            row1Circle3.style.pointerEvents = "none";
+            row1Circle4.style.pointerEvents = "none";
             pasarColorDivs(color1Game, row2Circle1, "background");
             pasarColorDivs(color1Game, row2Circle2, "background");
             pasarColorDivs(color1Game, row2Circle3, "background");
@@ -393,6 +397,10 @@ checkRow2.addEventListener("click", () => {
                 window.location.href = 'losser.html';
             }, 1000);
         }
+        row2Circle1.style.pointerEvents = "none";
+        row2Circle2.style.pointerEvents = "none";
+        row2Circle3.style.pointerEvents = "none";
+        row2Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row3Circle1, "background");
         pasarColorDivs(color1Game, row3Circle2, "background");
         pasarColorDivs(color1Game, row3Circle3, "background");
@@ -460,6 +468,10 @@ checkRow3.addEventListener("click", () => {
                 window.location.href = 'losser.html';
             }, 1000);
         }
+        row3Circle1.style.pointerEvents = "none";
+        row3Circle2.style.pointerEvents = "none";
+        row3Circle3.style.pointerEvents = "none";
+        row3Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row4Circle1, "background");
         pasarColorDivs(color1Game, row4Circle2, "background");
         pasarColorDivs(color1Game, row4Circle3, "background");
@@ -527,6 +539,10 @@ checkRow4.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
+            row4Circle1.style.pointerEvents = "none";
+            row4Circle2.style.pointerEvents = "none";
+            row4Circle3.style.pointerEvents = "none";
+            row4Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row5Circle1, "background");
         pasarColorDivs(color1Game, row5Circle2, "background");
         pasarColorDivs(color1Game, row5Circle3, "background");
@@ -594,6 +610,10 @@ checkRow5.addEventListener("click", () => {
                 window.location.href = 'losser.html';
             }, 1000);
         }
+        row5Circle1.style.pointerEvents = "none";
+        row5Circle2.style.pointerEvents = "none";
+        row5Circle3.style.pointerEvents = "none";
+        row5Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row6Circle1, "background");
         pasarColorDivs(color1Game, row6Circle2, "background");
         pasarColorDivs(color1Game, row6Circle3, "background");
@@ -661,6 +681,10 @@ checkRow6.addEventListener("click", () => {
                 window.location.href = 'losser.html';
             }, 1000);
         }
+        row6Circle1.style.pointerEvents = "none";
+        row6Circle2.style.pointerEvents = "none";
+        row6Circle3.style.pointerEvents = "none";
+        row6Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row7Circle1, "background");
         pasarColorDivs(color1Game, row7Circle2, "background");
         pasarColorDivs(color1Game, row7Circle3, "background");
@@ -728,6 +752,10 @@ checkRow7.addEventListener("click", () => {
                 window.location.href = 'losser.html';
             }, 1000);
         }
+        row7Circle1.style.pointerEvents = "none";
+        row7Circle2.style.pointerEvents = "none";
+        row7Circle3.style.pointerEvents = "none";
+        row7Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row8Circle1, "background");
         pasarColorDivs(color1Game, row8Circle2, "background");
         pasarColorDivs(color1Game, row8Circle3, "background");
@@ -795,6 +823,10 @@ checkRow8.addEventListener("click", () => {
                 window.location.href = 'losser.html';
             }, 1000);
         }
+        row8Circle1.style.pointerEvents = "none";
+        row8Circle2.style.pointerEvents = "none";
+        row8Circle3.style.pointerEvents = "none";
+        row8Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row9Circle1, "background");
         pasarColorDivs(color1Game, row9Circle2, "background");
         pasarColorDivs(color1Game, row9Circle3, "background");
@@ -862,6 +894,10 @@ checkRow9.addEventListener("click", () => {
                 window.location.href = 'losser.html';
             }, 1000);
         }
+        row9Circle1.style.pointerEvents = "none";
+        row9Circle2.style.pointerEvents = "none";
+        row9Circle3.style.pointerEvents = "none";
+        row9Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row10Circle1, "background");
         pasarColorDivs(color1Game, row10Circle2, "background");
         pasarColorDivs(color1Game, row10Circle3, "background");

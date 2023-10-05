@@ -137,17 +137,6 @@ const checkRow8 = document.querySelector("#checkRow8")
 const checkRow9 = document.querySelector("#checkRow9")
 const checkRow10 = document.querySelector("#checkRow10")
 
-// FUNCION QUE CONTIENE LOS EVENTOS DE COGER EL BACKGROUND Y PASARSELO A UN CIRCULO
-function pasarColorDivs(colorElement, circleElement, key) {
-    colorElement.addEventListener("click", () => {
-        const color = window.getComputedStyle(colorElement).backgroundColor;
-        localStorage.setItem(key, color);
-    })
-    circleElement.addEventListener("click", () => {
-        circleElement.style.backgroundColor = localStorage.getItem(key);
-    })
-}
-
 // ARRAY GANADOR:
 let arrayGanador = []
 
@@ -183,6 +172,20 @@ function rgbHexadecimal(rgb) {
     return hex;
 }
 
+// posicion para ir moviendose por los checks
+let posicionCheck = 0;
+
+// FUNCION QUE CONTIENE LOS EVENTOS DE COGER EL BACKGROUND Y PASARSELO A UN CIRCULO
+function pasarColorDivs(colorElement, circleElement, key) {
+    colorElement.addEventListener("click", () => {
+        const color = window.getComputedStyle(colorElement).backgroundColor;
+        localStorage.setItem(key, color);
+    })
+    circleElement.addEventListener("click", () => {
+        circleElement.style.backgroundColor = localStorage.getItem(key);
+    })
+}
+
 // funciones disponibles al comenzar el juego, pintar la PRIMERA ROW
 pasarColorDivs(color1Game, row1Circle1, "background");
 pasarColorDivs(color1Game, row1Circle2, "background");
@@ -201,59 +204,60 @@ pasarColorDivs(color4Game, row1Circle2, "background");
 pasarColorDivs(color4Game, row1Circle3, "background");
 pasarColorDivs(color4Game, row1Circle4, "background");
 
-// posicion para ir moviendose por los checks
-let posicionCheck = 0;
-
 // EVENTOS CHECK para que compare resultados y habilite una nueva row
 checkRow1.addEventListener("click", () => {
-        if (posicionCheck === 0) {
-            arrayRow1 = [
-                rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row1Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row1Circle4).backgroundColor)
-            ]
-            if (arrayRow1.toString() === arrayGanador.toString()) {
-                for (let i = 0; i < arrayRow1.length; i++) {
-                    const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
-                    if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
-                        circleSecundary.style.backgroundColor = 'purple';
-                    }
-                }
-                arrayGanador.forEach((valor, index) => {
-                    localStorage.setItem(`arrayGanador${index}`, valor);
-                });
-                setTimeout(function () {
-                    window.location.href = 'winner.html';
-                }, 1000);
-            } else {
-                for (let i = 0; i < arrayRow1.length; i++) {
-                    const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
-                    if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
-                        circleSecundary.style.backgroundColor = 'purple';
-                    } else if (arrayGanador.includes(arrayRow1[i])) {
-                        circleSecundary.style.backgroundColor = 'white';
-                    }
+    if (posicionCheck === 0) {
+        arrayRow1 = [
+            rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor),
+            rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor),
+            rgbHexadecimal(window.getComputedStyle(row1Circle3).backgroundColor),
+            rgbHexadecimal(window.getComputedStyle(row1Circle4).backgroundColor)
+        ]
+        if (arrayRow1.toString() === arrayGanador.toString()) {
+            for (let i = 0; i < arrayRow1.length; i++) {
+                const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
+                if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
+                    circleSecundary.style.backgroundColor = 'purple';
                 }
             }
-            pasarColorDivs(color1Game, row2Circle1, "background");
-            pasarColorDivs(color1Game, row2Circle2, "background");
-            pasarColorDivs(color1Game, row2Circle3, "background");
-            pasarColorDivs(color1Game, row2Circle4, "background");
-            pasarColorDivs(color2Game, row2Circle1, "background");
-            pasarColorDivs(color2Game, row2Circle2, "background");
-            pasarColorDivs(color2Game, row2Circle3, "background");
-            pasarColorDivs(color2Game, row2Circle4, "background");
-            pasarColorDivs(color3Game, row2Circle1, "background");
-            pasarColorDivs(color3Game, row2Circle2, "background");
-            pasarColorDivs(color3Game, row2Circle3, "background");
-            pasarColorDivs(color3Game, row2Circle4, "background");
-            pasarColorDivs(color4Game, row2Circle1, "background");
-            pasarColorDivs(color4Game, row2Circle2, "background");
-            pasarColorDivs(color4Game, row2Circle3, "background");
-            pasarColorDivs(color4Game, row2Circle4, "background");
-            posicionCheck = 1;
+            arrayGanador.forEach((valor, index) => {
+                localStorage.setItem(`arrayGanador${index}`, valor);
+            });
+            setTimeout(function () {
+                window.location.href = 'winner.html';
+            }, 1000);
+        } else {
+            for (let i = 0; i < arrayRow1.length; i++) {
+                const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
+                if (arrayRow1[i].toString() === arrayGanador[i].toString()) {
+                    circleSecundary.style.backgroundColor = 'purple';
+                } else if (arrayGanador.includes(arrayRow1[i])) {
+                    circleSecundary.style.backgroundColor = 'white';
+                }
+            }
         }
+        row1Circle1.style.pointerEvents = "none";
+        row1Circle2.style.pointerEvents = "none";
+        row1Circle3.style.pointerEvents = "none";
+        row1Circle4.style.pointerEvents = "none";
+        pasarColorDivs(color1Game, row2Circle1, "background");
+        pasarColorDivs(color1Game, row2Circle2, "background");
+        pasarColorDivs(color1Game, row2Circle3, "background");
+        pasarColorDivs(color1Game, row2Circle4, "background");
+        pasarColorDivs(color2Game, row2Circle1, "background");
+        pasarColorDivs(color2Game, row2Circle2, "background");
+        pasarColorDivs(color2Game, row2Circle3, "background");
+        pasarColorDivs(color2Game, row2Circle4, "background");
+        pasarColorDivs(color3Game, row2Circle1, "background");
+        pasarColorDivs(color3Game, row2Circle2, "background");
+        pasarColorDivs(color3Game, row2Circle3, "background");
+        pasarColorDivs(color3Game, row2Circle4, "background");
+        pasarColorDivs(color4Game, row2Circle1, "background");
+        pasarColorDivs(color4Game, row2Circle2, "background");
+        pasarColorDivs(color4Game, row2Circle3, "background");
+        pasarColorDivs(color4Game, row2Circle4, "background");
+        posicionCheck++;
+    }
 });
 
 checkRow2.addEventListener("click", () => {
@@ -287,6 +291,10 @@ checkRow2.addEventListener("click", () => {
                 }
             }
         }
+        row2Circle1.style.pointerEvents = "none";
+        row2Circle2.style.pointerEvents = "none";
+        row2Circle3.style.pointerEvents = "none";
+        row2Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row3Circle1, "background");
         pasarColorDivs(color1Game, row3Circle2, "background");
         pasarColorDivs(color1Game, row3Circle3, "background");
@@ -303,7 +311,7 @@ checkRow2.addEventListener("click", () => {
         pasarColorDivs(color4Game, row3Circle2, "background");
         pasarColorDivs(color4Game, row3Circle3, "background");
         pasarColorDivs(color4Game, row3Circle4, "background");
-        posicionCheck = 2;
+        posicionCheck++;
     }
 });
 
@@ -338,6 +346,10 @@ checkRow3.addEventListener("click", () => {
                 }
             }
         }
+        row3Circle1.style.pointerEvents = "none";
+        row3Circle2.style.pointerEvents = "none";
+        row3Circle3.style.pointerEvents = "none";
+        row3Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row4Circle1, "background");
         pasarColorDivs(color1Game, row4Circle2, "background");
         pasarColorDivs(color1Game, row4Circle3, "background");
@@ -354,7 +366,7 @@ checkRow3.addEventListener("click", () => {
         pasarColorDivs(color4Game, row4Circle2, "background");
         pasarColorDivs(color4Game, row4Circle3, "background");
         pasarColorDivs(color4Game, row4Circle4, "background");
-        posicionCheck = 3;
+        posicionCheck++;
     }
 });
 
@@ -389,6 +401,10 @@ checkRow4.addEventListener("click", () => {
                 }
             }
         }
+        row4Circle1.style.pointerEvents = "none";
+        row4Circle2.style.pointerEvents = "none";
+        row4Circle3.style.pointerEvents = "none";
+        row4Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row5Circle1, "background");
         pasarColorDivs(color1Game, row5Circle2, "background");
         pasarColorDivs(color1Game, row5Circle3, "background");
@@ -405,7 +421,7 @@ checkRow4.addEventListener("click", () => {
         pasarColorDivs(color4Game, row5Circle2, "background");
         pasarColorDivs(color4Game, row5Circle3, "background");
         pasarColorDivs(color4Game, row5Circle4, "background");
-        posicionCheck = 4;
+        posicionCheck++;
     }
 });
 
@@ -440,6 +456,10 @@ checkRow5.addEventListener("click", () => {
                 }
             }
         }
+        row5Circle1.style.pointerEvents = "none";
+        row5Circle2.style.pointerEvents = "none";
+        row5Circle3.style.pointerEvents = "none";
+        row5Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row6Circle1, "background");
         pasarColorDivs(color1Game, row6Circle2, "background");
         pasarColorDivs(color1Game, row6Circle3, "background");
@@ -456,7 +476,7 @@ checkRow5.addEventListener("click", () => {
         pasarColorDivs(color4Game, row6Circle2, "background");
         pasarColorDivs(color4Game, row6Circle3, "background");
         pasarColorDivs(color4Game, row6Circle4, "background");
-        posicionCheck = 5;
+        posicionCheck++;
     }
 });
 
@@ -491,6 +511,10 @@ checkRow6.addEventListener("click", () => {
                 }
             }
         }
+        row6Circle1.style.pointerEvents = "none";
+        row6Circle2.style.pointerEvents = "none";
+        row6Circle3.style.pointerEvents = "none";
+        row6Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row7Circle1, "background");
         pasarColorDivs(color1Game, row7Circle2, "background");
         pasarColorDivs(color1Game, row7Circle3, "background");
@@ -507,7 +531,7 @@ checkRow6.addEventListener("click", () => {
         pasarColorDivs(color4Game, row7Circle2, "background");
         pasarColorDivs(color4Game, row7Circle3, "background");
         pasarColorDivs(color4Game, row7Circle4, "background");
-        posicionCheck = 6;
+        posicionCheck++;
     }
 });
 
@@ -542,6 +566,10 @@ checkRow7.addEventListener("click", () => {
                 }
             }
         }
+        row7Circle1.style.pointerEvents = "none";
+        row7Circle2.style.pointerEvents = "none";
+        row7Circle3.style.pointerEvents = "none";
+        row7Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row8Circle1, "background");
         pasarColorDivs(color1Game, row8Circle2, "background");
         pasarColorDivs(color1Game, row8Circle3, "background");
@@ -558,7 +586,7 @@ checkRow7.addEventListener("click", () => {
         pasarColorDivs(color4Game, row8Circle2, "background");
         pasarColorDivs(color4Game, row8Circle3, "background");
         pasarColorDivs(color4Game, row8Circle4, "background");
-        posicionCheck = 7;
+        posicionCheck++;
     }
 });
 
@@ -593,6 +621,10 @@ checkRow8.addEventListener("click", () => {
                 }
             }
         }
+        row8Circle1.style.pointerEvents = "none";
+        row8Circle2.style.pointerEvents = "none";
+        row8Circle3.style.pointerEvents = "none";
+        row8Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row9Circle1, "background");
         pasarColorDivs(color1Game, row9Circle2, "background");
         pasarColorDivs(color1Game, row9Circle3, "background");
@@ -609,7 +641,7 @@ checkRow8.addEventListener("click", () => {
         pasarColorDivs(color4Game, row9Circle2, "background");
         pasarColorDivs(color4Game, row9Circle3, "background");
         pasarColorDivs(color4Game, row9Circle4, "background");
-        posicionCheck = 8;
+        posicionCheck++;
     }
 });
 
@@ -644,6 +676,10 @@ checkRow9.addEventListener("click", () => {
                 }
             }
         }
+        row9Circle1.style.pointerEvents = "none";
+        row9Circle2.style.pointerEvents = "none";
+        row9Circle3.style.pointerEvents = "none";
+        row9Circle4.style.pointerEvents = "none";
         pasarColorDivs(color1Game, row10Circle1, "background");
         pasarColorDivs(color1Game, row10Circle2, "background");
         pasarColorDivs(color1Game, row10Circle3, "background");
@@ -660,7 +696,7 @@ checkRow9.addEventListener("click", () => {
         pasarColorDivs(color4Game, row10Circle2, "background");
         pasarColorDivs(color4Game, row10Circle3, "background");
         pasarColorDivs(color4Game, row10Circle4, "background");
-        posicionCheck = 9;
+        posicionCheck++;
     }
 });
 
