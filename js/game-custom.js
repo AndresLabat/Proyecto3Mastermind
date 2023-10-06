@@ -210,17 +210,6 @@ const checkRow8 = document.querySelector("#checkRow8")
 const checkRow9 = document.querySelector("#checkRow9")
 const checkRow10 = document.querySelector("#checkRow10")
 
-// FUNCION QUE CONTIENE LOS EVENTOS DE COGER EL BACKGROUND Y PASARSELO A UN CIRCULO
-function pasarColorDivs(colorElement, circleElement, key) {
-    colorElement.addEventListener("click", () => {
-        const color = window.getComputedStyle(colorElement).backgroundColor;
-        localStorage.setItem(key, color);
-    })
-    circleElement.addEventListener("click", () => {
-        circleElement.style.backgroundColor = localStorage.getItem(key);
-    })
-}
-
 // ARRAY GANADOR:
 let arrayGanador = []
 
@@ -243,6 +232,50 @@ function rgbHexadecimal(rgb) {
     const hex = '#' + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
     return hex;
 }
+
+// BACKGROUND DEL CIRCULO EN HEXADECIMAL
+const backgroundCirculo = (circle) => {
+    return rgbHexadecimal(window.getComputedStyle(circle).backgroundColor)
+}
+// CREACION DEL ARRAY POR FILAS
+const crearFila = (array, circle1, circle2, circle3, circle4) => {
+    array.push(backgroundCirculo(circle1));
+    array.push(backgroundCirculo(circle2));
+    array.push(backgroundCirculo(circle3));
+    array.push(backgroundCirculo(circle4));
+    return array;
+}
+
+// COMPROBACION DE QUE TODOS LOS CIRCULOS ESTEN PINTADOS CON UN COLOR DISTINTO AL INICIAL
+const comprobarFilaPintada = (circle1, circle2, circle3, circle4) => {
+    if (backgroundCirculo(circle1) == "#000000"
+        || backgroundCirculo(circle2) == "#000000"
+        || backgroundCirculo(circle3) == "#000000"
+        || backgroundCirculo(circle4) == "#000000") {
+        return true;
+    }
+}
+
+const anularEventos = (circle1, circle2, circle3, circle4) => {
+    circle1.style.pointerEvents = "none";
+    circle2.style.pointerEvents = "none";
+    circle3.style.pointerEvents = "none";
+    circle4.style.pointerEvents = "none";
+}
+
+// FUNCION QUE CONTIENE LOS EVENTOS DE COGER EL BACKGROUND Y PASARSELO A UN CIRCULO
+function pasarColorDivs(colorElement, circleElement, key) {
+    colorElement.addEventListener("click", () => {
+        const color = window.getComputedStyle(colorElement).backgroundColor;
+        localStorage.setItem(key, color);
+    })
+    circleElement.addEventListener("click", () => {
+        circleElement.style.backgroundColor = localStorage.getItem(key);
+    })
+}
+
+// posicion para ir moviendose por los checks
+let posicionCheck = 0;
 
 // funciones disponibles al comenzar el juego, pintar la PRIMERA ROW
 pasarColorDivs(color1Game, row1Circle1, "background");
@@ -270,24 +303,13 @@ pasarColorDivs(color6Game, row1Circle2, "background");
 pasarColorDivs(color6Game, row1Circle3, "background");
 pasarColorDivs(color6Game, row1Circle4, "background");
 
-// posicion para ir moviendose por los checks
-let posicionCheck = 0;
-
 // EVENTOS CHECK para que compare resultados y habilite una nueva row
 checkRow1.addEventListener("click", () => {
     if (posicionCheck === 0) {
-        if (rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row1Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row1Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row1Circle1, row1Circle2, row1Circle3, row1Circle4) == true) {
         } else {
-            arrayRow1 = [
-                rgbHexadecimal(window.getComputedStyle(row1Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row1Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row1Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row1Circle4).backgroundColor)
-            ]
+            arrayRow1 = []
+            crearFila(arrayRow1, row1Circle1, row1Circle2, row1Circle3, row1Circle4);
             if (arrayRow1.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow1.length; i++) {
                     const circleSecundary = document.getElementById(`row1CircleSecundary${i + 1}`);
@@ -320,10 +342,7 @@ checkRow1.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row1Circle1.style.pointerEvents = "none";
-            row1Circle2.style.pointerEvents = "none";
-            row1Circle3.style.pointerEvents = "none";
-            row1Circle4.style.pointerEvents = "none";
+            anularEventos(row1Circle1, row1Circle2, row1Circle3, row1Circle4);
             pasarColorDivs(color1Game, row2Circle1, "background");
             pasarColorDivs(color1Game, row2Circle2, "background");
             pasarColorDivs(color1Game, row2Circle3, "background");
@@ -354,18 +373,10 @@ checkRow1.addEventListener("click", () => {
 
 checkRow2.addEventListener("click", () => {
     if (posicionCheck === 1) {
-        if (rgbHexadecimal(window.getComputedStyle(row2Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row2Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row2Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row2Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row2Circle1, row2Circle2, row2Circle3, row2Circle4) == true) {
         } else {
-            arrayRow2 = [
-                rgbHexadecimal(window.getComputedStyle(row2Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row2Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row2Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row2Circle4).backgroundColor)
-            ]
+            arrayRow2 = []
+            crearFila(arrayRow2, row2Circle1, row2Circle2, row2Circle3, row2Circle4);
             if (arrayRow2.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow2.length; i++) {
                     const circleSecundary = document.getElementById(`row2CircleSecundary${i + 1}`);
@@ -398,10 +409,7 @@ checkRow2.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row2Circle1.style.pointerEvents = "none";
-            row2Circle2.style.pointerEvents = "none";
-            row2Circle3.style.pointerEvents = "none";
-            row2Circle4.style.pointerEvents = "none";
+            anularEventos(row2Circle1, row2Circle2, row2Circle3, row2Circle4);
             pasarColorDivs(color1Game, row3Circle1, "background");
             pasarColorDivs(color1Game, row3Circle2, "background");
             pasarColorDivs(color1Game, row3Circle3, "background");
@@ -432,18 +440,10 @@ checkRow2.addEventListener("click", () => {
 
 checkRow3.addEventListener("click", () => {
     if (posicionCheck === 2) {
-        if (rgbHexadecimal(window.getComputedStyle(row3Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row3Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row3Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row3Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row3Circle1, row3Circle2, row3Circle3, row3Circle4) == true) {
         } else {
-            arrayRow3 = [
-                rgbHexadecimal(window.getComputedStyle(row3Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row3Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row3Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row3Circle4).backgroundColor)
-            ]
+            arrayRow3 = []
+            crearFila(arrayRow3, row3Circle1, row3Circle2, row3Circle3, row3Circle4);
             if (arrayRow3.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow3.length; i++) {
                     const circleSecundary = document.getElementById(`row3CircleSecundary${i + 1}`);
@@ -476,10 +476,7 @@ checkRow3.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row3Circle1.style.pointerEvents = "none";
-            row3Circle2.style.pointerEvents = "none";
-            row3Circle3.style.pointerEvents = "none";
-            row3Circle4.style.pointerEvents = "none";
+            anularEventos(row3Circle1, row3Circle2, row3Circle3, row3Circle4);
             pasarColorDivs(color1Game, row4Circle1, "background");
             pasarColorDivs(color1Game, row4Circle2, "background");
             pasarColorDivs(color1Game, row4Circle3, "background");
@@ -510,18 +507,10 @@ checkRow3.addEventListener("click", () => {
 
 checkRow4.addEventListener("click", () => {
     if (posicionCheck === 3) {
-        if (rgbHexadecimal(window.getComputedStyle(row4Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row4Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row4Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row4Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row4Circle1, row4Circle2, row4Circle3, row4Circle4) == true) {
         } else {
-            arrayRow4 = [
-                rgbHexadecimal(window.getComputedStyle(row4Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row4Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row4Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row4Circle4).backgroundColor)
-            ]
+            arrayRow4 = []
+            crearFila(arrayRow4, row4Circle1, row4Circle2, row4Circle3, row4Circle4);
             if (arrayRow4.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow4.length; i++) {
                     const circleSecundary = document.getElementById(`row4CircleSecundary${i + 1}`);
@@ -554,10 +543,7 @@ checkRow4.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row4Circle1.style.pointerEvents = "none";
-            row4Circle2.style.pointerEvents = "none";
-            row4Circle3.style.pointerEvents = "none";
-            row4Circle4.style.pointerEvents = "none";
+            anularEventos(row4Circle1, row4Circle2, row4Circle3, row4Circle4);
             pasarColorDivs(color1Game, row5Circle1, "background");
             pasarColorDivs(color1Game, row5Circle2, "background");
             pasarColorDivs(color1Game, row5Circle3, "background");
@@ -588,18 +574,10 @@ checkRow4.addEventListener("click", () => {
 
 checkRow5.addEventListener("click", () => {
     if (posicionCheck === 4) {
-        if (rgbHexadecimal(window.getComputedStyle(row5Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row5Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row5Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row5Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row5Circle1, row5Circle2, row5Circle3, row5Circle4) == true) {
         } else {
-            arrayRow5 = [
-                rgbHexadecimal(window.getComputedStyle(row5Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row5Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row5Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row5Circle4).backgroundColor)
-            ]
+            arrayRow5 = []
+            crearFila(arrayRow5, row5Circle1, row5Circle2, row5Circle3, row5Circle4);
             if (arrayRow5.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow5.length; i++) {
                     const circleSecundary = document.getElementById(`row5CircleSecundary${i + 1}`);
@@ -632,10 +610,7 @@ checkRow5.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row5Circle1.style.pointerEvents = "none";
-            row5Circle2.style.pointerEvents = "none";
-            row5Circle3.style.pointerEvents = "none";
-            row5Circle4.style.pointerEvents = "none";
+            anularEventos(row5Circle1, row5Circle2, row5Circle3, row5Circle4);
             pasarColorDivs(color1Game, row6Circle1, "background");
             pasarColorDivs(color1Game, row6Circle2, "background");
             pasarColorDivs(color1Game, row6Circle3, "background");
@@ -666,18 +641,10 @@ checkRow5.addEventListener("click", () => {
 
 checkRow6.addEventListener("click", () => {
     if (posicionCheck === 5) {
-        if (rgbHexadecimal(window.getComputedStyle(row6Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row6Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row6Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row6Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row6Circle1, row6Circle2, row6Circle3, row6Circle4) == true) {
         } else {
-            arrayRow6 = [
-                rgbHexadecimal(window.getComputedStyle(row6Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row6Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row6Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row6Circle4).backgroundColor)
-            ]
+            arrayRow6 = []
+            crearFila(arrayRow6, row6Circle1, row6Circle2, row6Circle3, row6Circle4);
             if (arrayRow6.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow6.length; i++) {
                     const circleSecundary = document.getElementById(`row6CircleSecundary${i + 1}`);
@@ -710,10 +677,7 @@ checkRow6.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row6Circle1.style.pointerEvents = "none";
-            row6Circle2.style.pointerEvents = "none";
-            row6Circle3.style.pointerEvents = "none";
-            row6Circle4.style.pointerEvents = "none";
+            anularEventos(row6Circle1, row6Circle2, row6Circle3, row6Circle4);
             pasarColorDivs(color1Game, row7Circle1, "background");
             pasarColorDivs(color1Game, row7Circle2, "background");
             pasarColorDivs(color1Game, row7Circle3, "background");
@@ -744,18 +708,10 @@ checkRow6.addEventListener("click", () => {
 
 checkRow7.addEventListener("click", () => {
     if (posicionCheck === 6) {
-        if (rgbHexadecimal(window.getComputedStyle(row7Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row7Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row7Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row7Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row7Circle1, row7Circle2, row7Circle3, row7Circle4) == true) {
         } else {
-            arrayRow7 = [
-                rgbHexadecimal(window.getComputedStyle(row7Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row7Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row7Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row7Circle4).backgroundColor)
-            ]
+            arrayRow7 = []
+            crearFila(arrayRow7, row7Circle1, row7Circle2, row7Circle3, row7Circle4);
             if (arrayRow7.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow7.length; i++) {
                     const circleSecundary = document.getElementById(`row7CircleSecundary${i + 1}`);
@@ -788,10 +744,7 @@ checkRow7.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row7Circle1.style.pointerEvents = "none";
-            row7Circle2.style.pointerEvents = "none";
-            row7Circle3.style.pointerEvents = "none";
-            row7Circle4.style.pointerEvents = "none";
+            anularEventos(row7Circle1, row7Circle2, row7Circle3, row7Circle4);
             pasarColorDivs(color1Game, row8Circle1, "background");
             pasarColorDivs(color1Game, row8Circle2, "background");
             pasarColorDivs(color1Game, row8Circle3, "background");
@@ -822,18 +775,10 @@ checkRow7.addEventListener("click", () => {
 
 checkRow8.addEventListener("click", () => {
     if (posicionCheck === 7) {
-        if (rgbHexadecimal(window.getComputedStyle(row8Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row8Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row8Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row8Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row8Circle1, row8Circle2, row8Circle3, row8Circle4) == true) {
         } else {
-            arrayRow8 = [
-                rgbHexadecimal(window.getComputedStyle(row8Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row8Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row8Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row8Circle4).backgroundColor)
-            ]
+            arrayRow8 = []
+            crearFila(arrayRow8, row8Circle1, row8Circle2, row8Circle3, row8Circle4);
             if (arrayRow8.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow8.length; i++) {
                     const circleSecundary = document.getElementById(`row8CircleSecundary${i + 1}`);
@@ -866,10 +811,7 @@ checkRow8.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row8Circle1.style.pointerEvents = "none";
-            row8Circle2.style.pointerEvents = "none";
-            row8Circle3.style.pointerEvents = "none";
-            row8Circle4.style.pointerEvents = "none";
+            anularEventos(row8Circle1, row8Circle2, row8Circle3, row8Circle4);
             pasarColorDivs(color1Game, row9Circle1, "background");
             pasarColorDivs(color1Game, row9Circle2, "background");
             pasarColorDivs(color1Game, row9Circle3, "background");
@@ -900,18 +842,10 @@ checkRow8.addEventListener("click", () => {
 
 checkRow9.addEventListener("click", () => {
     if (posicionCheck === 8) {
-        if (rgbHexadecimal(window.getComputedStyle(row9Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row9Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row9Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row9Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row9Circle1, row9Circle2, row9Circle3, row9Circle4) == true) {
         } else {
-            arrayRow9 = [
-                rgbHexadecimal(window.getComputedStyle(row9Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row9Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row9Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row9Circle4).backgroundColor)
-            ]
+            arrayRow9 = []
+            crearFila(arrayRow9, row9Circle1, row9Circle2, row9Circle3, row9Circle4);
             if (arrayRow9.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow9.length; i++) {
                     const circleSecundary = document.getElementById(`row9CircleSecundary${i + 1}`);
@@ -944,10 +878,7 @@ checkRow9.addEventListener("click", () => {
                     window.location.href = 'losser.html';
                 }, 1000);
             }
-            row9Circle1.style.pointerEvents = "none";
-            row9Circle2.style.pointerEvents = "none";
-            row9Circle3.style.pointerEvents = "none";
-            row9Circle4.style.pointerEvents = "none";
+            anularEventos(row9Circle1, row9Circle2, row9Circle3, row9Circle4);
             pasarColorDivs(color1Game, row10Circle1, "background");
             pasarColorDivs(color1Game, row10Circle2, "background");
             pasarColorDivs(color1Game, row10Circle3, "background");
@@ -978,18 +909,10 @@ checkRow9.addEventListener("click", () => {
 
 checkRow10.addEventListener("click", () => {
     if (posicionCheck === 9) {
-        if (rgbHexadecimal(window.getComputedStyle(row10Circle1).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row10Circle2).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row10Circle3).backgroundColor) == "#000000"
-            || rgbHexadecimal(window.getComputedStyle(row10Circle4).backgroundColor) == "#000000") {
-
+        if (comprobarFilaPintada(row10Circle1, row10Circle2, row10Circle3, row10Circle4) == true) {
         } else {
-            arrayRow10 = [
-                rgbHexadecimal(window.getComputedStyle(row10Circle1).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row10Circle2).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row10Circle3).backgroundColor),
-                rgbHexadecimal(window.getComputedStyle(row10Circle4).backgroundColor)
-            ]
+            arrayRow10 = []
+            crearFila(arrayRow10, row10Circle1, row10Circle2, row10Circle3, row10Circle4);
             if (arrayRow10.toString() === arrayGanador.toString()) {
                 for (let i = 0; i < arrayRow10.length; i++) {
                     const circleSecundary = document.getElementById(`row10CircleSecundary${i + 1}`);
