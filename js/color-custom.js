@@ -12,6 +12,7 @@ const muestraColor4 = document.getElementById("muestraColor4");
 const muestraColor5 = document.getElementById("muestraColor5");
 const muestraColor6 = document.getElementById("muestraColor6");
 const cantidadIntentos = document.getElementById("cantidadIntentos");
+const botonCustom = document.getElementById("boton-custom");
 
 cantidadIntentos.addEventListener("change", function () {
     const valorCantidadIntentos = cantidadIntentos.value;
@@ -40,7 +41,23 @@ function limitarRangoIntentos(event) {
     }
 }
 
-const botonCustom = document.getElementById("boton-custom");
+nombreJugador.addEventListener("input", ()=>{
+    localStorage.setItem("nombreJugador", nombreJugador.value);
+})
+
+const muestraColor = (color, muestraColor, num) => {
+    color.addEventListener("input", () => {
+        muestraColor.style.backgroundColor = color.value;
+        localStorage.setItem(`color${num}`, color.value);
+    })
+}
+
+muestraColor(color1, muestraColor1, 1);
+muestraColor(color2, muestraColor2, 2);
+muestraColor(color3, muestraColor3, 3);
+muestraColor(color4, muestraColor4, 4);
+muestraColor(color5, muestraColor5, 5);
+muestraColor(color6, muestraColor6, 6);
 
 botonCustom.addEventListener("click", () => {
     if (nombreJugador.value !== "" &&
@@ -64,31 +81,3 @@ botonCustom.addEventListener("click", () => {
         alert("Debes escribir tu nombre y seleccionar colores distintos entre ellos para poder comenzar la partida.");
     }
 });
-
-nombreJugador.addEventListener("input", ()=>{
-    localStorage.setItem("nombreJugador", nombreJugador.value);
-})
-color1.addEventListener("input", ()=>{
-    muestraColor1.style.backgroundColor = color1.value;
-    localStorage.setItem("color1", color1.value);
-})
-color2.addEventListener("input", ()=>{
-    muestraColor2.style.backgroundColor = color2.value;
-    localStorage.setItem("color2", color2.value);
-})
-color3.addEventListener("input", ()=>{
-    muestraColor3.style.backgroundColor = color3.value;
-    localStorage.setItem("color3", color3.value);
-})
-color4.addEventListener("input", ()=>{
-    muestraColor4.style.backgroundColor = color4.value;
-    localStorage.setItem("color4", color4.value);
-})
-color5.addEventListener("input", ()=>{
-    muestraColor5.style.backgroundColor = color5.value;
-    localStorage.setItem("color5", color5.value);
-})
-color6.addEventListener("input", ()=>{
-    muestraColor6.style.backgroundColor = color6.value;
-    localStorage.setItem("color6", color6.value);
-})

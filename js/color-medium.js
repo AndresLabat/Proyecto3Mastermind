@@ -14,26 +14,20 @@ const botonMedium = document.getElementById("boton-medium");
 nombreJugador.addEventListener("input", ()=>{
     localStorage.setItem("nombreJugador", nombreJugador.value);
 })
-color1.addEventListener("input", ()=>{
-    muestraColor1.style.backgroundColor = color1.value;
-    localStorage.setItem("color1", color1.value);
-})
-color2.addEventListener("input", ()=>{
-    muestraColor2.style.backgroundColor = color2.value;
-    localStorage.setItem("color2", color2.value);
-})
-color3.addEventListener("input", ()=>{
-    muestraColor3.style.backgroundColor = color3.value;
-    localStorage.setItem("color3", color3.value);
-})
-color4.addEventListener("input", ()=>{
-    muestraColor4.style.backgroundColor = color4.value;
-    localStorage.setItem("color4", color4.value);
-})
-color5.addEventListener("input", ()=>{
-    muestraColor5.style.backgroundColor = color5.value;
-    localStorage.setItem("color5", color5.value);
-})
+
+const muestraColor = (color, muestraColor, num) => {
+    color.addEventListener("input", () => {
+        muestraColor.style.backgroundColor = color.value;
+        localStorage.setItem(`color${num}`, color.value);
+    })
+}
+
+muestraColor(color1, muestraColor1, 1);
+muestraColor(color2, muestraColor2, 2);
+muestraColor(color3, muestraColor3, 3);
+muestraColor(color4, muestraColor4, 4);
+muestraColor(color5, muestraColor5, 5);
+
 botonMedium.addEventListener("click", () => {
     if (nombreJugador.value !== "" &&
         (color1.value !== color2.value &&

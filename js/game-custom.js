@@ -887,4 +887,3 @@ checkRow10.addEventListener("click", () => {
         }
     }
 });
-
