@@ -1,50 +1,3 @@
-// DECLARACION DE LOS ELEMENTOS DE CONTENDRAN LOS COLORES PREVIAMENTE SELECCIONADOS
-const color1Game = document.querySelector("#color1Game");
-const color2Game = document.querySelector("#color2Game");
-const color3Game = document.querySelector("#color3Game");
-const color4Game = document.querySelector("#color4Game");
-const color5Game = document.querySelector("#color5Game");
-
-// OBTENCION DE LOS VALORES DE COLORES GUARDADOS EN EL LOCAL STORAGE
-const color1Guardado = localStorage.getItem("color1");
-const color2Guardado = localStorage.getItem("color2");
-const color3Guardado = localStorage.getItem("color3");
-const color4Guardado = localStorage.getItem("color4");
-const color5Guardado = localStorage.getItem("color5");
-
-// ASIGNACION DE LOS COLORES GUARDADOS A LOS ELEMENTOS QUE LOS CONTIENEN
-color1Game.style.backgroundColor = color1Guardado
-color2Game.style.backgroundColor = color2Guardado
-color3Game.style.backgroundColor = color3Guardado
-color4Game.style.backgroundColor = color4Guardado
-color5Game.style.backgroundColor = color5Guardado
-
-// DECLARACION DEL BOTON PARA ACCEDER A LAS INTRUCCIONES Y LAS PROPIAS INSTRUCCIONES
-const botonInstrucciones = document.querySelector("#botonInstrucciones");
-const imagenInstrucciones = document.querySelector("#imagenInstrucciones");
-
-// EVENTO QUE CONTROLA EL DESPLIEGUE DE LAS INSTRUCCIONES
-botonInstrucciones.addEventListener("click", () => {
-    imagenInstrucciones.style.width = "96em";
-})
-
-// EVENTO QUE CONTROLA EL PLIEGUE DE LAS INSTRUCCIONES
-imagenInstrucciones.addEventListener("click", () => {
-    imagenInstrucciones.style.width = "0em";
-})
-
-// DECLARACION DEL BOTON PARA RENDIRSE
-const rendirseMedium = document.querySelector("#rendirseMedium");
-
-// EVENTO QUE CONTROLA EL BOTON RENDIRSE
-rendirseMedium.addEventListener("click", () => {
-    arrayGanador.forEach((valor, index) => {
-        localStorage.setItem(`arrayGanador${index}`, valor);
-    });
-    window.location.href = 'losser.html';
-});
-
-// DECLARACION DE TODOS LOS CIRCULOS A PINTAR
 const row1Circle1 = document.querySelector("#row1Circle1");
 const row1Circle2 = document.querySelector("#row1Circle2");
 const row1Circle3 = document.querySelector("#row1Circle3");
@@ -77,8 +30,6 @@ const row8Circle1 = document.querySelector("#row8Circle1");
 const row8Circle2 = document.querySelector("#row8Circle2");
 const row8Circle3 = document.querySelector("#row8Circle3");
 const row8Circle4 = document.querySelector("#row8Circle4");
-
-// DECLARACION DE TODOS LOS CIRCULOS QUE INDICAN POSICION Y COLOR CORRECTOS
 const row1CircleSecundary1 = document.querySelector("#row1CircleSecundary1");
 const row1CircleSecundary2 = document.querySelector("#row1CircleSecundary2");
 const row1CircleSecundary3 = document.querySelector("#row1CircleSecundary3");
@@ -111,8 +62,6 @@ const row8CircleSecundary1 = document.querySelector("#row8CircleSecundary1");
 const row8CircleSecundary2 = document.querySelector("#row8CircleSecundary2");
 const row8CircleSecundary3 = document.querySelector("#row8CircleSecundary3");
 const row8CircleSecundary4 = document.querySelector("#row8CircleSecundary4");
-
-// DECLARACION DE TODOS LOS CHECKS
 const checkRow1 = document.querySelector("#checkRow1")
 const checkRow2 = document.querySelector("#checkRow2")
 const checkRow3 = document.querySelector("#checkRow3")
@@ -121,8 +70,38 @@ const checkRow5 = document.querySelector("#checkRow5")
 const checkRow6 = document.querySelector("#checkRow6")
 const checkRow7 = document.querySelector("#checkRow7")
 const checkRow8 = document.querySelector("#checkRow8")
+const botonInstrucciones = document.querySelector("#botonInstrucciones");
+const imagenInstrucciones = document.querySelector("#imagenInstrucciones");
+const rendirseMedium = document.querySelector("#rendirseMedium");
+let posicionCheck = 0;
 
-// ARRAY GANADOR:
+const asignarColorInicial = (divColor, colorGuardado) =>{
+    const colorGame = document.querySelector(divColor);
+    const colorGuardadoStorage = localStorage.getItem(colorGuardado);
+    colorGame.style.backgroundColor = colorGuardadoStorage;
+}
+
+asignarColorInicial("#color1Game", "color1");
+asignarColorInicial("#color2Game", "color2");
+asignarColorInicial("#color3Game", "color3");
+asignarColorInicial("#color4Game", "color4");
+asignarColorInicial("#color5Game", "color5");
+
+botonInstrucciones.addEventListener("click", () => {
+    imagenInstrucciones.style.width = "96em";
+})
+
+imagenInstrucciones.addEventListener("click", () => {
+    imagenInstrucciones.style.width = "0em";
+})
+
+rendirseMedium.addEventListener("click", () => {
+    arrayGanador.forEach((valor, index) => {
+        localStorage.setItem(`arrayGanador${index}`, valor);
+    });
+    window.location.href = 'losser.html';
+});
+
 let arrayGanador = []
 for (let i = 1; i <= 4; i++) {
     const random = Math.floor(Math.random() * 5) + 1;
@@ -139,18 +118,16 @@ for (let i = 1; i <= 4; i++) {
     }
 }
 
-// Convertir rgb a hexadecimal
-function rgbHexadecimal(rgb) {
+const rgbHexadecimal = (rgb) => {
     const [r, g, b] = rgb.match(/\d+/g);
     const hex = '#' + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
     return hex;
 }
 
-// BACKGROUND DEL CIRCULO EN HEXADECIMAL
 const backgroundCirculo = (circle) => {
     return rgbHexadecimal(window.getComputedStyle(circle).backgroundColor)
 }
-// CREACION DEL ARRAY POR FILAS
+
 const crearFila = (array, circle1, circle2, circle3, circle4) => {
     array.push(backgroundCirculo(circle1));
     array.push(backgroundCirculo(circle2));
@@ -159,7 +136,6 @@ const crearFila = (array, circle1, circle2, circle3, circle4) => {
     return array;
 }
 
-// COMPROBACION DE QUE TODOS LOS CIRCULOS ESTEN PINTADOS CON UN COLOR DISTINTO AL INICIAL
 const comprobarFilaPintada = (circle1, circle2, circle3, circle4) => {
     if (backgroundCirculo(circle1) == "#000000"
         || backgroundCirculo(circle2) == "#000000"
@@ -176,7 +152,6 @@ const anularEventos = (circle1, circle2, circle3, circle4) => {
     circle4.style.pointerEvents = "none";
 }
 
-// FUNCION QUE CONTIENE LOS EVENTOS DE COGER EL BACKGROUND Y PASARSELO A UN CIRCULO
 function pasarColorDivs(colorElement, circleElement, key) {
     colorElement.addEventListener("click", () => {
         const color = window.getComputedStyle(colorElement).backgroundColor;
@@ -187,10 +162,6 @@ function pasarColorDivs(colorElement, circleElement, key) {
     })
 }
 
-// posicion para ir moviendose por los checks
-let posicionCheck = 0;
-
-// funciones disponibles al comenzar el juego, pintar la PRIMERA ROW
 pasarColorDivs(color1Game, row1Circle1, "background");
 pasarColorDivs(color1Game, row1Circle2, "background");
 pasarColorDivs(color1Game, row1Circle3, "background");
@@ -212,7 +183,6 @@ pasarColorDivs(color5Game, row1Circle2, "background");
 pasarColorDivs(color5Game, row1Circle3, "background");
 pasarColorDivs(color5Game, row1Circle4, "background");
 
-// EVENTOS CHECK para que compare resultados y habilite una nueva row
 checkRow1.addEventListener("click", () => {
     if (posicionCheck === 0) {
         if (comprobarFilaPintada(row1Circle1, row1Circle2, row1Circle3, row1Circle4) == true) {
