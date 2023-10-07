@@ -9,8 +9,16 @@ __<p align="center">Github pages: https://andreslabat.github.io/Proyecto3Masterm
 <br>
 Desarrollado como parte del Bootcamp de Full Stack Developer de Geekshubs Academy.</p>
 
+<p>
+   <div align="center">
+      <img src="./img/imagenes-README/geekhubs.png" style="max-width: 100%;" width="200">
+   </div>    
+</p>
+<p>
+   <div align="center">
+      <em><b>Bienvenido a MasterMind</b></em>
+   </div>   
 <p align="center">_______________________________________________</p>
-
 
 **Juego MasterMind** es un proyecto que recrea una experiencia interactiva del juego de mesa MasterMind utilizando HTML, CSS, JavaScript, GIT y GitHub. Este proyecto incluye una serie de elementos interactivos que simulan el juego de mesa, así como algunas funciones útiles que te permiten acceder a las instrucciones o volver a elegir colores y dificultad con tan solo un click.
 
@@ -363,7 +371,12 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para obt
 
 Agradecimentos a GeeksHubs Academy por los conocimientos que he podido adquirir estas tres semanas y que han hecho posible este proyecto, y a nuestros queridos profesores David Ochando y Dani Tarazona y su gran paciencia con nosotros.
 
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/geekhubs-con-fondo.png" style="max-width: 100%;" width="250">
+   </div>    
+</p>
+
 Quiero hacer una mención especial a mi mujer, Alba, ya que sin su apoyo e inspiracion ni este ni ningún otro proyecto llegarían a ser una realidad.
 
 ¡Gracias por visitar **Juego MasterMind** y explorar mi proyecto!
-
