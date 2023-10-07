@@ -137,10 +137,10 @@ const crearFila = (array, circle1, circle2, circle3, circle4) => {
 }
 
 const comprobarFilaPintada = (circle1, circle2, circle3, circle4) => {
-    if (backgroundCirculo(circle1) == "#000000"
-        || backgroundCirculo(circle2) == "#000000"
-        || backgroundCirculo(circle3) == "#000000"
-        || backgroundCirculo(circle4) == "#000000") {
+    if (backgroundCirculo(circle1) == "#53425c"
+        || backgroundCirculo(circle2) == "#53425c"
+        || backgroundCirculo(circle3) == "#53425c"
+        || backgroundCirculo(circle4) == "#53425c") {
         return true;
     }
 }

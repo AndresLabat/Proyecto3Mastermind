@@ -1052,6 +1052,7 @@ body {
     height: 3em;
     border-radius: 50%;
     border: 0.01em solid black;
+    background-color: #53425c00;
 }
 
 .fila-huecos-secundarios{
