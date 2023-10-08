@@ -6,15 +6,12 @@ const contenedorSecundario = document.querySelector('.div-huecos-secundarios');
 for (let i = 1; i <= cantidadIntentosNumero; i++) {
     const fila = document.createElement('div');
     fila.className = 'fila-huecos-principales';
-
     for (let j = 1; j <= 4; j++) {
         const divHuecoPrincipal = document.createElement('div');
         divHuecoPrincipal.className = 'div-hueco-principal';
-
         const circuloPrincipal = document.createElement('div');
         circuloPrincipal.className = 'hueco-principal';
         circuloPrincipal.id = `row${i}Circle${j}`;
-
         divHuecoPrincipal.appendChild(circuloPrincipal);
         fila.appendChild(divHuecoPrincipal);
     }
@@ -24,39 +21,29 @@ for (let i = 1; i <= cantidadIntentosNumero; i++) {
 for (let i = 1; i <= cantidadIntentosNumero; i++) {
     const filaHuecosSecundarios = document.createElement('div');
     filaHuecosSecundarios.classList.add('fila-huecos-secundarios');
-
     for (let j = 1; j <= 4; j++) {
         const huecoSecundario = document.createElement('div');
         huecoSecundario.classList.add('div-hueco-secundario');
-
         const huecoSecundarioInterno = document.createElement('div');
         huecoSecundarioInterno.classList.add('div-hueco-secundario-interno');
-
         const huecoSecundarioDiv = document.createElement('div');
         huecoSecundarioDiv.classList.add('hueco-secundario');
         huecoSecundarioDiv.id = `row${i}CircleSecundary${j}`;
-
         huecoSecundarioInterno.appendChild(huecoSecundarioDiv);
         huecoSecundario.appendChild(huecoSecundarioInterno);
         filaHuecosSecundarios.appendChild(huecoSecundario);
     }
     const checkContainer = document.createElement('div');
     checkContainer.classList.add('div-hueco-secundario-check');
-
     const checkContainerInterno = document.createElement('div');
     checkContainerInterno.classList.add('div-hueco-secundario-interno-check');
-
     const checkDiv = document.createElement('div');
     checkDiv.classList.add('check');
     checkDiv.id = `checkRow${i}`;
     checkDiv.innerHTML = '<div>Check</div>';
-
     checkContainerInterno.appendChild(checkDiv);
-
     checkContainer.appendChild(checkContainerInterno);
-
     filaHuecosSecundarios.appendChild(checkContainer);
-
     contenedorSecundario.appendChild(filaHuecosSecundarios);
 }
 

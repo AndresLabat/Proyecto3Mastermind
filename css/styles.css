@@ -82,7 +82,6 @@ body {
 .titulo-mastermind {
     width: 100vw;
     height: 20vh;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +91,6 @@ body {
 .titulo-superior {
     width: 9.9em;
     height: 10vh;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: end;
@@ -114,7 +112,6 @@ body {
 .titulo-inferior {
     width: 28em;
     height: 10vh;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +119,6 @@ body {
 
 .logo {
     width: 4em;
-    /* border: 0.1em solid black; */
 }
 
 .logo img {
@@ -163,7 +159,6 @@ body {
 .div-izquierdo, .div-derecho{
     width: 50vw;
     height: 100vh;
-    /* border: 0.1em solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,7 +166,6 @@ body {
 
 .degradado{
     color: white;
-    /* border: 0.1em solid black; */
     width: 9.9em;
 }
 
@@ -191,12 +185,10 @@ body {
 
 .small{
     width: 9.9em;
-    /* border: 0.1em solid black; */
 }
 
 .small-logo{
     width: 28em;
-    /* border: 0.1em solid black; */
 }
 
 /* MENU */
@@ -204,7 +196,6 @@ body {
 .div-video {
     width: 100vw;
     height: 50vh;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -240,7 +231,6 @@ body {
 .div-botones {
     width: 100vw;
     height: 27.4vh;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,7 +240,6 @@ body {
 .div-boton-play {
     width: 17.7em;
     height: 27.4vh;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,7 +310,6 @@ body {
 .div-explicacion {
     width: 91vw;
     height: 58vh;
-    /* border: 0.1em solid white; */
     color: white;
     padding-left: 4em;
     padding-right: 4em;
@@ -389,7 +377,6 @@ body {
 .div-selector-dificultad{
     width: 100vw;
     height: 68em;
-    /* border: 0.1em solid black; */
 }
 
 .contenedor-div-dificultades{
@@ -422,7 +409,6 @@ body {
 
 .div-dificultades{
     width: 25em;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -444,8 +430,6 @@ body {
     height: 5.5em;
     text-align: center;
     padding-bottom: 12em;
-    /* background-color: #3498db81; */
-
 }
 
 .margin-top{
@@ -561,7 +545,6 @@ body {
 .div-general-colores{
     width: 100vw;
     height: 22em;
-    /* background-color: #2ecc71; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -582,7 +565,6 @@ body {
 .div-separacion-colores-exterior{
     width: 48em;
     height: 19.6em;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -591,14 +573,12 @@ body {
 .div-separacion-colores-interior{
     width: 12em;
     height: 18em;
-    /* border: 0.1em solid black; */
     margin-bottom: 2em;
 }
 
 .div-color-seleccionado{
     width: 12em;
     height: 10em;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: end;
@@ -615,7 +595,6 @@ body {
 .div-input-color{
     width: 12em;
     height: 3em;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -631,7 +610,6 @@ body {
 .input-color-text{
     width: 12em;
     height: 5em;
-    /* border: 0.1em solid black; */
 }
 
 .color-text{
@@ -687,7 +665,6 @@ body {
 .div-separacion-colores-exterior-medium{
     width: 60em;
     height: 19.6em;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -710,7 +687,6 @@ body {
 .div-separacion-colores-exterior-hard{
     width: 72em;
     height: 19.6em;
-    /* border: 0.1em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -721,11 +697,9 @@ body {
 .div-felicitacion{
     width: 100vw;
     height: 50vh;
-    /* background-color: #c0bebe; */
     text-align: center;
     margin-top: 1em;
     margin-bottom: 2.2em;
-    /* color: white; */
 }
 
 .texto-felicitacion-verde{
@@ -775,7 +749,6 @@ body {
 .contenedor-soluciones-exterior{
     width: 100vw;
     height: 6em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content:center;
     align-items: center;
@@ -1174,7 +1147,6 @@ body {
     display: flex;
     justify-content:center;
     align-items: center;
-    /* background-color:#46494f; */
     background-image: url('../img/madera.jpeg');
     background-size: cover; 
     background-position: center;
@@ -1184,31 +1156,24 @@ body {
 .zona-juego-medium{
     width: 28em;
     height: 32em;
-    /* border: 0.01em solid black; */
     display: flex;
     align-items: center;
-    /* background-color: #3498db; */
     margin-top: 4em;
 }
 
 .div-huecos-principales-medium{
     width: 16em;
     height: 32em;
-    /* border: 0.01em solid black; */
-    /* background-color: red; */
 }
 
 .div-huecos-secundarios-medium{
     width: 12em;
     height: 32em;
-    /* border: 0.01em solid black; */
-    /* background-color: #3498db; */
 }
 
 .div-colores-importados-interior-medium{
     width: 10em;
     height: 30em;
-    /* border: 0.01em solid black; */
     margin-left: 0.8em;
     display: flex;
     flex-direction: column;
@@ -1219,7 +1184,6 @@ body {
 .interior-acceso-botones-juego-medium{
     width: 8em;
     height: 28em;
-    /* border: 0.01em solid black; */
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -1249,7 +1213,6 @@ body {
     display: flex;
     justify-content:center;
     align-items: center;
-    /* background-color:#46494f; */
     background-image: url('../img/madera.jpeg');
     background-size: cover; 
     background-position: center;
@@ -1259,31 +1222,24 @@ body {
 .zona-juego-hard{
     width: 28em;
     height: 24em;
-    /* border: 0.01em solid black; */
     display: flex;
     align-items: center;
-    /* background-color: #3498db; */
     margin-top: 8em;
 }
 
 .div-huecos-principales-hard{
     width: 16em;
     height: 24em;
-    /* border: 0.01em solid black; */
-    /* background-color: red; */
 }
 
 .div-huecos-secundarios-hard{
     width: 12em;
     height: 24em;
-    /* border: 0.01em solid black; */
-    /* background-color: #3498db; */
 }
 
 .div-colores-importados-interior-hard{
     width: 10em;
     height: 30em;
-    /* border: 0.01em solid black; */
     margin-left: 0.8em;
     display: flex;
     flex-direction: column;
@@ -1294,7 +1250,6 @@ body {
 .interior-acceso-botones-juego-hard{
     width: 8em;
     height: 28em;
-    /* border: 0.01em solid black; */
     display: flex;
     flex-direction: column;
     justify-content:space-around;
