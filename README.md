@@ -195,6 +195,19 @@ El proyecto **Juego MasterMind** consta de los siguientes archivos:
 
 17. **👾game-hard.js👾**: se encarga de toda la lógica necesaria para el correcto funcionamiento del juego en la dificultad personalizado y genera el tablero dinámicamente en base a la elección de intentos que haya realizado el jugador, por último guarda el resultado de la combinación ganadora en el local storage.
 
+## 🏗️ Diseño del tablero de juego
+
+Una de las cosas más complicadas fue definir la forma y contenido del tablero, de manera que luego al hacerlo dinámico todo quedara centrado y natural:
+
+<p>
+   <div align="center">
+      <img src="img/imagenes-README/diseño-tablero.jpeg" style="max-width: 100%;" width="500">
+   </div>    
+   <div align="center">
+      <em><b>Una vez diseñado ya solo quedaba adaptarlo a cada dificultad</b></em>
+   </div>   
+</p>
+
 ## 🔧 Tecnologías Utilizadas
 
 - **HTML**: Utilizado para estructurar la página web y crear elementos interactivos.

@@ -1,4 +1,4 @@
-* {
+* {          
     margin: 0;
     padding: 0;
 }
@@ -771,7 +771,6 @@ body {
 .sobre-fondo-flex{
     width: 100vw;
     height: 100vh;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content:center;
     align-items: center;
@@ -797,7 +796,6 @@ body {
     display: flex;
     justify-content:center;
     align-items: center;
-    /* background-color:#46494f; */
     background-image: url('../img/madera.jpeg');
     background-size: cover; 
     background-position: center;
@@ -807,7 +805,6 @@ body {
 .div-colores-importados{
     width: 4em;
     height: 40em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content:center;
     align-items: center;
@@ -817,7 +814,6 @@ body {
 .div-colores-importados-interior{
     width: 10em;
     height: 30em;
-    /* border: 0.01em solid black; */
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -844,7 +840,6 @@ body {
 .tablero-exterior{
     width: 36em;
     height: 40em;
-    /* border: 0.01em solid black; */
     display: flex;
     align-items:flex-start;
 }
@@ -852,7 +847,6 @@ body {
 .zona-juego{
     width: 28em;
     height: 40em;
-    /* border: 0.01em solid black; */
     display: flex;
     align-items: center;
 }
@@ -860,7 +854,6 @@ body {
 .acceso-botones-juego{
     width: 8em;
     height: 40em;
-    /* border: 0.01em solid black; */
     display: flex;
     align-items: center;
 }
@@ -868,7 +861,6 @@ body {
 .interior-acceso-botones-juego{
     width: 8em;
     height: 28em;
-    /* border: 0.01em solid black; */
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -878,7 +870,6 @@ body {
 .interior-acceso-botones-juego-easy{
     width: 8em;
     height: 36em;
-    /* border: 0.01em solid black; */
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -897,7 +888,6 @@ body {
 .titulo-aclaracion{
     width: 8em;
     height: 1.5em;
-    /* border: 0.01em solid black; */
     background: linear-gradient(45deg, violet, indigo, blue, green, orange, red);
     -webkit-background-clip: text;
     text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
@@ -914,20 +904,17 @@ body {
 .div-aclaracion-colores{
     width: 9em;
     height: 9em;
-    /* border: 0.01em solid black; */
     display: flex;
 }
 
 .aclaracion-colores{
     width: 2em;
     height: 9em;
-    /* border: 0.01em solid black; */
 }
 
 .div-blanco, .div-morado{
     width: 2em;
     height: 4.5em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -944,20 +931,17 @@ body {
 .div-texto-colores{
     width: 6em;
     height: 9em;
-    /* border: 0.01em solid black; */
     background: linear-gradient(45deg, grey, black, grey);
    -webkit-background-clip: text;
     text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.7);
     background-clip: text;
     color: transparent;
     font-family: 'Sedgwick Ave Display', cursive;
-    /* font-weight: bold; */
 }
 
 .texto-blanco, .texto-morado{
     width: 6em;
     height: 4.5em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -996,25 +980,20 @@ body {
 .div-huecos-principales{
     width: 16em;
     height: 40em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* background-color: red; */
 }
 
 .fila-huecos-principales{
     width: 16em;
     height: 4em;
-    /* border: 0.01em solid black; */
-    /* background-color: #46494f; */
     display: flex;
 }
 
 .div-hueco-principal{
     width: 4em;
     height: 4em;
-    /* border: 0.01em solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1032,8 +1011,6 @@ body {
     width: 12em;
     height: 4em;
     display: flex;
-    /* border: 0.01em solid black; */
-    /* background-color: yellow; */
 }
 
 .div-huecos-secundarios{
@@ -1042,14 +1019,11 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* border: 0.01em solid black; */
-    /* background-color: #3498db; */
 }
 
 .div-hueco-secundario{
     width: 2em;
     height: 4em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1058,7 +1032,6 @@ body {
 .div-hueco-secundario-check{
     width: 4em;
     height: 4em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1067,21 +1040,17 @@ body {
 .div-hueco-secundario-interno{
     width: 2em;
     height: 2em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #3498db; */
 }
 
 .div-hueco-secundario-interno-check{
     width: 4em;
     height: 2em;
-    /* border: 0.01em solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #3498db; */
 }
 
 .hueco-secundario{
@@ -1089,7 +1058,6 @@ body {
     height: 1.2em;
     border: 0.01em solid black;
     border-radius: 50%;
-    /* background-color: white; */
 }
 
 .check{
