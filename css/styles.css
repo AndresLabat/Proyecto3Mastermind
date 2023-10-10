@@ -808,7 +808,45 @@ body {
     display: flex;
     justify-content:center;
     align-items: center;
-    margin-right: 1.5em;
+    margin-right: 1.3em;
+    /* border: 0.05em solid black; */
+    /* --------------------------------------- */
+}
+
+.div-numeros-tablero-big{
+    width: 2em;
+    height: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
+    /* border: 0.05em solid black;
+    background-color: #2ecc71; */
+}
+
+.div-numeros-tablero-small{
+    width: 2em;
+    height: 32em;
+}
+
+.numeros-tablero{
+    width: 2em;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1em;
+    background: linear-gradient(45deg,blue, green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-family: 'Fredericka the Great', cursive;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
 }
 
 .div-colores-importados-interior{
@@ -849,6 +887,8 @@ body {
     height: 40em;
     display: flex;
     align-items: center;
+    /* border: 0.05em solid black; */
+    /* -------------------------------------------------- */
 }
 
 .acceso-botones-juego{
@@ -1260,4 +1300,3 @@ body {
     box-shadow: #004870 3px 3px 6px 0px inset, #004870 -3px -3px 6px 1px inset;
     cursor: pointer;
 }
-

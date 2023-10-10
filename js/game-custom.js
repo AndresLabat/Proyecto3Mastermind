@@ -4,6 +4,10 @@ const contenedorPrincipal = document.querySelector('.div-huecos-principales');
 const contenedorSecundario = document.querySelector('.div-huecos-secundarios');
 
 for (let i = 1; i <= cantidadIntentosNumero; i++) {
+    const nuevoDiv = document.createElement("div");
+    nuevoDiv.className = "numeros-tablero";
+    nuevoDiv.textContent = i;
+    document.querySelector(".div-numeros-tablero-big").appendChild(nuevoDiv);
     const fila = document.createElement('div');
     fila.className = 'fila-huecos-principales';
     for (let j = 1; j <= 4; j++) {
